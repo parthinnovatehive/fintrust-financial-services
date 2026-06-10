@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import InteractiveSuite from "../components/InteractiveSuite.jsx";
+import AppleWatchGrid from "../components/AppleWatchGrid/AppleWatchGrid";
 import {
   Shield,
   BarChart3,
@@ -116,6 +117,8 @@ export default function Home() {
       {/* 2. THE INTERACTIVE CALCULATOR & STRATEGY PORTAL */}
       <InteractiveSuite />
 
+{/* ADD THE NEW APPLE WATCH GRID COMPONENT HERE */}
+    <AppleWatchGrid />
       
 
       {/* 3. METRICS SECTION: Clean, High-Contrast Text-Driven Data Blocks */}
