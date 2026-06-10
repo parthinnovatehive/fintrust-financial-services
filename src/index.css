@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  /* Premium Corporate Palette */
+  --color-brand-navy: #0F172A;       /* Sophisticated deep slate/navy for text and dark elements */
+  --color-brand-blue: #1E3A8A;       /* Deep Royal Blue for Trust & Finance */
+  --color-brand-gold: #B45309;       /* Editorial Amber Gold for premium accentuation */
+  --color-brand-digital: #2563EB;    /* Professional Electric Blue for Digital Services */
+  
+  --color-surface-base: #FAFAFA;     /* Soft, clean off-white editorial background */
+  --color-surface-muted: #F1F5F9;    /* Light grey for clean structural layout blocks */
+}
+
+/* Base Editorial Settings */
+html, body {
+  background-color: #FAFAFA;
+  color: #334155;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
