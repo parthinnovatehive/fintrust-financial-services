@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import InteractiveSuite from "../components/InteractiveSuite.jsx";
 import {
   Shield,
   BarChart3,
@@ -10,8 +11,14 @@ import {
   Award,
   ArrowUpRight,
   CheckCircle2,
-  ChevronRight
+  ChevronRight,
+  HeartPulse,
+  Compass,
+  Target,
+  Gem
 } from "lucide-react";
+import WhatsAppButton from "../components/WhatsAppButton";
+
 
 /* Modern Counter Hook */
 function useCounter(end, duration = 1500, isInView = true) {
@@ -21,7 +28,7 @@ function useCounter(end, duration = 1500, isInView = true) {
   useEffect(() => {
     if (!isInView || hasAnimated.current) return;
     hasAnimated.current = true;
-    
+
     let startTime;
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
@@ -41,142 +48,80 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-surface-base text-slate-800 antialiased selection:bg-brand-blue/10">
-      
-      {/* 1. HERO SECTION: Editorial High-End Agency Layout */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-white to-surface-muted px-6 lg:px-16 overflow-hidden pt-20">
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Text Column */}
+
+      {/* 1. HERO SECTION: Luxury Editorial Asymmetric Layout */}
+      <section className="relative min-h-[95vh] flex items-center bg-gradient-to-b from-white to-slate-50 px-6 lg:px-16 overflow-hidden pt-24">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+          {/* Left Column: Sharp Editorial Copy */}
           <div className="lg:col-span-7 space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/5 border border-brand-blue/10">
-              <span className="w-2 h-2 rounded-full bg-brand-blue" />
-              <span className="text-brand-blue text-xs font-semibold uppercase tracking-wider">
-                Integrated Corporate Ecosystem
+            <div className="inline-flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
+              <span className="text-brand-gold text-[11px] font-bold uppercase tracking-super-wide">
+                Institutional Capital × Digital Performance
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-brand-navy leading-[1.1]">
-              Empowering your <span className="font-semibold text-brand-blue">finances</span>.<br />
-              Accelerating your <span className="font-semibold text-brand-digital">digital growth</span>.
+            <h1 className="text-4xl sm:text-6xl font-light tracking-tight text-brand-navy leading-[1.05]">
+              Architecting secure <br />
+              <span className="font-semibold text-brand-blue">financial pathways</span> <br />
+              & digital market scale.
             </h1>
 
-            <p className="text-lg text-slate-600 max-w-xl leading-relaxed font-light">
-              Fintrust bridges the absolute gap between premium financial advisory and high-performing digital lead engines. We scale your corporate capital and market presence simultaneously.
+            <p className="text-base text-slate-600 max-w-lg leading-relaxed font-light">
+              Fintrust operates at the intersection of premium asset advisory and high-yield digital acquisition. We engineer custom liquidity frameworks while building data-driven client pipelines.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-medium rounded-lg shadow-sm hover:bg-brand-navy transition-all duration-300 group cursor-pointer">
-                <span>Explore Financial Solutions</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <button className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-brand-navy text-white text-sm font-medium rounded-sm hover:bg-brand-blue transition-all duration-300 shadow-sm cursor-pointer group">
+                <span>Enterprise Solutions</span>
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
               </button>
-              <button className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition-all duration-300 cursor-pointer">
-                <span>Digital Growth Suite</span>
+              <button className="inline-flex items-center justify-center px-7 py-4 bg-transparent border border-slate-200 text-slate-700 text-sm font-medium rounded-sm hover:bg-slate-50 hover:border-slate-400 transition-all duration-300 cursor-pointer">
+                <span>Explore Capabilities</span>
               </button>
             </div>
           </div>
 
-          {/* Right Visual Column (Minimalist Abstract Geometry, No Cheesy Orbs) */}
-          <div className="lg:col-span-5 relative flex justify-center items-center h-[350px] lg:h-[450px]">
-            <div className="absolute w-72 h-72 border border-slate-200 rounded-full opacity-60" />
-            <div className="absolute w-96 h-96 border border-slate-100 rounded-full opacity-40" />
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="relative p-8 bg-white border border-slate-200 rounded-2xl shadow-xl max-w-sm w-full space-y-6"
-            >
-              <div className="flex justify-between items-center border-b border-slate-100 pb-4">
-                <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">Active Matrix</span>
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              </div>
-              <div className="space-y-3">
-                <div className="h-4 bg-slate-100 rounded w-3/4" />
-                <div className="h-4 bg-slate-100 rounded w-1/2" />
-                <div className="h-4 bg-slate-50 rounded w-5/6" />
-              </div>
-              <div className="pt-2 flex gap-2">
-                <span className="text-xs px-2.5 py-1 rounded bg-brand-blue/5 text-brand-blue font-medium">Lending Platform</span>
-                <span className="text-xs px-2.5 py-1 rounded bg-brand-digital/5 text-brand-digital font-medium">Performance Engine</span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+          {/* Right Column: Premium Asymmetrical Assembled Layout */}
+          <div className="lg:col-span-5 grid grid-cols-12 gap-4 relative">
 
-      {/* 2. THE TWO PILLARS: Sophisticated Corporate Layout */}
-      <section className="py-24 lg:py-32 px-6 lg:px-16 bg-white border-y border-slate-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mb-20">
-            <span className="text-xs font-bold tracking-widest uppercase text-brand-gold block mb-3">Capabilities</span>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-brand-navy mb-4">
-              Strategic Division of Services
-            </h2>
-            <p className="text-slate-600 font-light">
-              We leverage an institutional network of 15+ trusted banking partners alongside data-driven engineering models to serve both sides of business architecture.
-            </p>
-          </div>
+            {/* Structural Accent Lines that mimic luxury architecture sites */}
+            <div className="absolute -top-12 -left-6 w-px h-64 bg-slate-200/60 hidden xl:block" />
+            <div className="absolute -top-12 -left-12 w-64 h-px bg-slate-200/60 hidden xl:block" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            {/* Pillar 1: Finance */}
-            <div className="p-8 lg:p-12 bg-surface-base border border-slate-200 rounded-2xl hover:border-brand-blue/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 bg-brand-blue/5 rounded-lg flex items-center justify-center mb-8">
-                  <Landmark className="w-6 h-6 text-brand-blue" />
-                </div>
-                <h3 className="text-2xl font-medium text-brand-navy mb-4">Financial Consulting</h3>
-                <p className="text-slate-600 font-light mb-8 leading-relaxed">
-                  Bespoke retail loans, working capital financing, asset-backed monetization pathways, and comprehensive liability mitigation strategies.
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {["Home & Mortgage Loans", "Business & MSME Capital", "Personal Infrastructure Loans", "Asset-Backed Finance", "Corporate Insurance", "Wealth Protection"].map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                      <CheckCircle2 className="w-4 h-4 text-brand-blue shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <a href="#" className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-blue hover:text-brand-navy group transition-colors mt-auto">
-                <span>Request Financial Consultation</span>
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
+            {/* Main Feature Block */}
+            <div className="col-span-12 p-8 bg-white border border-slate-200/80 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300">
+              <span className="text-[10px] uppercase tracking-super-wide text-brand-gold font-bold block mb-4">Capital Structure</span>
+              <h3 className="text-2xl font-light text-brand-navy mb-2">Institutional Advisory</h3>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">Direct deployment vectors with 15+ trusted premier financial banking networks.</p>
             </div>
 
-            {/* Pillar 2: Digital Marketing */}
-            <div className="p-8 lg:p-12 bg-surface-base border border-slate-200 rounded-2xl hover:border-brand-digital/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="w-12 h-12 bg-brand-digital/5 rounded-lg flex items-center justify-center mb-8">
-                  <BarChart3 className="w-6 h-6 text-brand-digital" />
-                </div>
-                <h3 className="text-2xl font-medium text-brand-navy mb-4">Digital Performance Advisory</h3>
-                <p className="text-slate-600 font-light mb-8 leading-relaxed">
-                  Deploying algorithmic search visibility, strategic paid performance funnels, conversion optimizations, and brand development frameworks.
-                </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {["Enterprise SEO & SEM", "Social Media Management", "High-Conversion Web Dev", "Qualified Lead Generation", "PPC & Performance Ads", "Content Marketing Strategy"].map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                      <CheckCircle2 className="w-4 h-4 text-brand-digital shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <a href="#" className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-digital hover:text-brand-navy group transition-colors mt-auto">
-                <span>Request Growth Audit</span>
-                <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
+            {/* Offset Secondary Block Left */}
+            <div className="col-span-7 p-6 bg-brand-navy text-white rounded-sm shadow-sm mt-2">
+              <div className="text-2xl font-semibold tracking-tight text-white mb-1">5.2×</div>
+              <p className="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Average Marketing Alpha Generated</p>
+            </div>
+
+            {/* Offset Secondary Block Right */}
+            <div className="col-span-5 p-6 bg-white border border-slate-200 rounded-sm mt-2 flex flex-col justify-between">
+              <div className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span className="text-xs font-medium text-brand-navy block mt-4">Real-Time Sync Ready</span>
             </div>
 
           </div>
         </div>
       </section>
+
+      {/* 2. THE INTERACTIVE CALCULATOR & STRATEGY PORTAL */}
+      <InteractiveSuite />
+
+      
 
       {/* 3. METRICS SECTION: Clean, High-Contrast Text-Driven Data Blocks */}
       <section ref={statsRef} className="py-20 bg-brand-navy text-white px-6 lg:px-16">
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 text-center divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-          
+
           <div className="pt-6 lg:pt-0">
             <p className="text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-2">
               {useCounter(15, 1200, isStatsInView)}+
@@ -234,20 +179,225 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. EDITORIAL MINIMALIST FOOTER */}
-      <footer className="py-12 bg-white border-t border-slate-200 px-6 lg:px-16">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500 font-light">
+     {/* 3. ABOUT FINTRUST SECTION: Simple, Deep, Trustworthy */}
+      <section className="py-24 px-6 lg:px-16 bg-white border-b border-slate-200/60">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="lg:col-span-5 space-y-4 sticky top-28">
+            <span className="text-[11px] font-bold tracking-super-wide text-brand-gold uppercase block">
+              Corporate Overview
+            </span>
+            <h2 className="text-3xl font-semibold tracking-tight text-brand-navy leading-tight">
+              About Fintrust Financial Services
+            </h2>
+            <div className="w-12 h-0.5 bg-brand-blue mt-4" />
+          </div>
+          
+          <div className="lg:col-span-7 space-y-6 text-slate-600 font-light leading-relaxed text-base">
+            <p>
+              Fintrust Financial Services is a trusted financial consultancy dedicated to helping individuals, professionals, and businesses achieve their financial goals through customized loan and insurance solutions. With a customer-first approach, we simplify the borrowing process and provide expert guidance at every step.
+            </p>
+            <p>
+              We work with leading banks, NBFCs, and insurance companies to offer competitive financial products tailored to the unique needs of our clients. Our commitment is to deliver transparent advice, quick processing, and hassle-free service.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. COMPREHENSIVE SERVICES BLUEPRINT */}
+      <section className="py-24 px-6 lg:px-16 bg-slate-50 border-b border-slate-200/60">
+        <div className="max-w-7xl mx-auto">
+          
+          <div className="text-center max-w-2xl mx-auto mb-20 space-y-3">
+            <span className="text-[11px] font-bold tracking-super-wide text-brand-gold uppercase block">
+              Capabilities Matrix
+            </span>
+            <h2 className="text-3xl font-semibold tracking-tight text-brand-navy">
+              Bespoke Services Blueprint
+            </h2>
+            <p className="text-slate-500 text-sm font-light">
+              Simple, transparent solutions spanning traditional asset leverage and digital market performance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* COLUMN 1: LOAN SOLUTIONS */}
+            <div className="bg-white border border-slate-200/60 p-8 rounded-sm shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 bg-brand-blue/5 flex items-center justify-center mb-6 border border-brand-blue/10">
+                  <Landmark className="w-5 h-5 text-brand-blue" />
+                </div>
+                <h3 className="text-xl font-medium text-brand-navy mb-2">Loan Solutions</h3>
+                <p className="text-xs text-slate-400 font-light mb-6">Simplifying borrowing channels.</p>
+                <hr className="border-slate-100 mb-6" />
+                <ul className="space-y-4">
+                  {[
+                    "Home Loans", "Business Loans", "Personal Loans", 
+                    "Loan Against Property", "Working Capital Finance", 
+                    "Balance Transfer & Top-Up Loans", "Professional Loans (Doctors, CAs, etc.)"
+                  ].map((loan, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm font-light text-slate-600 group cursor-pointer hover:text-brand-blue">
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-brand-blue transition-colors" />
+                      <span>{loan}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* COLUMN 2: INSURANCE SOLUTIONS */}
+            <div className="bg-white border border-slate-200/60 p-8 rounded-sm shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 bg-brand-gold/5 flex items-center justify-center mb-6 border border-brand-gold/10">
+                  <HeartPulse className="w-5 h-5 text-brand-gold" />
+                </div>
+                <h3 className="text-xl font-medium text-brand-navy mb-2">Insurance Solutions</h3>
+                <p className="text-xs text-slate-400 font-light mb-6">Premium asset & health shields.</p>
+                <hr className="border-slate-100 mb-6" />
+                <ul className="space-y-4">
+                  {[
+                    "Health Insurance", "Life Insurance", "Term Insurance", 
+                    "Motor Insurance", "Corporate Insurance", "Investment & Wealth Protection Plans"
+                  ].map((ins, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm font-light text-slate-600 group cursor-pointer hover:text-brand-gold">
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-brand-gold transition-colors" />
+                      <span>{ins}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* COLUMN 3: DIGITAL MARKETING SERVICES */}
+            <div className="bg-white border border-slate-200/60 p-8 rounded-sm shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 bg-brand-digital/5 flex items-center justify-center mb-6 border border-brand-digital/10">
+                  <BarChart3 className="w-5 h-5 text-brand-digital" />
+                </div>
+                <h3 className="text-xl font-medium text-brand-navy mb-2">Digital Marketing Suite</h3>
+                <p className="text-xs text-slate-400 font-light mb-6">Result-oriented business growth.</p>
+                <hr className="border-slate-100 mb-6" />
+                <ul className="space-y-3.5">
+                  {[
+                    "Social Media Marketing", "Search Engine Optimization (SEO)", 
+                    "Google Ads & PPC Campaigns", "Website Design & Development", 
+                    "Lead Generation Campaigns", "Content & Campaign Management", 
+                    "WhatsApp & Email Marketing", "Online Reputation Management"
+                  ].map((mkt, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm font-light text-slate-600 group cursor-pointer hover:text-brand-digital">
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-brand-digital transition-colors" />
+                      <span className="truncate">{mkt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 5. STRATEGIC VALUE BLOCKS: Why Choose Fintrust */}
+      <section className="py-24 px-6 lg:px-16 bg-white border-b border-slate-200/60">
+        <div className="max-w-7xl mx-auto">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            {/* Left Stick Text */}
+            <div className="lg:col-span-4 space-y-4 lg:sticky top-28">
+              <span className="text-[11px] font-bold tracking-super-wide text-brand-gold uppercase block">
+                The Advantage
+              </span>
+              <h2 className="text-3xl font-semibold tracking-tight text-brand-navy">
+                Why Market Leaders Choose Fintrust
+              </h2>
+              <p className="text-slate-500 text-sm font-light leading-relaxed">
+                We combine extensive banking partnerships with data-driven marketing tools to deliver unparalleled operational advantages.
+              </p>
+            </div>
+
+            {/* Right Interactive Bullet Matrix */}
+            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                { title: "Expert Financial Guidance", desc: "Consultative planning with veteran financial strategists for every borrowing pathway." },
+                { title: "Multiple Bank Partnerships", desc: "Direct tie-ups across India's top premier banks and institutional NBFC ecosystems." },
+                { title: "Quick Loan Processing", desc: "Accelerated timelines driven by clean pre-screening optimization pipelines." },
+                { title: "Competitive Interest Rates", desc: "Leveraged marketplace positioning ensuring you acquire the absolute lowest available rates." },
+                { title: "Data-Driven Campaign Mgmt", desc: "Fully transparent, highly optimized digital lead generation funnels built for modern SMEs." },
+                { title: "Transparent & Ethical Practices", desc: "Zero hidden fee metrics, complete upfront honesty, and absolute fiduciary integrity." },
+                { title: "End-to-End Doc Support", desc: "Hassle-free document assembly managed entirely by our designated administrative agents." },
+                { title: "Affordable SME Solutions", desc: "Premium marketing strategies customized to launch and scale growing startups securely." }
+              ].map((value, idx) => (
+                <div key={idx} className="p-6 bg-slate-50 border border-slate-200/50 rounded-sm hover:bg-white hover:border-brand-blue/30 hover:shadow-md transition-all duration-300 group">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-1 shrink-0" />
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold text-brand-navy group-hover:text-brand-blue transition-colors">{value.title}</h4>
+                      <p className="text-xs text-slate-500 font-light leading-relaxed">{value.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 6. ETHOS SECTION: Mission, Vision, and Values */}
+      <section className="py-24 px-6 lg:px-16 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+          
+          {/* Mission */}
+          <div className="space-y-4 pt-8 lg:pt-0 lg:px-6 first:pl-0">
+            <div className="w-8 h-8 rounded-full bg-brand-blue/20 flex items-center justify-center border border-brand-blue/30">
+              <Compass className="w-4 h-4 text-brand-blue" />
+            </div>
+            <h3 className="text-lg font-medium tracking-tight">Our Mission</h3>
+            <p className="text-xs text-slate-400 font-light leading-relaxed">
+              To empower individuals and businesses with accessible financial solutions while building long-term relationships based on trust, transparency, and excellence.
+            </p>
+          </div>
+
+          {/* Vision */}
+          <div className="space-y-4 pt-8 lg:pt-0 lg:px-6">
+            <div className="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center border border-brand-gold/30">
+              <Target className="w-4 h-4 text-brand-gold" />
+            </div>
+            <h3 className="text-lg font-medium tracking-tight">Our Vision</h3>
+            <p className="text-xs text-slate-400 font-light leading-relaxed">
+              To become one of India's most trusted financial service providers by delivering innovative financial solutions and exceptional customer experiences.
+            </p>
+          </div>
+
+          {/* Values */}
+          <div className="space-y-4 pt-8 lg:pt-0 lg:px-6">
+            <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+              <Gem className="w-4 h-4 text-emerald-400" />
+            </div>
+            <h3 className="text-lg font-medium tracking-tight">Core Values</h3>
+            <div className="flex flex-wrap gap-2 pt-1">
+              {["Integrity", "Trust", "Transparency", "Customer Satisfaction", "Professional Excellence"].map((val, i) => (
+                <span key={i} className="text-[10px] uppercase font-medium tracking-wider px-2.5 py-1 bg-white/5 border border-white/10 rounded-sm text-slate-300">
+                  {val}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 7. MINIMALIST LUXURY FOOTER */}
+      <footer className="py-12 bg-white border-t border-slate-200/80 px-6 lg:px-16">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500 font-light">
           <div>
-            <span className="font-semibold text-brand-navy">Fintrust</span> Financial Services
+            <span className="font-semibold text-brand-navy">Fintrust</span> Financial Services Matrix
           </div>
-          <div className="flex gap-6">
-            <span className="hover:text-brand-blue cursor-pointer">Finance Advisory</span>
-            <span className="hover:text-brand-digital cursor-pointer">Digital Growth</span>
-          </div>
-          <p>© {new Date().getFullYear()} Fintrust. Institutional Services Matrix.</p>
+          <p>© {new Date().getFullYear()} Fintrust. Built for Institutional Scaling & Digital Growth.</p>
         </div>
       </footer>
-
+<WhatsAppButton />
     </div>
   );
 }

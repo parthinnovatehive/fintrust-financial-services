@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Landmark, BarChart3, ArrowUpRight, ShieldCheck, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar({ onNavigate, activePage }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null); // 'finance' | 'digital' | null
   const [scrolled, setScrolled] = useState(false);
 
-  // Add subtle shadow and background shift when page is scrolled
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -23,14 +22,21 @@ export default function Navbar() {
   const toggleMobileMenu = () => setIsOpen(!isOpen);
 
   // Reusable sub-navigation item component
-  const NavItem = ({ title, desc }) => (
-    <a href="#" className="group flex flex-col p-3 rounded-lg hover:bg-slate-50 transition-all duration-200">
+  const NavItem = ({ title, desc, target = "home" }) => (
+    <button 
+      onClick={() => {
+        onNavigate(target);
+        setIsOpen(false);
+        setActiveMenu(null);
+      }} 
+      className="text-left w-full group flex flex-col p-3 rounded-lg hover:bg-slate-50 transition-all duration-200 cursor-pointer"
+    >
       <div className="flex items-center gap-1 text-sm font-medium text-brand-navy group-hover:text-brand-blue">
         <span>{title}</span>
         <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-brand-blue" />
       </div>
       <p className="text-xs text-slate-500 font-light mt-0.5">{desc}</p>
-    </a>
+    </button>
   );
 
   return (
@@ -42,14 +48,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-16 h-20 flex items-center justify-between">
         
         {/* BRAND LOGO */}
-        <div className="text-xl font-semibold tracking-tight text-brand-navy cursor-pointer">
+        <div 
+          onClick={() => onNavigate("home")} 
+          className="text-xl font-semibold tracking-tight text-brand-navy cursor-pointer"
+        >
           Fin<span className="text-brand-blue font-bold">trust</span>
         </div>
 
         {/* DESKTOP NAVIGATION */}
         <div className="hidden lg:flex items-center gap-8">
           
-          {/* Menu Link 1: Finance Mega Menu */}
+          {/* Finance Mega Menu Trigger */}
           <div 
             className="relative"
             onMouseEnter={() => setActiveMenu("finance")}
@@ -62,7 +71,7 @@ export default function Navbar() {
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeMenu === "finance" ? "rotate-180 text-brand-blue" : ""}`} />
             </button>
 
-            {/* Finance Mega Menu Panel */}
+            {/* Finance Panel */}
             <AnimatePresence>
               {activeMenu === "finance" && (
                 <motion.div 
@@ -77,27 +86,27 @@ export default function Navbar() {
                       <Landmark className="w-3.5 h-3.5" />
                       Loan Solutions
                     </div>
-                    <NavItem title="Home Loans" desc="Mortgage & equity top-up consulting." />
-                    <NavItem title="Business Loans" desc="Unsecured MSME & corporate capital." />
-                    <NavItem title="Personal Loans" desc="Flexible salary-backed credit channels." />
-                    <NavItem title="Loan Against Property" desc="Monetize premium real estate assets." />
+                    <NavItem title="Home Loans" desc="Mortgage & equity top-up consulting." target="home" />
+                    <NavItem title="Business Loans" desc="Unsecured MSME & corporate capital." target="home" />
+                    <NavItem title="Personal Loans" desc="Flexible salary-backed credit channels." target="home" />
+                    <NavItem title="Loan Against Property" desc="Monetize premium real estate assets." target="home" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 px-3 pb-2 mb-2 border-b border-slate-100 text-xs font-bold uppercase text-brand-gold tracking-wider">
                       <ShieldCheck className="w-3.5 h-3.5" />
                       Insurance & Wealth
                     </div>
-                    <NavItem title="Health Insurance" desc="Comprehensive operational medical shields." />
-                    <NavItem title="Life & Term Plans" desc="Institutional financial protection assets." />
-                    <NavItem title="Corporate Risk Schemes" desc="Enterprise-level commercial safety nets." />
-                    <NavItem title="Working Capital Advisory" desc="Cash flow optimization blueprints." />
+                    <NavItem title="Health Insurance" desc="Comprehensive operational medical shields." target="home" />
+                    <NavItem title="Life & Term Plans" desc="Institutional financial protection assets." target="home" />
+                    <NavItem title="Corporate Risk Schemes" desc="Enterprise-level commercial safety nets." target="home" />
+                    <NavItem title="Working Capital Advisory" desc="Cash flow optimization blueprints." target="home" />
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Menu Link 2: Digital Mega Menu */}
+          {/* Digital Mega Menu Trigger */}
           <div 
             className="relative"
             onMouseEnter={() => setActiveMenu("digital")}
@@ -110,7 +119,7 @@ export default function Navbar() {
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeMenu === "digital" ? "rotate-180 text-brand-digital" : ""}`} />
             </button>
 
-            {/* Digital Mega Menu Panel */}
+            {/* Digital Panel */}
             <AnimatePresence>
               {activeMenu === "digital" && (
                 <motion.div 
@@ -124,23 +133,37 @@ export default function Navbar() {
                     <BarChart3 className="w-3.5 h-3.5" />
                     Performance Growth
                   </div>
-                  <NavItem title="SEO & Visibility" desc="Algorithmic ranking frameworks." />
-                  <NavItem title="Google & PPC Ads" desc="High-intent targeted client acquisition." />
-                  <NavItem title="Social Media Engineering" desc="Social presence & engagement strategies." />
-                  <NavItem title="Lead Gen Campaigns" desc="Data-optimized conversion systems." />
+                  <NavItem title="SEO & Visibility" desc="Algorithmic ranking frameworks." target="home" />
+                  <NavItem title="Google & PPC Ads" desc="High-intent targeted client acquisition." target="home" />
+                  <NavItem title="Social Media Engineering" desc="Social presence & engagement strategies." target="home" />
+                  <NavItem title="Lead Gen Campaigns" desc="Data-optimized conversion systems." target="home" />
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Standard Navigation Links */}
-          <a href="#" className="text-sm font-medium text-slate-600 hover:text-brand-navy transition-colors">About Us</a>
-          <a href="#" className="text-sm font-medium text-slate-600 hover:text-brand-navy transition-colors">Contact</a>
+          {/* Text Links mapped to view hooks */}
+          <button 
+            onClick={() => onNavigate("home")} 
+            className={`text-sm font-medium transition-colors cursor-pointer ${activePage === "home" ? "text-brand-blue" : "text-slate-600 hover:text-brand-navy"}`}
+          >
+            About Us
+          </button>
+          
+          <button 
+            onClick={() => onNavigate("contact")} 
+            className={`text-sm font-medium transition-colors cursor-pointer ${activePage === "contact" ? "text-brand-blue" : "text-slate-600 hover:text-brand-navy"}`}
+          >
+            Contact
+          </button>
         </div>
 
         {/* ACTIONS / CTA */}
         <div className="hidden lg:flex items-center gap-4">
-          <button className="px-5 py-2.5 text-sm font-medium bg-brand-blue text-white rounded-md shadow-sm hover:bg-brand-navy transition-colors cursor-pointer">
+          <button 
+            onClick={() => onNavigate("contact")}
+            className="px-5 py-2.5 text-sm font-medium bg-brand-blue text-white rounded-md shadow-sm hover:bg-brand-navy transition-colors cursor-pointer"
+          >
             Get Free Consultation
           </button>
         </div>
@@ -154,7 +177,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* MOBILE FULL-SCREEN DRAWER OVERLAY */}
+      {/* MOBILE DRAW OVERLAY */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
@@ -166,31 +189,31 @@ export default function Navbar() {
             <div className="space-y-2">
               <p className="text-xs font-bold tracking-wider uppercase text-brand-blue px-2">Financial Solutions</p>
               <div className="grid grid-cols-2 gap-2 pl-2">
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-blue">Home Loans</a>
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-blue">Business Loans</a>
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-blue">Personal Loans</a>
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-blue">Insurance Plans</a>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Home Loans</button>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Business Loans</button>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Personal Loans</button>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Insurance Plans</button>
               </div>
             </div>
 
             <div className="space-y-2">
               <p className="text-xs font-bold tracking-wider uppercase text-brand-digital px-2">Digital Growth Suite</p>
               <div className="grid grid-cols-2 gap-2 pl-2">
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-digital">SEO Audits</a>
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-digital">Google PPC</a>
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-digital">Social Ads</a>
-                <a href="#" className="text-sm text-slate-600 py-1.5 hover:text-brand-digital">Lead Generation</a>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">SEO Audits</button>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Google PPC</button>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Social Ads</button>
+                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Lead Generation</button>
               </div>
             </div>
 
             <hr className="border-slate-100" />
 
             <div className="flex flex-col gap-4 pl-2">
-              <a href="#" className="text-base font-medium text-brand-navy">About Fintrust</a>
-              <a href="#" className="text-base font-medium text-brand-navy">Contact & Support</a>
+              <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-base font-medium text-brand-navy">About Fintrust</button>
+              <button onClick={() => { onNavigate("contact"); setIsOpen(false); }} className="text-left text-base font-medium text-brand-navy">Contact & Support</button>
             </div>
 
-            <button className="w-full py-3 bg-brand-blue text-white text-center font-medium rounded-lg shadow-sm">
+            <button onClick={() => { onNavigate("contact"); setIsOpen(false); }} className="w-full py-3 bg-brand-blue text-white text-center font-medium rounded-lg shadow-sm">
               Get Free Consultation
             </button>
           </motion.div>
