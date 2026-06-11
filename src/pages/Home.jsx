@@ -262,7 +262,6 @@ export default function Home() {
       </section>
 
       {/* 2. INTERACTIVE CALCULATOR SUITE WITH SYSTEMIC LEAD CTAs */}
-      {/* 2. INTERACTIVE CALCULATOR SUITE WITH SYSTEMIC LEAD CTAs */}
 <section className="bg-white py-20 border-b border-slate-200/60 relative">
   <div className="max-w-7xl mx-auto px-6 lg:px-16">
     <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">

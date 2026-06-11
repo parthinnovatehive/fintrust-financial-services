@@ -47,10 +47,10 @@ export default function AppleWatchGrid() {
     );
 
   return (
-    <section className="relative py-32 bg-[#071B47] overflow-hidden">
+    <section className="relative pb-5 pt-20 md:py-32 bg-[#071B47]">
 
       {/* Background Glow */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         {mouse.active && (
           <motion.div
             className="absolute pointer-events-none rounded-full blur-[120px]"
@@ -74,20 +74,20 @@ export default function AppleWatchGrid() {
       </div>
 
       {/* Heading */}
-      <div className="relative z-10 text-center mb-20">
-        <span className="uppercase text-xs tracking-[0.3em] text-slate-400">
+      <div className="relative z-10 text-center mb-12 md:mb-20">
+        <span className="uppercase text-[10px] md:text-xs tracking-[0.3em] text-slate-400">
           Lending Network
         </span>
 
-        <h2 className="text-5xl font-light text-white mt-4">
+        <h2 className="text-2xl md:text-5xl font-light text-white mt-2 md:mt-4">
           Our Lending Partners
         </h2>
       </div>
 
       {/* Honeycomb */}
-      <div className="relative z-10 flex justify-center">
+      <div className="relative z-10 flex justify-start md:justify-center overflow-x-auto md:overflow-visible pt-8 md:pt-0 pb-4 pl-5">
         <motion.div
-          className="relative"
+          className="relative shrink-0"
           animate={{
 
             x: mouse.active
@@ -104,7 +104,7 @@ export default function AppleWatchGrid() {
             damping: 20,
           }}
           style={{
-            width: 1200,
+            width: 1000,
             height: 750,
           }}
         >
