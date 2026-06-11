@@ -379,11 +379,6 @@ export default function Home() {
     </div>
   </div>
 
-  {/* Small Trust Badge - HIDE ON MOBILE, SHOW ON DESKTOP */}
-  <div className="absolute -left-4 bottom-20 bg-white rounded-lg px-3 py-2 shadow-lg border border-slate-100 hidden lg:flex items-center gap-2">
-    <Award className="w-3.5 h-3.5 text-[#00A896]" />
-    <span className="text-[9px] font-medium text-slate-600">SEBI Registered</span>
-  </div>
 </div>  
   </div>
 </section>
