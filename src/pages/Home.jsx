@@ -21,7 +21,9 @@ import {
   Zap,
   Percent,
   FileText,
-  Eye
+  Eye,
+  MessageCircle,
+  PhoneCall
 } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
 import EthosSection from "../components/EthosSection";
@@ -57,105 +59,94 @@ export default function Home() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+  // Direct Lead Vector Routing parameters
+  const clientWhatsAppNumber = "919876543210";
+  const clientPhoneLine = "+919876543210";
+
+  const genericWhatsAppMessage = encodeURIComponent(
+    "Hello Fintrust, I just explored your financial and marketing services on the website. I would like to get on a quick advisory call."
+  );
+
   const advantageFeatures = [
-  {
-    title: "Multiple Bank Partnerships",
-    icon: Landmark,
-    heading: "Direct Access To 15+ Leading Lending Institutions",
+    {
+      title: "Multiple Bank Partnerships",
+      icon: Landmark,
+      heading: "Direct Access To 15+ Leading Lending Institutions",
+      desc: "Unlike traditional loan consultants who are limited to a handful of lenders, Fintrust maintains active partnerships with a wide network of banks and NBFCs. This allows us to compare eligibility, approval probability, repayment structures, and interest rates across multiple institutions simultaneously.",
+      details: [
+        "Access to 15+ banks and NBFCs",
+        "Multiple offers compared simultaneously",
+        "Higher approval probability",
+        "Customized lender matching"
+      ]
+    },
+    {
+      title: "Quick Loan Processing",
+      icon: Zap,
+      heading: "Accelerated Approval & Disbursement Process",
+      desc: "Our internal pre-screening and documentation framework eliminates unnecessary delays before your application reaches the lender. By identifying potential issues early, we help reduce processing time and improve overall approval efficiency.",
+      details: [
+        "Fast document verification",
+        "Reduced processing delays",
+        "Pre-screened applications",
+        "Dedicated application tracking"
+      ]
+    },
+    {
+      title: "Competitive Interest Rates",
+      icon: Percent,
+      heading: "Optimized Financing At Competitive Rates",
+      desc: "Because we work with multiple lending partners, we are able to negotiate and identify the most suitable financing options available in the market. This helps clients secure better repayment structures and lower borrowing costs whenever possible.",
+      details: [
+        "Market-wide comparison",
+        "Lower financing costs",
+        "Flexible repayment structures",
+        "Better loan affordability"
+      ]
+    },
+    {
+      title: "Data-Driven Campaign Mgmt",
+      icon: BarChart3,
+      heading: "Performance-Focused Growth Strategies",
+      desc: "For business clients, Fintrust combines financial expertise with modern digital marketing systems. We use analytics, customer insights, and performance tracking to create campaigns that generate measurable business growth.",
+      details: [
+        "ROI-focused campaigns",
+        "Lead generation systems",
+        "Customer analytics",
+        "Performance optimization"
+      ]
+    },
+    {
+      title: "Transparent & Ethical Practices",
+      icon: Eye,
+      heading: "Complete Transparency In Every Transaction",
+      desc: "Trust is the foundation of our business. We maintain complete transparency regarding fees, lender requirements, documentation, timelines, and recommendations so that clients can make informed financial decisions with confidence.",
+      details: [
+        "No hidden charges",
+        "Clear process visibility",
+        "Ethical recommendations",
+        "Transparent communication"
+      ]
+    },
+    {
+      title: "End-to-End Doc Support",
+      icon: FileText,
+      heading: "Dedicated Documentation Assistance",
+      desc: "Financial documentation can often be overwhelming. Our team assists clients throughout the process, ensuring that paperwork is complete, accurate, and compliant with lender requirements, reducing stress and avoiding delays.",
+      details: [
+        "Complete documentation support",
+        "Application preparation",
+        "Compliance assistance",
+        "Reduced paperwork burden"
+      ]
+    }
+  ];
 
-    desc: "Unlike traditional loan consultants who are limited to a handful of lenders, Fintrust maintains active partnerships with a wide network of banks and NBFCs. This allows us to compare eligibility, approval probability, repayment structures, and interest rates across multiple institutions simultaneously.",
-
-    details: [
-      "Access to 15+ banks and NBFCs",
-      "Multiple offers compared simultaneously",
-      "Higher approval probability",
-      "Customized lender matching"
-    ]
-  },
-
-  {
-    title: "Quick Loan Processing",
-    icon: Zap,
-    heading: "Accelerated Approval & Disbursement Process",
-
-    desc: "Our internal pre-screening and documentation framework eliminates unnecessary delays before your application reaches the lender. By identifying potential issues early, we help reduce processing time and improve overall approval efficiency.",
-
-    details: [
-      "Fast document verification",
-      "Reduced processing delays",
-      "Pre-screened applications",
-      "Dedicated application tracking"
-    ]
-  },
-
-  {
-    title: "Competitive Interest Rates",
-    icon: Percent,
-    heading: "Optimized Financing At Competitive Rates",
-
-    desc: "Because we work with multiple lending partners, we are able to negotiate and identify the most suitable financing options available in the market. This helps clients secure better repayment structures and lower borrowing costs whenever possible.",
-
-    details: [
-      "Market-wide comparison",
-      "Lower financing costs",
-      "Flexible repayment structures",
-      "Better loan affordability"
-    ]
-  },
-
-  {
-    title: "Data-Driven Campaign Mgmt",
-    icon: BarChart3,
-    heading: "Performance-Focused Growth Strategies",
-
-    desc: "For business clients, Fintrust combines financial expertise with modern digital marketing systems. We use analytics, customer insights, and performance tracking to create campaigns that generate measurable business growth.",
-
-    details: [
-      "ROI-focused campaigns",
-      "Lead generation systems",
-      "Customer analytics",
-      "Performance optimization"
-    ]
-  },
-
-  {
-    title: "Transparent & Ethical Practices",
-    icon: Eye,
-    heading: "Complete Transparency In Every Transaction",
-
-    desc: "Trust is the foundation of our business. We maintain complete transparency regarding fees, lender requirements, documentation, timelines, and recommendations so that clients can make informed financial decisions with confidence.",
-
-    details: [
-      "No hidden charges",
-      "Clear process visibility",
-      "Ethical recommendations",
-      "Transparent communication"
-    ]
-  },
-
-  {
-    title: "End-to-End Doc Support",
-    icon: FileText,
-    heading: "Dedicated Documentation Assistance",
-
-    desc: "Financial documentation can often be overwhelming. Our team assists clients throughout the process, ensuring that paperwork is complete, accurate, and compliant with lender requirements, reducing stress and avoiding delays.",
-
-    details: [
-      "Complete documentation support",
-      "Application preparation",
-      "Compliance assistance",
-      "Reduced paperwork burden"
-    ]
-  }
-];
-
-  // --- AUTOMATIC 3-SECOND ROTATION LOGIC ---
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveFeature((prevIndex) => (prevIndex + 1) % advantageFeatures.length);
-    }, 3000); // 3000ms = 3 seconds
-
-    return () => clearInterval(timer); // Clears the timer loop when component unmounts or activeFeature updates
+    }, 3000);
+    return () => clearInterval(timer);
   }, [activeFeature, advantageFeatures.length]);
 
   const handleMouseMove = (e) => {
@@ -168,7 +159,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-slate-900 antialiased selection:bg-brand-blue/10 font-sans">
+    <div className="min-h-screen bg-[#FAF7F2] text-slate-900 antialiased selection:bg-[#00A896]/10 font-sans">
 
       {/* 1. HERO SECTION */}
       <section
@@ -211,13 +202,21 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0B132B] text-white text-sm font-medium rounded-lg hover:bg-[#00A896] transition-all duration-300 shadow-lg shadow-brand-navy/10 group cursor-pointer">
+              <a 
+                href={`https://wa.me/${clientWhatsAppNumber}?text=${genericWhatsAppMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0B132B] text-white text-sm font-medium rounded-lg hover:bg-[#00A896] transition-all duration-300 shadow-lg shadow-slate-900/10 group cursor-pointer"
+              >
                 <span>Enterprise Solutions</span>
                 <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </button>
-              <button className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:bg-white hover:border-slate-400 transition-all duration-300 shadow-xs cursor-pointer">
-                <span>Explore Capabilities</span>
-              </button>
+              </a>
+              <a 
+                href={`tel:${clientPhoneLine}`}
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:bg-white hover:border-slate-400 transition-all duration-300 shadow-xs cursor-pointer"
+              >
+                <span>Call Expert Desk</span>
+              </a>
             </div>
           </div>
 
@@ -262,13 +261,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. INTERACTIVE CALCULATOR SUITE */}
+      {/* 2. INTERACTIVE CALCULATOR SUITE WITH SYSTEMIC LEAD CTAs */}
+      {/* 2. INTERACTIVE CALCULATOR SUITE WITH SYSTEMIC LEAD CTAs */}
+<section className="bg-white py-20 border-b border-slate-200/60 relative">
+  <div className="max-w-7xl mx-auto px-6 lg:px-16">
+    <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+      <span className="text-[11px] font-bold tracking-widest text-emerald-600 uppercase block">Instant Eligibility Estimator</span>
+      <h2 className="text-3xl font-light tracking-tight text-[#0B132B]">Configure Your Financing Structure</h2>
+      <p className="text-slate-500 text-sm font-light">Adjust the metrics below to view estimated monthly repayment plans instantly.</p>
+    </div>
+    
+    {/* Main Core Component Frame Container */}
+    <div className="bg-[#FAF7F2] p-4 sm:p-8 rounded-2xl border border-slate-200/70 shadow-sm">
+      
+      {/* Renders your EMI Calculator UI */}
       <InteractiveSuite />
+      
+      {/* ⚡ THE CONVERSION ENGINE: Captures intent and generates the custom message link */}
+      <div className="mt-8 pt-8 border-t border-slate-200/70 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <div className="md:col-span-7">
+          <h4 className="text-sm font-semibold text-[#0B132B] mb-1">Satisfied with these calculations?</h4>
+          <p className="text-xs text-slate-500 font-light">Connect with our processing desk right now to submit your configuration for instant pre-approval across our 15+ banking partners.</p>
+        </div>
+        <div className="md:col-span-5 flex flex-col sm:flex-row gap-3 justify-end w-full">
+          <button
+            onClick={() => {
+              // 1. Attempt to scrape current visual slider totals dynamically from the browser DOM safely 
+              // (This acts as an overlay catcher so you don't have to rewrite your child component's internal state)
+              const displayElements = document.querySelectorAll('.bg-white, .text-3xl, .font-semibold');
+              let capturedDetails = "the values configured on the matrix panel";
+              
+              // If your calculator text uses common currency layouts, we scrape them seamlessly
+              const numbers = Array.from(document.querySelectorAll('h3, span, p, input'))
+                .map(el => el.innerText || el.value || '')
+                .filter(txt => txt.includes('₹') || txt.includes('%') || txt.includes('yrs') || txt.includes('months'));
+
+              if (numbers.length > 0) {
+                // Creates a clean readable list from whatever numbers are currently active on screen
+                capturedDetails = numbers.slice(0, 4).join(', ');
+              }
+
+              const customWhatsAppText = `Hi Fintrust, I just used your EMI calculator tool and want to verify/apply for a loan with these estimated terms: (${capturedDetails}). Please guide me through the document submission blueprint!`;
+              
+              // 2. Fire the deep-link redirection line
+              window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent(customWhatsAppText)}`, '_blank');
+            }}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg.5 bg-[#128C7E] text-white text-xs font-bold tracking-widest uppercase rounded-lg hover:bg-[#075E54] transition-all shadow-md shadow-emerald-900/10 cursor-pointer w-full sm:w-auto"
+          >
+            {/* Standard Vector Representation matching official identity updates */}
+            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            <span>Lock This Rate</span>
+          </button>
+          
+          <a
+            href={`tel:${clientPhoneLine}`}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0B132B] text-white text-xs font-bold tracking-widest uppercase rounded-lg hover:bg-slate-800 transition-all shadow-md shadow-slate-900/10 w-full sm:w-auto text-center"
+          >
+            <span>Speak to Consultant</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* 3. APPLE WATCH GRID */}
       <AppleWatchGrid />
 
-      {/* 4. METRICS SECTION (Optimized padding and negative margin layout to collapse the gap) */}
+      {/* 4. METRICS SECTION */}
       <section 
         ref={statsRef} 
         className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-[#0B132B] text-white px-6 lg:px-16 relative overflow-hidden -mt-12 lg:-mt-24 z-30"
@@ -324,7 +387,6 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* Left Column: List buttons with clear dynamic indicator progress styles */}
             <div className="lg:col-span-5 space-y-2.5">
               {advantageFeatures.map((feat, idx) => {
                 const IconComponent = feat.icon;
@@ -339,7 +401,6 @@ export default function Home() {
                         : "bg-transparent border-transparent hover:bg-white/40 hover:border-slate-200"
                     }`}
                   >
-                    {/* Visual timed loading bar indicator at the bottom of the active row */}
                     {isSelected && (
                       <motion.div 
                         initial={{ width: "0%" }}
@@ -364,48 +425,42 @@ export default function Home() {
               })}
             </div>
 
-            {/* Right Column: Display with Framer Motion AnimatePresence */}
             <div className="lg:col-span-7 lg:sticky lg:top-24">
               <div className="w-full bg-[#0B132B] text-white rounded-2xl p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[400px] flex flex-col justify-between">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
                 
                 <AnimatePresence mode="wait">
-  <motion.div
-    key={activeFeature}
-    initial={{ opacity: 0, x: 30 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -30 }}
-    transition={{ duration: 0.4 }}
-    className="relative z-10 h-full flex flex-col justify-center"
-  >
+                  <motion.div
+                    key={activeFeature}
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -30 }}
+                    transition={{ duration: 0.4 }}
+                    className="relative z-10 h-full flex flex-col justify-center"
+                  >
+                    <h3 className="text-3xl font-semibold text-white mb-6">
+                      {advantageFeatures[activeFeature].heading}
+                    </h3>
 
-    <h3 className="text-3xl font-semibold text-white mb-6">
-      {advantageFeatures[activeFeature].heading}
-    </h3>
+                    <p className="text-slate-300 leading-relaxed text-base max-w-2xl mb-8">
+                      {advantageFeatures[activeFeature].desc}
+                    </p>
 
-    <p className="text-slate-300 leading-relaxed text-base max-w-2xl mb-8">
-      {advantageFeatures[activeFeature].desc}
-    </p>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {advantageFeatures[activeFeature].details.map((item, index) => (
-        <div
-          key={index}
-          className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5"
-        >
-          <div className="w-2 h-2 rounded-full bg-[#00A896] mt-2 shrink-0" />
-
-          <span className="text-sm text-slate-300 leading-relaxed">
-            {item}
-          </span>
-        </div>
-      ))}
-    </div>
-
-  </motion.div>
-</AnimatePresence>
-
-                
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {advantageFeatures[activeFeature].details.map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5"
+                        >
+                          <div className="w-2 h-2 rounded-full bg-[#00A896] mt-2 shrink-0" />
+                          <span className="text-sm text-slate-300 leading-relaxed">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 
@@ -444,7 +499,11 @@ export default function Home() {
                     "Loan Against Property", "Working Capital Finance",
                     "Balance Transfer & Top-Up Loans", "Professional Loans Desk"
                   ].map((loan, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-sm font-light text-slate-600 group/item cursor-pointer hover:text-[#00A896] transition-colors">
+                    <li 
+                      key={i} 
+                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + loan)}`, "_blank")}
+                      className="flex items-center gap-2.5 text-sm font-light text-slate-600 group/item cursor-pointer hover:text-[#00A896] transition-colors"
+                    >
                       <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover/item:text-[#00A896] transition-colors" />
                       <span>{loan}</span>
                     </li>
@@ -467,7 +526,11 @@ export default function Home() {
                     "Health Insurance", "Life Insurance", "Term Insurance",
                     "Motor Insurance", "Corporate Risk Coverage", "Investment Protection Plans"
                   ].map((ins, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-sm font-light text-slate-600 group/item cursor-pointer hover:text-[#00A896] transition-colors">
+                    <li 
+                      key={i} 
+                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + ins)}`, "_blank")}
+                      className="flex items-center gap-2.5 text-sm font-light text-slate-600 group/item cursor-pointer hover:text-[#00A896] transition-colors"
+                    >
                       <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover/item:text-[#00A896] transition-colors" />
                       <span>{ins}</span>
                     </li>
@@ -492,7 +555,11 @@ export default function Home() {
                     "Lead Generation Architecture", "Campaign Management",
                     "WhatsApp & Conversational Flow"
                   ].map((mkt, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-sm font-light text-slate-600 group/item cursor-pointer hover:text-[#00A896] transition-colors">
+                    <li 
+                      key={i} 
+                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm looking to scale my business infrastructure. Let's discuss your execution models for: " + mkt)}`, "_blank")}
+                      className="flex items-center gap-2.5 text-sm font-light text-slate-600 group/item cursor-pointer hover:text-[#00A896] transition-colors"
+                    >
                       <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover/item:text-[#00A896] transition-colors" />
                       <span className="truncate">{mkt}</span>
                     </li>
@@ -540,7 +607,8 @@ export default function Home() {
           <p>© {new Date().getFullYear()} Fintrust. Built for Institutional Scaling & Digital Growth.</p>
         </div>
       </footer>
-      <WhatsAppButton />
+      
+      <WhatsAppButton activePage="home" />
     </div>
   );
 }
