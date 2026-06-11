@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import WhatsAppButton from "./components/WhatsAppButton";
 import HomeLoan from "./pages/HomeLoan"; 
+import BusinessLoan from "./pages/BusinessLoan";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -20,6 +21,7 @@ function App() {
       {/* 2. Add the route for home-loan */}
       {activePage === "home" && <Home />}
       {activePage === "home-loan" && <HomeLoan />} 
+      {activePage === "business-loan" && <BusinessLoan />} 
       {activePage === "contact" && <Contact />}
 
       <WhatsAppButton activePage={activePage} />

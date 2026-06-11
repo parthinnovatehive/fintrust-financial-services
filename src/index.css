@@ -30,3 +30,12 @@ html, body {
   margin: 0;
   padding: 0;
 }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}

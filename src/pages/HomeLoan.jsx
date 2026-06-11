@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Clock, ShieldCheck, UserCircle } from 'lucide-react'; // Add this at the top of your file
 
 // Hardcoded lenders array using paths relative to the public/ folder
 const lenders = [
@@ -52,7 +53,7 @@ export default function HomeLoan() {
     return (
         <div className="bg-slate-50 min-h-screen text-[#0B132B]">
             {/* Hero Banner */}
-            <section className="bg-[#0B132B] text-white py-20">
+            <section className="bg-[#0B132B] text-white pt-25 pb-5">
                 <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
                     <h1 className="text-4xl sm:text-5xl font-light">Mortgage & Equity Top-Up <span className="text-emerald-400">Consulting</span></h1>
                 </div>
@@ -84,6 +85,45 @@ export default function HomeLoan() {
                                 <p className="text-xs text-slate-400 font-light">Max Tenure</p>
                                 <p className="text-lg font-medium text-white">30 Years</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* TRUST & BENEFIT SECTION */}
+            <section className="py-16 bg-white border-t border-b border-slate-100">
+                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+
+                    {/* Benefit 1 */}
+                    <div className="flex flex-col items-center space-y-4">
+                        <div className="p-4 bg-[#128C7E]/10 rounded-full text-[#128C7E]">
+                            <Clock size={32} strokeWidth={1.5} />
+                        </div>
+                        <div className="space-y-1">
+                            <h4 className="text-[#0B132B] font-semibold">48-Hour Approval</h4>
+                            <p className="text-sm text-slate-500 font-light px-4">Accelerated processing for pre-qualified profiles.</p>
+                        </div>
+                    </div>
+
+                    {/* Benefit 2 */}
+                    <div className="flex flex-col items-center space-y-4">
+                        <div className="p-4 bg-[#128C7E]/10 rounded-full text-[#128C7E]">
+                            <ShieldCheck size={32} strokeWidth={1.5} />
+                        </div>
+                        <div className="space-y-1">
+                            <h4 className="text-[#0B132B] font-semibold">Zero Hidden Fees</h4>
+                            <p className="text-sm text-slate-500 font-light px-4">Full disclosure of all administrative and bank charges.</p>
+                        </div>
+                    </div>
+
+                    {/* Benefit 3 */}
+                    <div className="flex flex-col items-center space-y-4">
+                        <div className="p-4 bg-[#128C7E]/10 rounded-full text-[#128C7E]">
+                            <UserCircle size={32} strokeWidth={1.5} />
+                        </div>
+                        <div className="space-y-1">
+                            <h4 className="text-[#0B132B] font-semibold">Expert Desk</h4>
+                            <p className="text-sm text-slate-500 font-light px-4">A dedicated loan specialist to manage your documentation.</p>
                         </div>
                     </div>
                 </div>
@@ -151,6 +191,8 @@ export default function HomeLoan() {
                     </div>
                 </div>
             </section>
+
+
 
             {/* Dynamic Partner Ecosystem */}
             <section className="bg-white py-20 border-t border-b border-slate-100">
