@@ -47,7 +47,7 @@ export default function AppleWatchGrid() {
     );
 
   return (
-    <section className="relative py-32 bg-slate-950 overflow-hidden">
+    <section className="relative py-32 bg-[#071B47] overflow-hidden">
 
       {/* Background Glow */}
       <div className="absolute inset-0">

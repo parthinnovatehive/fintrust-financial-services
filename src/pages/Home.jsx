@@ -19,7 +19,7 @@ import {
   Gem
 } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
-
+import AdvantageSlider from "../components/AdvantageSlider";
 
 /* Modern Counter Hook */
 function useCounter(end, duration = 1500, isInView = true) {
@@ -51,7 +51,7 @@ export default function Home() {
     <div className="min-h-screen bg-surface-base text-slate-800 antialiased selection:bg-brand-blue/10">
 
       {/* 1. HERO SECTION: Luxury Editorial Asymmetric Layout */}
-      <section className="relative min-h-[95vh] flex items-center bg-gradient-to-b from-white to-slate-50 px-6 lg:px-16 overflow-hidden pt-24">
+      <section className="relative min-h-[95vh] flex items-center bg-gradient-to-b from-[#FAF7F2] to-[#F5F0E8] px-6 lg:px-16 overflow-hidden pt-24">
         <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
           {/* Left Column: Sharp Editorial Copy */}
@@ -117,9 +117,9 @@ export default function Home() {
       {/* 2. THE INTERACTIVE CALCULATOR & STRATEGY PORTAL */}
       <InteractiveSuite />
 
-{/* ADD THE NEW APPLE WATCH GRID COMPONENT HERE */}
-    <AppleWatchGrid />
-      
+      {/* ADD THE NEW APPLE WATCH GRID COMPONENT HERE */}
+      <AppleWatchGrid />
+
 
       {/* 3. METRICS SECTION: Clean, High-Contrast Text-Driven Data Blocks */}
       <section ref={statsRef} className="py-20 bg-brand-navy text-white px-6 lg:px-16">
@@ -182,7 +182,7 @@ export default function Home() {
         </div>
       </section>
 
-     {/* 3. ABOUT FINTRUST SECTION: Simple, Deep, Trustworthy */}
+      {/* 3. ABOUT FINTRUST SECTION: Simple, Deep, Trustworthy */}
       <section className="py-24 px-6 lg:px-16 bg-white border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-5 space-y-4 sticky top-28">
@@ -194,7 +194,7 @@ export default function Home() {
             </h2>
             <div className="w-12 h-0.5 bg-brand-blue mt-4" />
           </div>
-          
+
           <div className="lg:col-span-7 space-y-6 text-slate-600 font-light leading-relaxed text-base">
             <p>
               Fintrust Financial Services is a trusted financial consultancy dedicated to helping individuals, professionals, and businesses achieve their financial goals through customized loan and insurance solutions. With a customer-first approach, we simplify the borrowing process and provide expert guidance at every step.
@@ -209,7 +209,7 @@ export default function Home() {
       {/* 4. COMPREHENSIVE SERVICES BLUEPRINT */}
       <section className="py-24 px-6 lg:px-16 bg-slate-50 border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-20 space-y-3">
             <span className="text-[11px] font-bold tracking-super-wide text-brand-gold uppercase block">
               Capabilities Matrix
@@ -223,7 +223,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
+
             {/* COLUMN 1: LOAN SOLUTIONS */}
             <div className="bg-white border border-slate-200/60 p-8 rounded-sm shadow-sm flex flex-col justify-between">
               <div>
@@ -235,8 +235,8 @@ export default function Home() {
                 <hr className="border-slate-100 mb-6" />
                 <ul className="space-y-4">
                   {[
-                    "Home Loans", "Business Loans", "Personal Loans", 
-                    "Loan Against Property", "Working Capital Finance", 
+                    "Home Loans", "Business Loans", "Personal Loans",
+                    "Loan Against Property", "Working Capital Finance",
                     "Balance Transfer & Top-Up Loans", "Professional Loans (Doctors, CAs, etc.)"
                   ].map((loan, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm font-light text-slate-600 group cursor-pointer hover:text-brand-blue">
@@ -259,7 +259,7 @@ export default function Home() {
                 <hr className="border-slate-100 mb-6" />
                 <ul className="space-y-4">
                   {[
-                    "Health Insurance", "Life Insurance", "Term Insurance", 
+                    "Health Insurance", "Life Insurance", "Term Insurance",
                     "Motor Insurance", "Corporate Insurance", "Investment & Wealth Protection Plans"
                   ].map((ins, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm font-light text-slate-600 group cursor-pointer hover:text-brand-gold">
@@ -282,9 +282,9 @@ export default function Home() {
                 <hr className="border-slate-100 mb-6" />
                 <ul className="space-y-3.5">
                   {[
-                    "Social Media Marketing", "Search Engine Optimization (SEO)", 
-                    "Google Ads & PPC Campaigns", "Website Design & Development", 
-                    "Lead Generation Campaigns", "Content & Campaign Management", 
+                    "Social Media Marketing", "Search Engine Optimization (SEO)",
+                    "Google Ads & PPC Campaigns", "Website Design & Development",
+                    "Lead Generation Campaigns", "Content & Campaign Management",
                     "WhatsApp & Email Marketing", "Online Reputation Management"
                   ].map((mkt, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm font-light text-slate-600 group cursor-pointer hover:text-brand-digital">
@@ -301,46 +301,30 @@ export default function Home() {
       </section>
 
       {/* 5. STRATEGIC VALUE BLOCKS: Why Choose Fintrust */}
-      <section className="py-24 px-6 lg:px-16 bg-white border-b border-slate-200/60">
+      <section className="py-28 px-6 lg:px-16 bg-[#F5F0E8] border-b border-slate-200/60 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
-            {/* Left Stick Text */}
-            <div className="lg:col-span-4 space-y-4 lg:sticky top-28">
-              <span className="text-[11px] font-bold tracking-super-wide text-brand-gold uppercase block">
-                The Advantage
-              </span>
-              <h2 className="text-3xl font-semibold tracking-tight text-brand-navy">
-                Why Market Leaders Choose Fintrust
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+            {/* Left Column Copy Area Block */}
+            <div className="lg:col-span-12 xl:col-span-4 space-y-4">
+              <div className="inline-flex items-center gap-2">
+                <span className="w-1 h-1 rounded-full bg-brand-gold" />
+                <span className="text-[11px] font-bold tracking-super-wide text-brand-gold uppercase block">
+                  The Advantage Matrix
+                </span>
+              </div>
+              <h2 className="text-4xl font-light tracking-tight text-brand-navy leading-tight">
+                Why Market Leaders <br />
+                <span className="font-semibold text-brand-navy">Choose Fintrust</span>
               </h2>
-              <p className="text-slate-500 text-sm font-light leading-relaxed">
-                We combine extensive banking partnerships with data-driven marketing tools to deliver unparalleled operational advantages.
+              <p className="text-slate-500 text-sm font-light leading-relaxed max-w-md">
+                We combine extensive banking partnerships with custom-engineered data acquisition tools to deliver secure capital scaling.
               </p>
             </div>
 
-            {/* Right Interactive Bullet Matrix */}
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { title: "Expert Financial Guidance", desc: "Consultative planning with veteran financial strategists for every borrowing pathway." },
-                { title: "Multiple Bank Partnerships", desc: "Direct tie-ups across India's top premier banks and institutional NBFC ecosystems." },
-                { title: "Quick Loan Processing", desc: "Accelerated timelines driven by clean pre-screening optimization pipelines." },
-                { title: "Competitive Interest Rates", desc: "Leveraged marketplace positioning ensuring you acquire the absolute lowest available rates." },
-                { title: "Data-Driven Campaign Mgmt", desc: "Fully transparent, highly optimized digital lead generation funnels built for modern SMEs." },
-                { title: "Transparent & Ethical Practices", desc: "Zero hidden fee metrics, complete upfront honesty, and absolute fiduciary integrity." },
-                { title: "End-to-End Doc Support", desc: "Hassle-free document assembly managed entirely by our designated administrative agents." },
-                { title: "Affordable SME Solutions", desc: "Premium marketing strategies customized to launch and scale growing startups securely." }
-              ].map((value, idx) => (
-                <div key={idx} className="p-6 bg-slate-50 border border-slate-200/50 rounded-sm hover:bg-white hover:border-brand-blue/30 hover:shadow-md transition-all duration-300 group">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-1 shrink-0" />
-                    <div className="space-y-1">
-                      <h4 className="text-sm font-semibold text-brand-navy group-hover:text-brand-blue transition-colors">{value.title}</h4>
-                      <p className="text-xs text-slate-500 font-light leading-relaxed">{value.desc}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            {/* Right Column Component Wrapper Block */}
+            <div className="lg:col-span-12 xl:col-span-8 w-full">
+              <AdvantageSlider />
             </div>
 
           </div>
@@ -348,51 +332,71 @@ export default function Home() {
       </section>
 
       {/* 6. ETHOS SECTION: Mission, Vision, and Values */}
-      <section className="py-24 px-6 lg:px-16 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-          
-          {/* Mission */}
-          <div className="space-y-4 pt-8 lg:pt-0 lg:px-6 first:pl-0">
-            <div className="w-8 h-8 rounded-full bg-brand-blue/20 flex items-center justify-center border border-brand-blue/30">
-              <Compass className="w-4 h-4 text-brand-blue" />
-            </div>
-            <h3 className="text-lg font-medium tracking-tight">Our Mission</h3>
-            <p className="text-xs text-slate-400 font-light leading-relaxed">
-              To empower individuals and businesses with accessible financial solutions while building long-term relationships based on trust, transparency, and excellence.
-            </p>
-          </div>
+<section className="py-28 px-6 lg:px-16 bg-gradient-to-b from-slate-950 to-slate-900 text-white relative overflow-hidden">
+  {/* Geometric background accent */}
+  <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
+  
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center max-w-2xl mx-auto mb-20 space-y-3">
+      <span className="text-[11px] font-bold tracking-super-wide text-brand-gold uppercase block">
+        Corporate Foundations
+      </span>
+      <h2 className="text-3xl font-light tracking-tight text-white sm:text-4xl">
+        The Principles Guiding <span className="font-semibold text-brand-blue">Our Growth</span>
+      </h2>
+    </div>
 
-          {/* Vision */}
-          <div className="space-y-4 pt-8 lg:pt-0 lg:px-6">
-            <div className="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center border border-brand-gold/30">
-              <Target className="w-4 h-4 text-brand-gold" />
-            </div>
-            <h3 className="text-lg font-medium tracking-tight">Our Vision</h3>
-            <p className="text-xs text-slate-400 font-light leading-relaxed">
-              To become one of India's most trusted financial service providers by delivering innovative financial solutions and exceptional customer experiences.
-            </p>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Mission Card */}
+      <div className="p-10 bg-slate-900/50 border border-white/10 rounded-sm hover:border-brand-blue/40 transition-all duration-300 flex flex-col justify-between group backdrop-blur-sm">
+        <div className="space-y-6">
+          <div className="w-12 h-12 rounded-sm bg-brand-blue/10 flex items-center justify-center border border-brand-blue/20 group-hover:bg-brand-blue/20 transition-colors">
+            <Compass className="w-5 h-5 text-brand-blue" />
           </div>
-
-          {/* Values */}
-          <div className="space-y-4 pt-8 lg:pt-0 lg:px-6">
-            <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
-              <Gem className="w-4 h-4 text-emerald-400" />
-            </div>
-            <h3 className="text-lg font-medium tracking-tight">Core Values</h3>
-            <div className="flex flex-wrap gap-2 pt-1">
-              {["Integrity", "Trust", "Transparency", "Customer Satisfaction", "Professional Excellence"].map((val, i) => (
-                <span key={i} className="text-[10px] uppercase font-medium tracking-wider px-2.5 py-1 bg-white/5 border border-white/10 rounded-sm text-slate-300">
-                  {val}
-                </span>
-              ))}
-            </div>
-          </div>
-
+          <h3 className="text-xl font-medium tracking-tight text-white">Our Mission</h3>
+          <p className="text-sm text-slate-400 font-light leading-relaxed">
+            To empower individuals and businesses with accessible financial solutions while building long-term relationships based on trust, transparency, and excellence.
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* Vision Card */}
+      <div className="p-10 bg-slate-900/50 border border-white/10 rounded-sm hover:border-brand-gold/40 transition-all duration-300 flex flex-col justify-between group backdrop-blur-sm">
+        <div className="space-y-6">
+          <div className="w-12 h-12 rounded-sm bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 group-hover:bg-brand-gold/20 transition-colors">
+            <Target className="w-5 h-5 text-brand-gold" />
+          </div>
+          <h3 className="text-xl font-medium tracking-tight text-white">Our Vision</h3>
+          <p className="text-sm text-slate-400 font-light leading-relaxed">
+            To become one of India's most trusted financial service providers by delivering innovative financial solutions and exceptional customer experiences.
+          </p>
+        </div>
+      </div>
+
+      {/* Core Values Card */}
+      <div className="p-10 bg-slate-900/50 border border-white/10 rounded-sm hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between group backdrop-blur-sm">
+        <div className="space-y-6">
+          <div className="w-12 h-12 rounded-sm bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-colors">
+            <Gem className="w-5 h-5 text-emerald-400" />
+          </div>
+          <h3 className="text-xl font-medium tracking-tight text-white">Core Values</h3>
+          
+          <ul className="space-y-3 pt-1">
+            {["Integrity & Transparency", "Uncompromising Trust", "Customer Obsession", "Professional Excellence"].map((val, i) => (
+              <li key={i} className="flex items-center gap-3 text-sm font-light text-slate-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>{val}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* 7. MINIMALIST LUXURY FOOTER */}
-      <footer className="py-12 bg-white border-t border-slate-200/80 px-6 lg:px-16">
+      <footer className="py-12 bg-[#FAF7F2] border-t border-slate-200/80 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500 font-light">
           <div>
             <span className="font-semibold text-brand-navy">Fintrust</span> Financial Services Matrix
@@ -400,7 +404,7 @@ export default function Home() {
           <p>© {new Date().getFullYear()} Fintrust. Built for Institutional Scaling & Digital Growth.</p>
         </div>
       </footer>
-<WhatsAppButton />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #090D1A;       /* Deepened to a rich midnight ink blue */
-  --color-brand-blue: #1E40AF;       /* Institutional Royal Blue */
-  --color-brand-gold: #C2410C;       /* Burnt Ochre / Muted Editorial Gold */
-  --color-brand-digital: #2563EB;    
-  
-  --color-surface-base: #F8FAFC;     /* Ultra-clean slate off-white */
-  --color-surface-muted: #F1F5F9;    
+  --color-brand-navy: #0A2D73;
+  --color-brand-blue: #0FA6A6;
+  --color-brand-teal: #0B7E83;
+
+  --color-brand-gold: #B89A5E;
+
+  --color-surface-base: #FAF7F2;
+  --color-surface-muted: #F5F0E8;
+
+  --color-surface-card: #FFFFFF;
 }
 
 /* Luxury Editorial Typography Enhancements */
@@ -21,9 +24,9 @@ h1, h2, h3 {
 
 /* Base Editorial Settings */
 html, body {
-  background-color: #FAFAFA;
+  background-color: #FAF7F2;
   color: #334155;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
   padding: 0;
 }
