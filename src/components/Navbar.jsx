@@ -22,22 +22,22 @@
     const toggleMobileMenu = () => setIsOpen(!isOpen);
 
     // Reusable sub-navigation item component
-    const NavItem = ({ title, desc, target = "home" }) => (
-      <button 
-        onClick={() => {
-          onNavigate(target);
-          setIsOpen(false);
-          setActiveMenu(null);
-        }} 
-        className="text-left w-full group flex flex-col p-3 rounded-lg hover:bg-slate-50 transition-all duration-200 cursor-pointer"
-      >
-        <div className="flex items-center gap-1 text-sm font-medium text-brand-navy group-hover:text-brand-blue">
-          <span>{title}</span>
-          <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-brand-blue" />
-        </div>
-        <p className="text-xs text-slate-500 font-light mt-0.5">{desc}</p>
-      </button>
-    );
+const NavItem = ({ title, desc, target = "home", section = null }) => (
+  <button 
+    onClick={() => {
+      onNavigate(target, section);
+      setIsOpen(false);
+      setActiveMenu(null);
+    }} 
+    className="text-left w-full group flex flex-col p-3 rounded-lg hover:bg-slate-50 transition-all duration-200 cursor-pointer"
+  >
+    <div className="flex items-center gap-1 text-sm font-medium text-brand-navy group-hover:text-brand-blue">
+      <span>{title}</span>
+      <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all text-brand-blue" />
+    </div>
+    <p className="text-xs text-slate-500 font-light mt-0.5">{desc}</p>
+  </button>
+);
 
     return (
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -111,40 +111,40 @@
             </div>
 
             {/* Digital Mega Menu Trigger */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveMenu("digital")}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <button className={`flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer py-2 ${
-                activeMenu === "digital" ? "text-brand-digital" : "text-slate-600 hover:text-brand-navy"
-              }`}>
-                <span>Digital Marketing</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeMenu === "digital" ? "rotate-180 text-brand-digital" : ""}`} />
-              </button>
+<div 
+  className="relative"
+  onMouseEnter={() => setActiveMenu("digital")}
+  onMouseLeave={() => setActiveMenu(null)}
+>
+  <button className={`flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer py-2 ${
+    activeMenu === "digital" ? "text-brand-digital" : "text-slate-600 hover:text-brand-navy"
+  }`}>
+    <span>Digital Marketing</span>
+    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeMenu === "digital" ? "rotate-180 text-brand-digital" : ""}`} />
+  </button>
 
-              {/* Digital Panel */}
-              <AnimatePresence>
-                {activeMenu === "digital" && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-1/2 -translate-x-1/2 top-full w-[300px] bg-white border border-slate-200 rounded-xl shadow-xl p-4 flex flex-col gap-1"
-                  >
-                    <div className="flex items-center gap-2 px-3 pb-2 mb-2 border-b border-slate-100 text-xs font-bold uppercase text-brand-digital tracking-wider">
-                      <BarChart3 className="w-3.5 h-3.5" />
-                      Performance Growth
-                    </div>
-                    <NavItem title="SEO & Visibility" desc="Algorithmic ranking frameworks." target="seo-visibility" />
-                    <NavItem title="Google & PPC Ads" desc="High-intent targeted client acquisition." target="home" />
-                    <NavItem title="Social Media Engineering" desc="Social presence & engagement strategies." target="home" />
-                    <NavItem title="Lead Gen Campaigns" desc="Data-optimized conversion systems." target="home" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+  {/* Digital Panel */}
+  <AnimatePresence>
+    {activeMenu === "digital" && (
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 10 }}
+        transition={{ duration: 0.2 }}
+        className="absolute left-1/2 -translate-x-1/2 top-full w-[300px] bg-white border border-slate-200 rounded-xl shadow-xl p-4 flex flex-col gap-1"
+      >
+        <div className="flex items-center gap-2 px-3 pb-2 mb-2 border-b border-slate-100 text-xs font-bold uppercase text-brand-digital tracking-wider">
+          <BarChart3 className="w-3.5 h-3.5" />
+          Performance Growth
+        </div>
+        <NavItem title="SEO & Visibility" desc="Algorithmic ranking frameworks." target="seo-visibility" section="seo" />
+        <NavItem title="Google & PPC Ads" desc="High-intent targeted client acquisition." target="seo-visibility" section="ppc" />
+        <NavItem title="Social Media Engineering" desc="Social presence & engagement strategies." target="seo-visibility" section="social-media" />
+        <NavItem title="Lead Gen Campaigns" desc="Data-optimized conversion systems." target="seo-visibility" section="lead-gen" />
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
 
             {/* Text Links mapped to view hooks */}
             <button 
