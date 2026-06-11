@@ -104,13 +104,13 @@ export default function AdvantageSlider() {
                             key={idx}
                             onClick={() => setActive(idx)}
                             className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center gap-4 group cursor-pointer ${IsActiveRow
-                                    ? "bg-white border-slate-200/90 shadow-md shadow-slate-100/50"
-                                    : "bg-transparent border-transparent hover:bg-slate-100/70"
+                                ? "bg-white border-slate-200/90 shadow-md shadow-slate-100/50"
+                                : "bg-transparent border-transparent hover:bg-slate-100/70"
                                 }`}
                         >
                             <div className={`p-2 rounded-lg border transition-colors ${IsActiveRow
-                                    ? "bg-brand-blue/5 border-brand-blue/10 text-brand-blue"
-                                    : "bg-white border-slate-100 text-slate-400 group-hover:text-slate-600"
+                                ? "bg-brand-blue/5 border-brand-blue/10 text-brand-blue"
+                                : "bg-white border-slate-100 text-slate-400 group-hover:text-slate-600"
                                 }`}>
                                 <RowIcon size={16} />
                             </div>
@@ -186,10 +186,7 @@ export default function AdvantageSlider() {
                                 </div>
                             </div>
                             <div className="text-right">
-                                <div className="inline-flex items-center gap-1.5 text-xs text-brand-blue font-medium bg-brand-blue/5 border border-brand-blue/10 px-3 py-1 rounded-full">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
-                                    Live Framework Optima
-                                </div>
+
                             </div>
                         </div>
 
