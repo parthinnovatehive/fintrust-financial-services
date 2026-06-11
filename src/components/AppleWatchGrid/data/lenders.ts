@@ -17,7 +17,7 @@ export const lenders: Lender[] = [
   {
     id: 2,
     name: "HDFC Bank",
-    logo: "/lenders/HDFC Bank-converted-from-jpg.svg",
+    logo: "/lenders/hdfc.svg",
     size: 90,
   },
   {
