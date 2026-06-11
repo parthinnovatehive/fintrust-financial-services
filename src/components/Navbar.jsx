@@ -137,7 +137,7 @@
                       <BarChart3 className="w-3.5 h-3.5" />
                       Performance Growth
                     </div>
-                    <NavItem title="SEO & Visibility" desc="Algorithmic ranking frameworks." target="home" />
+                    <NavItem title="SEO & Visibility" desc="Algorithmic ranking frameworks." target="seo-visibility" />
                     <NavItem title="Google & PPC Ads" desc="High-intent targeted client acquisition." target="home" />
                     <NavItem title="Social Media Engineering" desc="Social presence & engagement strategies." target="home" />
                     <NavItem title="Lead Gen Campaigns" desc="Data-optimized conversion systems." target="home" />

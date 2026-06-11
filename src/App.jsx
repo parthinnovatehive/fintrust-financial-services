@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import WhatsAppButton from "./components/WhatsAppButton";
 import HomeLoan from "./pages/HomeLoan"; 
 import BusinessLoan from "./pages/BusinessLoan";
+import SEOVisibility from "./pages/SEOVisibility";
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -22,6 +23,7 @@ function App() {
       {activePage === "home" && <Home />}
       {activePage === "home-loan" && <HomeLoan />} 
       {activePage === "business-loan" && <BusinessLoan />} 
+      {activePage === "seo-visibility" && <SEOVisibility />} 
       {activePage === "contact" && <Contact />}
 
       <WhatsAppButton activePage={activePage} />

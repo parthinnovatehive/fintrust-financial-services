@@ -303,7 +303,7 @@ export default function Home() {
 
           <div className="p-8 border-r border-b border-slate-100">
             <div className="text-5xl font-light text-[#0B132B]">
-              15+
+              50+
             </div>
             <p className="text-[10px] uppercase tracking-widest text-slate-400 mt-3">
               Lending Partners
