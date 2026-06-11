@@ -77,10 +77,10 @@ export default function Bubble({
                 height: lender.size,
                 zIndex: Math.round(scale * 1000),
             }}
-           whileHover={{
-  scale: scale + 0.5,
-  zIndex: 999999,
-}}
+            whileHover={{
+                scale: scale + 0.5,
+                zIndex: 999999,
+            }}
         >
             <div
                 className="
@@ -105,8 +105,8 @@ export default function Bubble({
   src={lender.logo}
   alt={lender.name}
   className="
-    w-[60%]
-    h-[60%]
+    w-[78%]
+    h-[78%]
     object-contain
     transition-transform
     duration-500

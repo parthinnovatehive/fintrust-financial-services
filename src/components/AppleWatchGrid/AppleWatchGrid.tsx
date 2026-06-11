@@ -105,7 +105,7 @@ export default function AppleWatchGrid() {
           }}
           style={{
             width: 1200,
-            height: 900,
+            height: 750,
           }}
         >
           {mouse.active && (

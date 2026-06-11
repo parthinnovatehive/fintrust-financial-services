@@ -278,12 +278,12 @@ export const lenders: Lender[] = [
     logo: "/lenders/Protium-converted-from-png.svg",
     size: 72,
   },
-  {
-    id: 46,
-    name: "Saraswat Bank",
-    logo: "/lenders/Saraswat Bank-converted-from-png.svg",
-    size: 75,
-  },
+  // {
+  //   id: 46,
+  //   name: "Saraswat Bank",
+  //   logo: "/lenders/Saraswat Bank-converted-from-png.svg",
+  //   size: 75,
+  // },
   {
     id: 47,
     name: "SBM Bank",

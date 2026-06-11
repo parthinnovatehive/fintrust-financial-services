@@ -58,49 +58,96 @@ export default function Home() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const advantageFeatures = [
-    {
-      title: "Multiple Bank Partnerships",
-      icon: Landmark,
-      tag: "NETWORKS",
-      heading: "Direct Tier-1 Institutional Integrations",
-      desc: "We route capital requirements across 15+ premier banking networks simultaneously to lock down optimal capital placement rates effortlessly.",
-    },
-    {
-      title: "Quick Loan Processing",
-      icon: Zap,
-      tag: "SPEED",
-      heading: "Automated Verification Frameworks",
-      desc: "Skip legacy corporate bottlenecks. Our direct pipeline integration cuts down loan onboarding time frames by up to 65%.",
-    },
-    {
-      title: "Competitive Interest Rates",
-      icon: Percent,
-      tag: "OPTIMIZATION",
-      heading: "Market-Leading Alpha Arbitrage",
-      desc: "By leveraging systemic balance sheets across multiple corporate entities, we pull down capital costs below industry standard baselines.",
-    },
-    {
-      title: "Data-Driven Campaign Mgmt",
-      icon: BarChart3,
-      tag: "PERFORMANCE",
-      heading: "Hyper-Targeted B2B Customer Scaling",
-      desc: "We run multi-channel intent validation algorithms to source high-intent leads, tracking customer conversion patterns metrics live.",
-    },
-    {
-      title: "Transparent & Ethical Practices",
-      icon: Eye,
-      tag: "COMPLIANCE",
-      heading: "Zero Hidden-Fee Frameworks",
-      desc: "Full visibility contracts governed by strict fiduciary standards ensure your scaling efforts face zero structural legal surprises.",
-    },
-    {
-      title: "End-to-End Doc Support",
-      icon: FileText,
-      tag: "CONCIERGE",
-      heading: "Complete Administrative Concierge",
-      desc: "From initial entity formatting to final compliance validation audits, our legal desks manage the paperwork burden seamlessly.",
-    },
-  ];
+  {
+    title: "Multiple Bank Partnerships",
+    icon: Landmark,
+    heading: "Direct Access To 15+ Leading Lending Institutions",
+
+    desc: "Unlike traditional loan consultants who are limited to a handful of lenders, Fintrust maintains active partnerships with a wide network of banks and NBFCs. This allows us to compare eligibility, approval probability, repayment structures, and interest rates across multiple institutions simultaneously.",
+
+    details: [
+      "Access to 15+ banks and NBFCs",
+      "Multiple offers compared simultaneously",
+      "Higher approval probability",
+      "Customized lender matching"
+    ]
+  },
+
+  {
+    title: "Quick Loan Processing",
+    icon: Zap,
+    heading: "Accelerated Approval & Disbursement Process",
+
+    desc: "Our internal pre-screening and documentation framework eliminates unnecessary delays before your application reaches the lender. By identifying potential issues early, we help reduce processing time and improve overall approval efficiency.",
+
+    details: [
+      "Fast document verification",
+      "Reduced processing delays",
+      "Pre-screened applications",
+      "Dedicated application tracking"
+    ]
+  },
+
+  {
+    title: "Competitive Interest Rates",
+    icon: Percent,
+    heading: "Optimized Financing At Competitive Rates",
+
+    desc: "Because we work with multiple lending partners, we are able to negotiate and identify the most suitable financing options available in the market. This helps clients secure better repayment structures and lower borrowing costs whenever possible.",
+
+    details: [
+      "Market-wide comparison",
+      "Lower financing costs",
+      "Flexible repayment structures",
+      "Better loan affordability"
+    ]
+  },
+
+  {
+    title: "Data-Driven Campaign Mgmt",
+    icon: BarChart3,
+    heading: "Performance-Focused Growth Strategies",
+
+    desc: "For business clients, Fintrust combines financial expertise with modern digital marketing systems. We use analytics, customer insights, and performance tracking to create campaigns that generate measurable business growth.",
+
+    details: [
+      "ROI-focused campaigns",
+      "Lead generation systems",
+      "Customer analytics",
+      "Performance optimization"
+    ]
+  },
+
+  {
+    title: "Transparent & Ethical Practices",
+    icon: Eye,
+    heading: "Complete Transparency In Every Transaction",
+
+    desc: "Trust is the foundation of our business. We maintain complete transparency regarding fees, lender requirements, documentation, timelines, and recommendations so that clients can make informed financial decisions with confidence.",
+
+    details: [
+      "No hidden charges",
+      "Clear process visibility",
+      "Ethical recommendations",
+      "Transparent communication"
+    ]
+  },
+
+  {
+    title: "End-to-End Doc Support",
+    icon: FileText,
+    heading: "Dedicated Documentation Assistance",
+
+    desc: "Financial documentation can often be overwhelming. Our team assists clients throughout the process, ensuring that paperwork is complete, accurate, and compliant with lender requirements, reducing stress and avoiding delays.",
+
+    details: [
+      "Complete documentation support",
+      "Application preparation",
+      "Compliance assistance",
+      "Reduced paperwork burden"
+    ]
+  }
+];
 
   // --- AUTOMATIC 3-SECOND ROTATION LOGIC ---
   useEffect(() => {
@@ -221,8 +268,11 @@ export default function Home() {
       {/* 3. APPLE WATCH GRID */}
       <AppleWatchGrid />
 
-      {/* 4. METRICS SECTION */}
-      <section ref={statsRef} className="py-24 bg-[#0B132B] text-white px-6 lg:px-16 relative overflow-hidden">
+      {/* 4. METRICS SECTION (Optimized padding and negative margin layout to collapse the gap) */}
+      <section 
+        ref={statsRef} 
+        className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-[#0B132B] text-white px-6 lg:px-16 relative overflow-hidden -mt-12 lg:-mt-24 z-30"
+      >
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
         
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 text-center relative z-10 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
@@ -316,34 +366,46 @@ export default function Home() {
 
             {/* Right Column: Display with Framer Motion AnimatePresence */}
             <div className="lg:col-span-7 lg:sticky lg:top-24">
-              <div className="w-full bg-[#0B132B] text-white rounded-2xl p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[380px] flex flex-col justify-between">
+              <div className="w-full bg-[#0B132B] text-white rounded-2xl p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[400px] flex flex-col justify-between">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
                 
                 <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeFeature}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.35, ease: "easeInOut" }}
-                    className="space-y-6 relative z-10 my-auto"
-                  >
-                    <div className="inline-block px-2.5 py-1 rounded bg-[#00A896]/10 text-[#00A896] text-[9px] font-bold tracking-widest uppercase border border-[#00A896]/20">
-                      {advantageFeatures[activeFeature].tag} Matrix / 0{activeFeature + 1}
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-light tracking-tight text-white">
-                      {advantageFeatures[activeFeature].heading}
-                    </h3>
-                    <p className="text-slate-400 text-sm font-light leading-relaxed max-w-xl">
-                      {advantageFeatures[activeFeature].desc}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
+  <motion.div
+    key={activeFeature}
+    initial={{ opacity: 0, x: 30 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -30 }}
+    transition={{ duration: 0.4 }}
+    className="relative z-10 h-full flex flex-col justify-center"
+  >
 
-                <div className="pt-6 border-t border-slate-800 text-[10px] uppercase tracking-widest text-slate-500 font-medium relative z-10 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00A896]" />
-                  Live Framework Optima Configured
-                </div>
+    <h3 className="text-3xl font-semibold text-white mb-6">
+      {advantageFeatures[activeFeature].heading}
+    </h3>
+
+    <p className="text-slate-300 leading-relaxed text-base max-w-2xl mb-8">
+      {advantageFeatures[activeFeature].desc}
+    </p>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {advantageFeatures[activeFeature].details.map((item, index) => (
+        <div
+          key={index}
+          className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5"
+        >
+          <div className="w-2 h-2 rounded-full bg-[#00A896] mt-2 shrink-0" />
+
+          <span className="text-sm text-slate-300 leading-relaxed">
+            {item}
+          </span>
+        </div>
+      ))}
+    </div>
+
+  </motion.div>
+</AnimatePresence>
+
+                
               </div>
             </div>
 
