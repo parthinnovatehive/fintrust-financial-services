@@ -1,27 +1,16 @@
 import React, { useState } from 'react';
 import { 
-    Briefcase, BarChart3, TrendingUp, ChevronRight, ShieldCheck, 
-    Clock, Target, Building2, IndianRupee, Percent, Calendar, 
-    MessageCircle, Phone, Award, Users, Rocket, Zap, CheckCircle2,
-    DollarSign, LineChart, PieChart, CreditCard
+    User, CreditCard, Calendar, IndianRupee, Percent, 
+    MessageCircle, Phone, ShieldCheck, Clock, Award, 
+    CheckCircle2, Wallet, Zap, Heart, Briefcase, 
+    TrendingUp, ArrowRight, Landmark, Users, DollarSign
 } from 'lucide-react';
 
-export default function BusinessLoan() {
-    const [loanAmount, setLoanAmount] = useState(2000000);
-    const [interestRate, setInterestRate] = useState(12.5);
+export default function PersonalLoan() {
+    const [loanAmount, setLoanAmount] = useState(500000);
+    const [interestRate, setInterestRate] = useState(11.5);
     const [tenure, setTenure] = useState(5);
     const [isAgreed, setIsAgreed] = useState(false);
-
-    const logos = [
-        'Aavas Financiers-converted-from-png',
-        'Aditya Birla Capital Home Loans-converted-from-jpg',
-        'AU Small Finance Bank-converted-from-png',
-        'Bajaj Housing Finance Limited',
-        'CLIX-converted-from-png',
-        'hdfc',
-        'SBI-converted-from-png',
-        'YES BANK-converted-from-png'
-    ];
 
     const calculateEMI = () => {
         const P = loanAmount;
@@ -41,14 +30,27 @@ export default function BusinessLoan() {
             alert("Please review and accept the terms & conditions first.");
             return;
         }
-        const message = `Hi Fintrust, I'm interested in a Business Loan.\n\n• Amount: ₹${loanAmount.toLocaleString('en-IN')}\n• Interest Rate: ${interestRate}%\n• Tenure: ${tenure} Years\n• Monthly EMI: ₹${emiVal.toLocaleString('en-IN')}\n• Total Interest: ₹${totalInterest.toLocaleString('en-IN')}\n\nPlease guide me through the application process.`;
+        const message = `Hi Fintrust, I'm interested in a Personal Loan.\n\n• Amount: ₹${loanAmount.toLocaleString('en-IN')}\n• Interest Rate: ${interestRate}%\n• Tenure: ${tenure} Years\n• Monthly EMI: ₹${emiVal.toLocaleString('en-IN')}\n• Total Interest: ₹${totalInterest.toLocaleString('en-IN')}\n\nPlease guide me through the application process.`;
         window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
     };
+
+    // Lenders logos array
+    const logos = [
+        'SBI-converted-from-png',
+        'hdfc',
+        'Shinhan Bank-converted-from-jpg.svg',
+        'ICICI Bank-converted-from-png',
+        'Axis Bank-converted-from-png',
+        'YES BANK-converted-from-png',
+        'Bajaj Finserv-converted-from-png',
+        'Tata Capital-converted-from-jpg',
+        'IDFC First Bank-converted-from-png'
+    ];
 
     return (
         <div className="bg-[#FAF7F2] min-h-screen text-[#0B132B]">
             
-            {/* HERO SECTION - IMPROVED */}
+            {/* HERO SECTION */}
             <section className="relative bg-gradient-to-br from-[#0B132B] to-[#1a2a4a] text-white pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,168,150,0.12),transparent_60%)]" />
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00A896] to-transparent" />
@@ -57,21 +59,21 @@ export default function BusinessLoan() {
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
-                            <span className="text-[10px] font-bold tracking-[0.2em] text-[#00A896] uppercase">Business Financing</span>
+                            <span className="text-[10px] font-bold tracking-[0.2em] text-[#00A896] uppercase">Personal Financing</span>
                         </div>
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-tight mb-6">
-                            Capital for <span className="font-bold bg-gradient-to-r from-[#00A896] to-emerald-400 bg-clip-text text-transparent">Scale</span>, Not Just Survival.
+                            Funds When You <span className="font-bold bg-gradient-to-r from-[#00A896] to-emerald-400 bg-clip-text text-transparent">Need Them Most</span>
                         </h1>
                         <p className="text-slate-300 text-lg font-light max-w-2xl mx-auto">
-                            Strategic financing to accelerate inventory turnover, optimize operations, and capture market share.
+                            Quick, hassle-free personal loans for medical emergencies, travel, education, weddings, or debt consolidation.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Business Loan options for my company.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Personal Loan options.")}`, '_blank')}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all"
                             >
                                 <MessageCircle className="w-4 h-4" />
-                                Apply for Business Loan
+                                Apply for Personal Loan
                             </button>
                             <button 
                                 onClick={() => window.open(`tel:+919876543210`)}
@@ -85,38 +87,15 @@ export default function BusinessLoan() {
                 </div>
             </section>
 
-            {/* INFINITE SCROLL BANNER - IMPROVED */}
-            <div className="w-full overflow-hidden py-8 bg-white border-y border-slate-100">
-                <div className="relative">
-                    <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
-                    <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
-                    <div className="flex animate-scroll gap-16 items-center">
-                        {[...logos, ...logos, ...logos].map((name, i) => (
-                            <div key={i} className="flex-shrink-0 w-28 h-10 opacity-60 hover:opacity-100 transition-opacity">
-                                <img 
-                                    src={`/lenders/${name}.svg`} 
-                                    alt={name} 
-                                    className="h-full w-full object-contain" 
-                                    onError={(e) => e.target.style.display = 'none'}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="text-center mt-3">
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Trusted by 50+ leading financial institutions</p>
-                </div>
-            </div>
-
-            {/* STATS SECTION - NEW */}
+            {/* STATS SECTION */}
             <section className="py-12 px-6 lg:px-16 bg-white border-b border-slate-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                         {[
-                            { value: "₹50Cr+", label: "Disbursed", icon: DollarSign },
-                            { value: "500+", label: "Businesses Served", icon: Users },
-                            { value: "48hrs", label: "Approval Time", icon: Clock },
-                            { value: "15+", label: "Banking Partners", icon: Building2 }
+                            { value: "₹200Cr+", label: "Disbursed", icon: DollarSign },
+                            { value: "25K+", label: "Happy Customers", icon: Users },
+                            { value: "24hrs", label: "Approval Time", icon: Clock },
+                            { value: "15+", label: "Banking Partners", icon: Landmark }
                         ].map((stat, idx) => (
                             <div key={idx} className="p-4">
                                 <stat.icon className="w-6 h-6 text-[#00A896] mx-auto mb-2" />
@@ -128,34 +107,35 @@ export default function BusinessLoan() {
                 </div>
             </section>
 
-            {/* VALUE PILLARS - ENHANCED */}
+            {/* KEY BENEFITS SECTION */}
             <section className="py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
-                        <span className="text-[11px] font-bold tracking-[0.2em] text-[#00A896] uppercase">Why Choose Fintrust</span>
-                        <h2 className="text-3xl font-light text-[#0B132B] mt-2">Strategic Growth <span className="font-semibold">Advantages</span></h2>
+                        <span className="text-[11px] font-bold tracking-[0.2em] text-[#00A896] uppercase">Why Choose Us</span>
+                        <h2 className="text-3xl font-light text-[#0B132B] mt-2">Personal Loan <span className="font-semibold">Advantages</span></h2>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[
-                            { icon: TrendingUp, title: "Capture Market Share", desc: "Scale marketing and distribution without waiting for cash flow.", color: "emerald" },
-                            { icon: BarChart3, title: "Optimize Operations", desc: "Use bulk procurement to improve your gross profit margins.", color: "blue" },
-                            { icon: Rocket, title: "Strategic Expansion", desc: "Fund R&D and infrastructure to lead your industry.", color: "amber" }
-                        ].map((item, i) => (
-                            <div key={i} className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br from-${item.color}-500/10 to-${item.color}-600/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                                    <item.icon className={`w-6 h-6 text-${item.color}-600`} />
-                                </div>
-                                <h4 className="font-semibold text-xl mb-2 text-[#0B132B]">{item.title}</h4>
-                                <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+    {[
+        { icon: Zap, title: "Instant Approval", desc: "Get approval within 24 hours", color: "emerald", bgClass: "from-emerald-500/10 to-emerald-600/5", textClass: "text-emerald-600" },
+        { icon: CreditCard, title: "No Collateral", desc: "Unsecured loans up to ₹50L", color: "blue", bgClass: "from-blue-500/10 to-blue-600/5", textClass: "text-blue-600" },
+        { icon: Wallet, title: "Minimal Documents", desc: "Only KYC and income proof", color: "amber", bgClass: "from-amber-500/10 to-amber-600/5", textClass: "text-amber-600" },
+        { icon: Heart, title: "Flexible EMI", desc: "Tenure up to 7 years", color: "rose", bgClass: "from-rose-500/10 to-rose-600/5", textClass: "text-rose-600" }
+    ].map((item, i) => (
+        <div key={i} className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+            <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.bgClass} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                <item.icon className={`w-6 h-6 ${item.textClass}`} />
+            </div>
+            <h4 className="font-semibold text-lg mb-2 text-[#0B132B]">{item.title}</h4>
+            <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+        </div>
+    ))}
+</div>
                 </div>
             </section>
 
-            {/* ELIGIBILITY & BENEFITS SECTION - NEW */}
+            {/* ELIGIBILITY & FEATURES SECTION */}
             <section className="py-16 px-6 lg:px-16 bg-white border-t border-b border-slate-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -167,10 +147,10 @@ export default function BusinessLoan() {
                             </div>
                             <div className="space-y-4">
                                 {[
-                                    { title: "Business Vintage", desc: "Minimum 3 years of operational history" },
-                                    { title: "Annual Turnover", desc: "₹10 Lakhs or above" },
-                                    { title: "ITR Filing", desc: "Minimum 2 years of Income Tax Returns" },
-                                    { title: "CIBIL Score", desc: "750 or above (relaxable for secured loans)" }
+                                    { title: "Age", desc: "21 years to 60 years" },
+                                    { title: "Employment", desc: "Salaried or Self-employed professionals" },
+                                    { title: "Income", desc: "Minimum ₹25,000 per month" },
+                                    { title: "CIBIL Score", desc: "750 or above (relaxable for existing customers)" }
                                 ].map((item, idx) => (
                                     <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
                                         <CheckCircle2 className="w-4 h-4 text-[#00A896] mt-0.5 shrink-0" />
@@ -183,18 +163,18 @@ export default function BusinessLoan() {
                             </div>
                         </div>
                         
-                        {/* Key Benefits */}
+                        {/* Loan Features */}
                         <div>
                             <div className="flex items-center gap-2 mb-6">
                                 <Award className="w-5 h-5 text-[#00A896]" />
-                                <h3 className="text-xl font-semibold text-[#0B132B]">Key Benefits</h3>
+                                <h3 className="text-xl font-semibold text-[#0B132B]">Loan Features</h3>
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {[
-                                    { title: "Low Interest Rates", desc: "Starting at 9.5% p.a." },
-                                    { title: "Flexible Tenure", desc: "Up to 15 years" },
-                                    { title: "Quick Disbursal", desc: "Within 48-72 hours" },
-                                    { title: "No Collateral", desc: "Up to ₹50 Lakhs" }
+                                    { title: "Loan Amount", desc: "Up to ₹50 Lakhs" },
+                                    { title: "Interest Rate", desc: "Starting at 9.9% p.a." },
+                                    { title: "Repayment Tenure", desc: "12 months to 84 months" },
+                                    { title: "Processing Fee", desc: "As low as 0.5%" }
                                 ].map((item, idx) => (
                                     <div key={idx} className="p-4 rounded-xl bg-gradient-to-br from-[#00A896]/5 to-transparent border border-[#00A896]/10">
                                         <p className="text-sm font-semibold text-[#0B132B]">{item.title}</p>
@@ -207,12 +187,12 @@ export default function BusinessLoan() {
                 </div>
             </section>
 
-            {/* CALCULATOR SECTION - IMPROVED */}
+            {/* CALCULATOR SECTION */}
             <section className="py-20 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-10">
                         <span className="text-[11px] font-bold tracking-[0.2em] text-[#00A896] uppercase">Calculate Your EMI</span>
-                        <h2 className="text-3xl font-light text-[#0B132B] mt-2">Business Loan <span className="font-semibold">Calculator</span></h2>
+                        <h2 className="text-3xl font-light text-[#0B132B] mt-2">Personal Loan <span className="font-semibold">Calculator</span></h2>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
                     
@@ -229,17 +209,17 @@ export default function BusinessLoan() {
                                 </div>
                                 <input 
                                     type="range" 
-                                    min="500000" 
-                                    max="50000000" 
-                                    step="100000" 
+                                    min="50000" 
+                                    max="5000000" 
+                                    step="25000" 
                                     value={loanAmount} 
                                     onChange={(e) => setLoanAmount(Number(e.target.value))} 
                                     className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer" 
                                 />
                                 <div className="flex justify-between text-[10px] text-slate-400">
-                                    <span>₹5L</span>
-                                    <span>₹2.5Cr</span>
-                                    <span>₹5Cr</span>
+                                    <span>₹50K</span>
+                                    <span>₹25L</span>
+                                    <span>₹50L</span>
                                 </div>
                             </div>
 
@@ -255,7 +235,7 @@ export default function BusinessLoan() {
                                     type="range" 
                                     min="9.5" 
                                     max="24" 
-                                    step="0.5" 
+                                    step="0.25" 
                                     value={interestRate} 
                                     onChange={(e) => setInterestRate(Number(e.target.value))} 
                                     className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer" 
@@ -278,7 +258,7 @@ export default function BusinessLoan() {
                                 <input 
                                     type="range" 
                                     min="1" 
-                                    max="15" 
+                                    max="7" 
                                     step="1" 
                                     value={tenure} 
                                     onChange={(e) => setTenure(Number(e.target.value))} 
@@ -286,8 +266,8 @@ export default function BusinessLoan() {
                                 />
                                 <div className="flex justify-between text-[10px] text-slate-400">
                                     <span>1 yr</span>
-                                    <span>8 yrs</span>
-                                    <span>15 yrs</span>
+                                    <span>4 yrs</span>
+                                    <span>7 yrs</span>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +297,7 @@ export default function BusinessLoan() {
                                     <span className="text-white font-semibold">₹{totalPayment.toLocaleString('en-IN')}</span>
                                 </div>
                                 <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                                    <div className="h-full w-[65%] bg-gradient-to-r from-[#00A896] to-emerald-400 rounded-full" />
+                                    <div className="h-full w-[68%] bg-gradient-to-r from-[#00A896] to-emerald-400 rounded-full" />
                                 </div>
                                 <div className="flex justify-between text-[9px] text-slate-500 mt-1">
                                     <span>Principal</span>
@@ -349,7 +329,7 @@ export default function BusinessLoan() {
                 </div>
             </section>
 
-            {/* DOCUMENTS REQUIRED - NEW */}
+            {/* DOCUMENTS REQUIRED */}
             <section className="py-16 px-6 lg:px-16 bg-white border-t border-slate-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-8">
@@ -358,9 +338,9 @@ export default function BusinessLoan() {
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {[
-                            "KYC Documents", "Business Proof", "ITR (2 years)", "Bank Statements"
+                            "KYC Documents", "Income Proof", "Bank Statements", "Employment Proof"
                         ].map((doc, idx) => (
-                            <div key={idx} className="text-center p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <div key={idx} className="text-center p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#00A896]/30 transition-all">
                                 <CheckCircle2 className="w-5 h-5 text-[#00A896] mx-auto mb-2" />
                                 <p className="text-sm font-medium text-[#0B132B]">{doc}</p>
                             </div>
@@ -369,15 +349,41 @@ export default function BusinessLoan() {
                 </div>
             </section>
 
+            {/* USE CASES SECTION - NEW */}
+            <section className="py-16 px-6 lg:px-16">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-10">
+                        <span className="text-[11px] font-bold tracking-[0.2em] text-[#00A896] uppercase">Popular Uses</span>
+                        <h3 className="text-2xl font-light text-[#0B132B] mt-2">Why Customers <span className="font-semibold">Choose Personal Loans</span></h3>
+                        <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[
+                            { icon: Heart, label: "Medical Emergency" },
+                            { icon: Briefcase, label: "Wedding Expenses" },
+                            { icon: TrendingUp, label: "Debt Consolidation" },
+                            { icon: CreditCard, label: "Travel & Vacation" }
+                        ].map((use, idx) => (
+                            <div key={idx} className="text-center p-5 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                                <use.icon className="w-6 h-6 text-[#00A896] mx-auto mb-2" />
+                                <p className="text-sm font-medium text-[#0B132B]">{use.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+          
+
             {/* FINAL CTA */}
             <section className="py-16 px-6 lg:px-16">
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="bg-gradient-to-r from-[#0B132B] to-[#1a2a4a] rounded-2xl p-10 shadow-xl">
-                        <h3 className="text-2xl font-light text-white mb-3">Ready to Scale Your Business?</h3>
+                        <h3 className="text-2xl font-light text-white mb-3">Ready to Get Started?</h3>
                         <p className="text-slate-300 text-sm mb-6">Get instant approval from 15+ banks with competitive interest rates</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Business Loan options for my company.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to apply for a Personal Loan.")}`, '_blank')}
                                 className="px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all flex items-center justify-center gap-2"
                             >
                                 <MessageCircle className="w-4 h-4" />
@@ -388,10 +394,10 @@ export default function BusinessLoan() {
                                 className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                             >
                                 <Phone className="w-4 h-4" />
-                                Call Business Desk
+                                Call Loan Desk
                             </button>
                         </div>
-                        <p className="text-[9px] text-slate-500 mt-4">No hidden charges | Zero processing fee for select profiles</p>
+                        <p className="text-[9px] text-slate-500 mt-4">Instant approval | Flexible EMI | Minimal paperwork</p>
                     </div>
                 </div>
             </section>

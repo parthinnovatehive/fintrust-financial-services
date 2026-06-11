@@ -6,6 +6,14 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import HomeLoan from "./pages/HomeLoan"; 
 import BusinessLoan from "./pages/BusinessLoan";
 import SEOVisibility from "./pages/SEOVisibility";
+import PersonalLoan from "./pages/PersonalLoan";
+import LoanAgainstProperty from "./pages/LoanAgainstProperty";
+import HealthInsurance from "./pages/HealthInsurance";
+import LifeInsurance from "./pages/LifeInsurance";
+import CorporateRisk from "./pages/CorporateRisk";
+import WorkingCapital from "./pages/WorkingCapital";
+
+
 
 function App() {
   const [activePage, setActivePage] = useState("home");
@@ -52,6 +60,13 @@ function App() {
       {activePage === "home" && <Home />}
       {activePage === "home-loan" && <HomeLoan />} 
       {activePage === "business-loan" && <BusinessLoan />} 
+      {activePage === "personal-loan" && <PersonalLoan />}
+      {activePage === "loan-against-property" && <LoanAgainstProperty />}
+      {activePage === "health-insurance" && <HealthInsurance />}
+      {activePage === "life-insurance" && <LifeInsurance />}
+      {activePage === "corp-insurance" && <CorporateRisk />}
+      {activePage === "working-capital" && <WorkingCapital />}
+
       {activePage === "seo-visibility" && <SEOVisibility />} 
       {activePage === "contact" && <Contact />}
 

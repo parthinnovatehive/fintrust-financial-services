@@ -90,18 +90,18 @@ export default function Navbar({ onNavigate, activePage }) {
                     </div>
                     <NavItem title="Home Loans" desc="Mortgage & equity top-up consulting." target="home-loan" />
                     <NavItem title="Business Loans" desc="Unsecured MSME & corporate capital." target="business-loan" />
-                    <NavItem title="Personal Loans" desc="Flexible salary-backed credit channels." target="home" />
-                    <NavItem title="Loan Against Property" desc="Monetize premium real estate assets." target="home" />
+                    <NavItem title="Personal Loans" desc="Flexible salary-backed credit channels." target="personal-loan" />
+                    <NavItem title="Loan Against Property" desc="Monetize premium real estate assets." target="loan-against-property" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 px-3 pb-2 mb-2 border-b border-slate-100 text-xs font-bold uppercase text-brand-gold tracking-wider">
                       <ShieldCheck className="w-3.5 h-3.5" />
                       Insurance & Wealth
                     </div>
-                    <NavItem title="Health Insurance" desc="Comprehensive operational medical shields." target="home" />
-                    <NavItem title="Life & Term Plans" desc="Institutional financial protection assets." target="home" />
-                    <NavItem title="Corporate Risk Schemes" desc="Enterprise-level commercial safety nets." target="home" />
-                    <NavItem title="Working Capital Advisory" desc="Cash flow optimization blueprints." target="home" />
+                    <NavItem title="Health Insurance" desc="Comprehensive operational medical shields." target="health-insurance" />
+                    <NavItem title="Life & Term Plans" desc="Institutional financial protection assets." target="life-insurance" />
+                    <NavItem title="Corporate Risk Schemes" desc="Enterprise-level commercial safety nets." target="corp-insurance" />
+                    <NavItem title="Working Capital Advisory" desc="Cash flow optimization blueprints." target="working-capital" />
                   </div>
                 </motion.div>
               )}
@@ -143,13 +143,6 @@ export default function Navbar({ onNavigate, activePage }) {
             </AnimatePresence>
           </div>
 
-          {/* Text Links mapped to view hooks */}
-          <button
-            onClick={() => onNavigate("home")}
-            className={`text-sm font-medium transition-colors cursor-pointer ${activePage === "home" ? "text-brand-blue" : "text-slate-600 hover:text-brand-navy"}`}
-          >
-            About Us
-          </button>
 
           <button
             onClick={() => onNavigate("contact")}
