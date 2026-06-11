@@ -1,6 +1,7 @@
 export function calculateInfluence(
   bubbleX: number,
   bubbleY: number,
+  bubbleSize: number,
   mouseX: number,
   mouseY: number,
   active: boolean
@@ -13,14 +14,20 @@ export function calculateInfluence(
     };
   }
 
-  const dx = mouseX - bubbleX;
-  const dy = mouseY - bubbleY;
+  const centerX =
+    bubbleX + bubbleSize / 2;
+
+  const centerY =
+    bubbleY + bubbleSize / 2;
+
+  const dx = mouseX - centerX;
+  const dy = mouseY - centerY;
 
   const distance = Math.sqrt(
     dx * dx + dy * dy
   );
 
-  const radius = 250;
+  const radius = 180;
 
   if (distance > radius) {
     return {
@@ -34,20 +41,20 @@ export function calculateInfluence(
     1 - distance / radius;
 
   return {
-    scale: 1 + strength * 0.8,
+    scale: 1 + strength * 0.9,
 
     offsetX:
-  distance === 0
-    ? 0
-    : (dx / distance) *
-      strength *
-      18,
+      distance === 0
+        ? 0
+        : (dx / distance) *
+          strength *
+          20,
 
-offsetY:
-  distance === 0
-    ? 0
-    : (dy / distance) *
-      strength *
-      18,
+    offsetY:
+      distance === 0
+        ? 0
+        : (dy / distance) *
+          strength *
+          20,
   };
 }

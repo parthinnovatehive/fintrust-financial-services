@@ -24,10 +24,11 @@ export default function AppleWatchGrid() {
   } = useMouseField();
 
   const scales = positions.map(
-    (pos) =>
+    (pos, index) =>
       calculateInfluence(
         pos.x,
         pos.y,
+        expandedLenders[index].size,
         mouse.x,
         mouse.y,
         mouse.active
@@ -35,15 +36,15 @@ export default function AppleWatchGrid() {
   );
 
   const repulsion =
-              useRepulsionPhysics(
-                positions,
-                scales
-              );
+    useRepulsionPhysics(
+      positions,
+      scales
+    );
 
-              const floatingNodes =
-  useFloatingNodes(
-    expandedLenders.length
-  );
+  const floatingNodes =
+    useFloatingNodes(
+      expandedLenders.length
+    );
 
   return (
     <section className="relative py-32 bg-slate-950 overflow-hidden">
@@ -51,24 +52,24 @@ export default function AppleWatchGrid() {
       {/* Background Glow */}
       <div className="absolute inset-0">
         {mouse.active && (
-  <motion.div
-    className="absolute pointer-events-none rounded-full blur-[120px]"
-    animate={{
-      x: mouse.x - 200,
-      y: mouse.y - 200,
-    }}
-    transition={{
-      type: "tween",
-      duration: 0.1,
-    }}
-    style={{
-      width: 400,
-      height: 400,
-      background:
-        "rgba(59,130,246,0.12)",
-    }}
-  />
-)}
+          <motion.div
+            className="absolute pointer-events-none rounded-full blur-[120px]"
+            animate={{
+              x: mouse.x - 200,
+              y: mouse.y - 200,
+            }}
+            transition={{
+              type: "tween",
+              duration: 0.1,
+            }}
+            style={{
+              width: 400,
+              height: 400,
+              background:
+                "rgba(59,130,246,0.12)",
+            }}
+          />
+        )}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-blue-500/10 blur-[150px]" />
       </div>
 
@@ -84,14 +85,11 @@ export default function AppleWatchGrid() {
       </div>
 
       {/* Honeycomb */}
-      <div
-        className="relative z-10 flex justify-center"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-      >
+      <div className="relative z-10 flex justify-center">
         <motion.div
           className="relative"
           animate={{
+
             x: mouse.active
               ? (mouse.x - 600) * 0.02
               : 0,
@@ -110,6 +108,15 @@ export default function AppleWatchGrid() {
             height: 900,
           }}
         >
+          {mouse.active && (
+            <div
+              className="absolute w-3 h-3 bg-red-500 rounded-full z-[99999] pointer-events-none"
+              style={{
+                left: mouse.x,
+                top: mouse.y,
+              }}
+            />
+          )}
           {expandedLenders.map((lender, index) => {
             const pos = positions[index];
 
@@ -117,34 +124,35 @@ export default function AppleWatchGrid() {
               calculateInfluence(
                 pos.x,
                 pos.y,
+                lender.size,
                 mouse.x,
                 mouse.y,
                 mouse.active
               );
 
-            
+
 
             return (
               <Bubble
-  key={index}
-  lender={lender}
-  x={pos.x}
-  y={pos.y}
-  scale={influence.scale}
-  offsetX={influence.offsetX}
-  offsetY={influence.offsetY}
-  repelX={repulsion[index].x}
-  repelY={repulsion[index].y}
-  floatAmplitude={
-    floatingNodes[index].amplitude
-  }
-  floatDuration={
-    floatingNodes[index].duration
-  }
-  floatDelay={
-    floatingNodes[index].delay
-  }
-/>
+                key={index}
+                lender={lender}
+                x={pos.x}
+                y={pos.y}
+                scale={influence.scale}
+                offsetX={influence.offsetX}
+                offsetY={influence.offsetY}
+                repelX={repulsion[index].x}
+                repelY={repulsion[index].y}
+                floatAmplitude={
+                  floatingNodes[index].amplitude
+                }
+                floatDuration={
+                  floatingNodes[index].duration
+                }
+                floatDelay={
+                  floatingNodes[index].delay
+                }
+              />
             );
           })}
         </motion.div>

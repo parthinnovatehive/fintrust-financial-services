@@ -79,6 +79,7 @@ export default function Bubble({
             }}
            whileHover={{
   scale: scale + 0.5,
+  zIndex: 999999,
 }}
         >
             <div
