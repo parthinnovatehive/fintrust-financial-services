@@ -90,7 +90,7 @@
                         <Landmark className="w-3.5 h-3.5" />
                         Loan Solutions
                       </div>
-                      <NavItem title="Home Loans" desc="Mortgage & equity top-up consulting." target="home" />
+                      <NavItem title="Home Loans" desc="Mortgage & equity top-up consulting." target="home-loan" />
                       <NavItem title="Business Loans" desc="Unsecured MSME & corporate capital." target="home" />
                       <NavItem title="Personal Loans" desc="Flexible salary-backed credit channels." target="home" />
                       <NavItem title="Loan Against Property" desc="Monetize premium real estate assets." target="home" />
