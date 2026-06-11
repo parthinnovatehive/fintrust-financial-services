@@ -163,302 +163,302 @@ export default function Home() {
 
       {/* 1. HERO SECTION */}
       <section
-  ref={heroRef}
-  onMouseMove={handleMouseMove}
-  className="relative min-h-screen flex items-center bg-gradient-to-b from-[#FAF7F2] to-[#F3EDE2] px-6 lg:px-16 overflow-hidden pt-24 pb-12"
->
-  {/* Texture Overlay */}
-  <div
-    className="absolute inset-0 opacity-[0.015] pointer-events-none"
-    style={{
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>')`,
-    }}
-  />
+        ref={heroRef}
+        onMouseMove={handleMouseMove}
+        className="relative min-h-screen flex items-center bg-gradient-to-b from-[#FAF7F2] to-[#F3EDE2] px-6 lg:px-16 overflow-hidden pt-24 pb-12"
+      >
+        {/* Texture Overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.015] pointer-events-none"
+          style={{
+            backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>')`,
+          }}
+        />
 
-  {/* Subtle Grid Pattern */}
-  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-  {/* Mouse Glow */}
-  <div
-    className="absolute hidden lg:block w-[600px] h-[600px] rounded-full blur-[140px] opacity-15 pointer-events-none transition-opacity duration-300"
-    style={{
-      left: `${mousePos.x - 300}px`,
-      top: `${mousePos.y - 300}px`,
-      background: "radial-gradient(circle, rgba(0,168,150,0.2) 0%, rgba(11,19,43,0.05) 60%, transparent 100%)",
-    }}
-  />
+        {/* Mouse Glow */}
+        <div
+          className="absolute hidden lg:block w-[600px] h-[600px] rounded-full blur-[140px] opacity-15 pointer-events-none transition-opacity duration-300"
+          style={{
+            left: `${mousePos.x - 300}px`,
+            top: `${mousePos.y - 300}px`,
+            background: "radial-gradient(circle, rgba(0,168,150,0.2) 0%, rgba(11,19,43,0.05) 60%, transparent 100%)",
+          }}
+        />
 
-  <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-16 items-center relative z-10">
+        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-16 items-center relative z-10">
 
-    {/* LEFT COLUMN */}
-    <div className="lg:col-span-6 space-y-8">
-      {/* Trust Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
-        <div className="w-2 h-2 rounded-full bg-[#00A896] animate-pulse shadow-[0_0_6px_#00A896]" />
-        <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-slate-600">
-          Trusted Financial Advisory
-        </span>
-      </div>
+          {/* LEFT COLUMN */}
+          <div className="lg:col-span-6 space-y-8">
+            {/* Trust Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
+              <div className="w-2 h-2 rounded-full bg-[#00A896] animate-pulse shadow-[0_0_6px_#00A896]" />
+              <span className="text-[11px] tracking-[0.2em] uppercase font-semibold text-slate-600">
+                Trusted Financial Advisory
+              </span>
+            </div>
 
-      {/* Main Heading */}
-      <h1 className="text-5xl lg:text-7xl xl:text-8xl font-light leading-[1.05] tracking-tight text-[#0B132B]">
-        Financing
-        <br />
-        <span className="font-bold bg-gradient-to-r from-[#00A896] to-[#0B132B] bg-clip-text text-transparent">
-          Growth.
-        </span>
-        <br />
-        Building
-        <br />
-        <span className="font-semibold">Trust.</span>
-      </h1>
+            {/* Main Heading */}
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-light leading-[1.05] tracking-tight text-[#0B132B]">
+              Financing
+              <br />
+              <span className="font-bold bg-gradient-to-r from-[#00A896] to-[#0B132B] bg-clip-text text-transparent">
+                Growth.
+              </span>
+              <br />
+              Building
+              <br />
+              <span className="font-semibold">Trust.</span>
+            </h1>
 
-      {/* Description */}
-      <p className="max-w-xl text-base lg:text-lg text-slate-500 leading-relaxed font-light">
-        Access institutional lending, insurance advisory, and business growth solutions through one trusted financial partner.
-      </p>
+            {/* Description */}
+            <p className="max-w-xl text-base lg:text-lg text-slate-500 leading-relaxed font-light">
+              Access institutional lending, insurance advisory, and business growth solutions through one trusted financial partner.
+            </p>
 
-      {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 pt-2">
-        <a
-          href={`https://wa.me/${clientWhatsAppNumber}?text=${genericWhatsAppMessage}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0B132B] text-white font-semibold hover:bg-[#00A896] transition-all duration-300 shadow-lg shadow-[#0B132B]/20 hover:shadow-[#00A896]/30 hover:-translate-y-0.5"
-        >
-          <span>Speak With Advisor</span>
-          <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <a
+                href={`https://wa.me/${clientWhatsAppNumber}?text=${genericWhatsAppMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#0B132B] text-white font-semibold hover:bg-[#00A896] transition-all duration-300 shadow-lg shadow-[#0B132B]/20 hover:shadow-[#00A896]/30 hover:-translate-y-0.5"
+              >
+                <span>Speak With Advisor</span>
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
 
-        <a
-          href={`tel:${clientPhoneLine}`}
-          className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border border-slate-200 text-[#0B132B] font-semibold hover:border-[#00A896] hover:bg-[#00A896]/5 transition-all duration-300 hover:-translate-y-0.5"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-          <span>Call Expert Desk</span>
-        </a>
-      </div>
+              <a
+                href={`tel:${clientPhoneLine}`}
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white border border-slate-200 text-[#0B132B] font-semibold hover:border-[#00A896] hover:bg-[#00A896]/5 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Call Expert Desk</span>
+              </a>
+            </div>
 
-      {/* Stats Bar - Enhanced */}
-      <div className="grid grid-cols-3 gap-4 pt-6">
-        <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
-          <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
-            15<span className="text-[#00A896]">+</span>
+            {/* Stats Bar - Enhanced */}
+            <div className="grid grid-cols-3 gap-4 pt-6">
+              <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
+                <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
+                  15<span className="text-[#00A896]">+</span>
+                </div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
+                  Banking Partners
+                </div>
+                <div className="w-8 h-px bg-[#00A896]/30 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+
+              <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
+                <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
+                  10<span className="text-[#00A896]">K+</span>
+                </div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
+                  Clients Served
+                </div>
+                <div className="w-8 h-px bg-[#00A896]/30 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+
+              <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
+                <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
+                  98<span className="text-[#00A896]">%</span>
+                </div>
+                <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
+                  Satisfaction Rate
+                </div>
+                <div className="w-8 h-px bg-[#00A896]/30 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            </div>
           </div>
-          <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
-            Banking Partners
+
+          {/* RIGHT COLUMN */}
+          {/* RIGHT COLUMN */}
+          <div className="lg:col-span-6 relative">
+            {/* Background Glow */}
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#00A896]/10 rounded-full blur-[120px]" />
+            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#0B132B]/5 rounded-full blur-[100px]" />
+
+            {/* Main Card */}
+            <div className="relative bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xl">
+
+              {/* Card Header */}
+              <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-slate-100 flex justify-between items-center bg-gradient-to-r from-white to-slate-50/50">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]" />
+                    <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#00A896] font-bold">
+                      FINTRUST NETWORK
+                    </p>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-semibold text-[#0B132B] mt-1">
+                    Capital Ecosystem
+                  </h3>
+                </div>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-[#00A896]/10 border border-[#00A896]/20">
+                  <span className="w-1.5 h-1.5 bg-[#00A896] rounded-full animate-pulse" />
+                  <span className="text-[8px] sm:text-[10px] font-mono text-[#00A896] font-semibold">
+                    LIVE
+                  </span>
+                </div>
+              </div>
+
+              {/* Stats Grid - Top Row - FIXED FOR MOBILE */}
+              <div className="grid grid-cols-2 border-b border-slate-100">
+                {/* Left Stat - Banking Partners */}
+                <div className="px-3 sm:px-6 py-4 sm:py-6 border-r border-slate-100 text-center">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B132B]">
+                    50<span className="text-[#00A896]">+</span>
+                  </div>
+                  <p className="text-[8px] sm:text-[10px] uppercase tracking-wider text-slate-500 mt-1 sm:mt-2 font-medium">
+                    Banking Partners
+                  </p>
+                  <div className="w-8 sm:w-10 h-px bg-[#00A896]/30 mx-auto mt-2 sm:mt-3" />
+                </div>
+
+                {/* Right Stat - Approval */}
+                <div className="px-3 sm:px-6 py-4 sm:py-6 text-center">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00A896]">
+                    98<span className="text-[#0B132B]">%</span>
+                  </div>
+                  <p className="text-[8px] sm:text-[10px] uppercase tracking-wider text-slate-500 mt-1 sm:mt-2 font-medium">
+                    Approval Rate
+                  </p>
+                  <div className="w-8 sm:w-10 h-px bg-[#00A896]/30 mx-auto mt-2 sm:mt-3" />
+                </div>
+              </div>
+
+              {/* Services Grid - Bottom Row - FIXED FOR MOBILE */}
+              <div className="grid grid-cols-2">
+                {/* Loan Solutions */}
+                <div className="px-3 sm:px-6 py-3 sm:py-5 border-r border-slate-100 bg-slate-50/30">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                    <Landmark className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00A896]" />
+                    <span className="text-xs sm:text-sm font-semibold text-[#0B132B]">Loan Solutions</span>
+                  </div>
+                  <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed">
+                    Home • Business • LAP • Working Capital
+                  </p>
+                </div>
+
+                {/* Insurance */}
+                <div className="px-3 sm:px-6 py-3 sm:py-5 bg-slate-50/30">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                    <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00A896]" />
+                    <span className="text-xs sm:text-sm font-semibold text-[#0B132B]">Insurance</span>
+                  </div>
+                  <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed">
+                    Health • Life • Term • Corporate
+                  </p>
+                </div>
+              </div>
+
+              {/* Card Footer */}
+              <div className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-50 border-t border-slate-100">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium">
+                    Integrated Banking Network
+                  </p>
+                  <span className="text-[10px] sm:text-[11px] font-semibold text-[#00A896]">50+ Banks & NBFCs</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Badge - Capital Facilitated - ADJUSTED FOR MOBILE */}
+            <div className="absolute -right-2 sm:-right-16 top-37 sm:top-24 lg:top-32 bg-gradient-to-br from-[#0B132B] to-[#1a2a4a] text-white px-3 sm:px-5 py-2.5 sm:py-4 rounded-xl shadow-2xl border-l-4 border-[#00A896]">
+              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#00A896] leading-none">
+                ₹500<span className="text-white text-base sm:text-xl">Cr+</span>
+              </div>
+              <div className="text-[7px] sm:text-[9px] uppercase tracking-wider text-slate-400 mt-0.5 sm:mt-1 font-medium">
+                Capital Facilitated
+              </div>
+            </div>
+
           </div>
-          <div className="w-8 h-px bg-[#00A896]/30 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
-
-        <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
-          <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
-            10<span className="text-[#00A896]">K+</span>
-          </div>
-          <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
-            Clients Served
-          </div>
-          <div className="w-8 h-px bg-[#00A896]/30 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-        </div>
-
-        <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
-          <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
-            98<span className="text-[#00A896]">%</span>
-          </div>
-          <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
-            Satisfaction Rate
-          </div>
-          <div className="w-8 h-px bg-[#00A896]/30 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-        </div>
-      </div>
-    </div>
-
-    {/* RIGHT COLUMN */}
-    {/* RIGHT COLUMN */}
-<div className="lg:col-span-6 relative">
-  {/* Background Glow */}
-  <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#00A896]/10 rounded-full blur-[120px]" />
-  <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#0B132B]/5 rounded-full blur-[100px]" />
-
-  {/* Main Card */}
-  <div className="relative bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xl">
-    
-    {/* Card Header */}
-    <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-slate-100 flex justify-between items-center bg-gradient-to-r from-white to-slate-50/50">
-      <div>
-        <div className="flex items-center gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]" />
-          <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#00A896] font-bold">
-            FINTRUST NETWORK
-          </p>
-        </div>
-        <h3 className="text-base sm:text-lg font-semibold text-[#0B132B] mt-1">
-          Capital Ecosystem
-        </h3>
-      </div>
-      <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-[#00A896]/10 border border-[#00A896]/20">
-        <span className="w-1.5 h-1.5 bg-[#00A896] rounded-full animate-pulse" />
-        <span className="text-[8px] sm:text-[10px] font-mono text-[#00A896] font-semibold">
-          LIVE
-        </span>
-      </div>
-    </div>
-
-    {/* Stats Grid - Top Row - FIXED FOR MOBILE */}
-    <div className="grid grid-cols-2 border-b border-slate-100">
-      {/* Left Stat - Banking Partners */}
-      <div className="px-3 sm:px-6 py-4 sm:py-6 border-r border-slate-100 text-center">
-        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B132B]">
-          50<span className="text-[#00A896]">+</span>
-        </div>
-        <p className="text-[8px] sm:text-[10px] uppercase tracking-wider text-slate-500 mt-1 sm:mt-2 font-medium">
-          Banking Partners
-        </p>
-        <div className="w-8 sm:w-10 h-px bg-[#00A896]/30 mx-auto mt-2 sm:mt-3" />
-      </div>
-      
-      {/* Right Stat - Approval */}
-      <div className="px-3 sm:px-6 py-4 sm:py-6 text-center">
-        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#00A896]">
-          98<span className="text-[#0B132B]">%</span>
-        </div>
-        <p className="text-[8px] sm:text-[10px] uppercase tracking-wider text-slate-500 mt-1 sm:mt-2 font-medium">
-          Approval Rate
-        </p>
-        <div className="w-8 sm:w-10 h-px bg-[#00A896]/30 mx-auto mt-2 sm:mt-3" />
-      </div>
-    </div>
-
-    {/* Services Grid - Bottom Row - FIXED FOR MOBILE */}
-    <div className="grid grid-cols-2">
-      {/* Loan Solutions */}
-      <div className="px-3 sm:px-6 py-3 sm:py-5 border-r border-slate-100 bg-slate-50/30">
-        <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-          <Landmark className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00A896]" />
-          <span className="text-xs sm:text-sm font-semibold text-[#0B132B]">Loan Solutions</span>
-        </div>
-        <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed">
-          Home • Business • LAP • Working Capital
-        </p>
-      </div>
-      
-      {/* Insurance */}
-      <div className="px-3 sm:px-6 py-3 sm:py-5 bg-slate-50/30">
-        <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-          <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00A896]" />
-          <span className="text-xs sm:text-sm font-semibold text-[#0B132B]">Insurance</span>
-        </div>
-        <p className="text-[10px] sm:text-xs text-slate-500 leading-relaxed">
-          Health • Life • Term • Corporate
-        </p>
-      </div>
-    </div>
-
-    {/* Card Footer */}
-    <div className="px-4 sm:px-6 py-3 sm:py-4 bg-slate-50 border-t border-slate-100">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0">
-        <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium">
-          Integrated Banking Network
-        </p>
-        <span className="text-[10px] sm:text-[11px] font-semibold text-[#00A896]">50+ Banks & NBFCs</span>
-      </div>
-    </div>
-  </div>
-
-  {/* Floating Badge - Capital Facilitated - ADJUSTED FOR MOBILE */}
-  <div className="absolute -right-2 sm:-right-16 top-37 sm:top-24 lg:top-32 bg-gradient-to-br from-[#0B132B] to-[#1a2a4a] text-white px-3 sm:px-5 py-2.5 sm:py-4 rounded-xl shadow-2xl border-l-4 border-[#00A896]">
-    <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#00A896] leading-none">
-      ₹500<span className="text-white text-base sm:text-xl">Cr+</span>
-    </div>
-    <div className="text-[7px] sm:text-[9px] uppercase tracking-wider text-slate-400 mt-0.5 sm:mt-1 font-medium">
-      Capital Facilitated
-    </div>
-  </div>
-
-</div>  
-  </div>
-</section>
+      </section>
 
       {/* 2. INTERACTIVE CALCULATOR SUITE WITH SYSTEMIC LEAD CTAs */}
-<section className="bg-white py-20 border-b border-slate-200/60 relative">
-  <div className="max-w-7xl mx-auto px-6 lg:px-16">
-    <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-      <span className="text-[11px] font-bold tracking-widest text-emerald-600 uppercase block">Instant Eligibility Estimator</span>
-      <h2 className="text-3xl font-light tracking-tight text-[#0B132B]">Configure Your Financing Structure</h2>
-      <p className="text-slate-500 text-sm font-light">Adjust the metrics below to view estimated monthly repayment plans instantly.</p>
-    </div>
-    
-    {/* Main Core Component Frame Container */}
-    <div className="bg-[#FAF7F2] p-4 sm:p-8 rounded-2xl border border-slate-200/70 shadow-sm">
-      
-      {/* Renders your EMI Calculator UI */}
-      <InteractiveSuite />
-      
-      {/* ⚡ THE CONVERSION ENGINE: Captures intent and generates the custom message link */}
-      <div className="mt-8 pt-8 border-t border-slate-200/70 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-        <div className="md:col-span-7">
-          <h4 className="text-sm font-semibold text-[#0B132B] mb-1">Satisfied with these calculations?</h4>
-          <p className="text-xs text-slate-500 font-light">Connect with our processing desk right now to submit your configuration for instant pre-approval across our 15+ banking partners.</p>
+      <section className="bg-white py-20 border-b border-slate-200/60 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <span className="text-[11px] font-bold tracking-widest text-emerald-600 uppercase block">Instant Eligibility Estimator</span>
+            <h2 className="text-3xl font-light tracking-tight text-[#0B132B]">Configure Your Financing Structure</h2>
+            <p className="text-slate-500 text-sm font-light">Adjust the metrics below to view estimated monthly repayment plans instantly.</p>
+          </div>
+
+          {/* Main Core Component Frame Container */}
+          <div className="bg-[#FAF7F2] p-4 sm:p-8 rounded-2xl border border-slate-200/70 shadow-sm">
+
+            {/* Renders your EMI Calculator UI */}
+            <InteractiveSuite />
+
+            {/* ⚡ THE CONVERSION ENGINE: Captures intent and generates the custom message link */}
+            <div className="mt-8 pt-8 border-t border-slate-200/70 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div className="md:col-span-7">
+                <h4 className="text-sm font-semibold text-[#0B132B] mb-1">Satisfied with these calculations?</h4>
+                <p className="text-xs text-slate-500 font-light">Connect with our processing desk right now to submit your configuration for instant pre-approval across our 15+ banking partners.</p>
+              </div>
+              <div className="md:col-span-5 flex flex-col sm:flex-row gap-3 justify-end w-full">
+                <button
+                  onClick={() => {
+                    // 1. Attempt to scrape current visual slider totals dynamically from the browser DOM safely 
+                    // (This acts as an overlay catcher so you don't have to rewrite your child component's internal state)
+                    const displayElements = document.querySelectorAll('.bg-white, .text-3xl, .font-semibold');
+                    let capturedDetails = "the values configured on the matrix panel";
+
+                    // If your calculator text uses common currency layouts, we scrape them seamlessly
+                    const numbers = Array.from(document.querySelectorAll('h3, span, p, input'))
+                      .map(el => el.innerText || el.value || '')
+                      .filter(txt => txt.includes('₹') || txt.includes('%') || txt.includes('yrs') || txt.includes('months'));
+
+                    if (numbers.length > 0) {
+                      // Creates a clean readable list from whatever numbers are currently active on screen
+                      capturedDetails = numbers.slice(0, 4).join(', ');
+                    }
+
+                    const customWhatsAppText = `Hi Fintrust, I just used your EMI calculator tool and want to verify/apply for a loan with these estimated terms: (${capturedDetails}). Please guide me through the document submission blueprint!`;
+
+                    // 2. Fire the deep-link redirection line
+                    window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent(customWhatsAppText)}`, '_blank');
+                  }}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg.5 bg-[#128C7E] text-white text-xs font-bold tracking-widest uppercase rounded-lg hover:bg-[#075E54] transition-all shadow-md shadow-emerald-900/10 cursor-pointer w-full sm:w-auto"
+                >
+                  {/* Standard Vector Representation matching official identity updates */}
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  <span>Lock This Rate</span>
+                </button>
+
+                <a
+                  href={`tel:${clientPhoneLine}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0B132B] text-white text-xs font-bold tracking-widest uppercase rounded-lg hover:bg-slate-800 transition-all shadow-md shadow-slate-900/10 w-full sm:w-auto text-center"
+                >
+                  <span>Speak to Consultant</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div className="md:col-span-5 flex flex-col sm:flex-row gap-3 justify-end w-full">
-          <button
-            onClick={() => {
-              // 1. Attempt to scrape current visual slider totals dynamically from the browser DOM safely 
-              // (This acts as an overlay catcher so you don't have to rewrite your child component's internal state)
-              const displayElements = document.querySelectorAll('.bg-white, .text-3xl, .font-semibold');
-              let capturedDetails = "the values configured on the matrix panel";
-              
-              // If your calculator text uses common currency layouts, we scrape them seamlessly
-              const numbers = Array.from(document.querySelectorAll('h3, span, p, input'))
-                .map(el => el.innerText || el.value || '')
-                .filter(txt => txt.includes('₹') || txt.includes('%') || txt.includes('yrs') || txt.includes('months'));
-
-              if (numbers.length > 0) {
-                // Creates a clean readable list from whatever numbers are currently active on screen
-                capturedDetails = numbers.slice(0, 4).join(', ');
-              }
-
-              const customWhatsAppText = `Hi Fintrust, I just used your EMI calculator tool and want to verify/apply for a loan with these estimated terms: (${capturedDetails}). Please guide me through the document submission blueprint!`;
-              
-              // 2. Fire the deep-link redirection line
-              window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent(customWhatsAppText)}`, '_blank');
-            }}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg.5 bg-[#128C7E] text-white text-xs font-bold tracking-widest uppercase rounded-lg hover:bg-[#075E54] transition-all shadow-md shadow-emerald-900/10 cursor-pointer w-full sm:w-auto"
-          >
-            {/* Standard Vector Representation matching official identity updates */}
-            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span>Lock This Rate</span>
-          </button>
-          
-          <a
-            href={`tel:${clientPhoneLine}`}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0B132B] text-white text-xs font-bold tracking-widest uppercase rounded-lg hover:bg-slate-800 transition-all shadow-md shadow-slate-900/10 w-full sm:w-auto text-center"
-          >
-            <span>Speak to Consultant</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* 3. APPLE WATCH GRID */}
       <AppleWatchGrid />
 
       {/* 4. METRICS SECTION */}
-      <section 
-        ref={statsRef} 
+      <section
+        ref={statsRef}
         className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-[#0B132B] text-white px-6 lg:px-16 relative overflow-hidden -mt-12 lg:-mt-24 z-30"
       >
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        
+
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 text-center relative z-10 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
           <div className="pt-6 lg:pt-0">
             <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
@@ -490,7 +490,7 @@ export default function Home() {
       {/* 5. INTERACTIVE ADVANTAGE MATRIX WITH CLEAN 3s AUTO-PLAY */}
       <section className="py-28 px-6 lg:px-16 bg-[#F4EDE2] border-b border-slate-200 relative">
         <div className="max-w-7xl mx-auto">
-          
+
           <div className="max-w-2xl mb-16 space-y-3">
             <div className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
@@ -507,7 +507,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
+
             <div className="lg:col-span-5 space-y-2.5">
               {advantageFeatures.map((feat, idx) => {
                 const IconComponent = feat.icon;
@@ -516,14 +516,13 @@ export default function Home() {
                   <button
                     key={idx}
                     onClick={() => setActiveFeature(idx)}
-                    className={`w-full text-left flex items-center gap-4 p-5 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden relative ${
-                      isSelected
+                    className={`w-full text-left flex items-center gap-4 p-5 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden relative ${isSelected
                         ? "bg-white border-slate-300 shadow-md translate-x-2"
                         : "bg-transparent border-transparent hover:bg-white/40 hover:border-slate-200"
-                    }`}
+                      }`}
                   >
                     {isSelected && (
-                      <motion.div 
+                      <motion.div
                         initial={{ width: "0%" }}
                         animate={{ width: "100%" }}
                         transition={{ duration: 3, ease: "linear" }}
@@ -531,14 +530,12 @@ export default function Home() {
                       />
                     )}
 
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transition-colors ${
-                      isSelected ? "bg-[#0B132B] border-[#0B132B] text-white" : "bg-white border-slate-200 text-slate-600"
-                    }`}>
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transition-colors ${isSelected ? "bg-[#0B132B] border-[#0B132B] text-white" : "bg-white border-slate-200 text-slate-600"
+                      }`}>
                       <IconComponent className="w-4 h-4" />
                     </div>
-                    <span className={`text-sm font-medium tracking-tight transition-colors ${
-                      isSelected ? "text-[#0B132B] font-semibold" : "text-slate-600"
-                    }`}>
+                    <span className={`text-sm font-medium tracking-tight transition-colors ${isSelected ? "text-[#0B132B] font-semibold" : "text-slate-600"
+                      }`}>
                       {feat.title}
                     </span>
                   </button>
@@ -549,7 +546,7 @@ export default function Home() {
             <div className="lg:col-span-7 lg:sticky lg:top-24">
               <div className="w-full bg-[#0B132B] text-white rounded-2xl p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[400px] flex flex-col justify-between">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
-                
+
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeFeature}
@@ -591,201 +588,201 @@ export default function Home() {
 
       {/* 6. COMPREHENSIVE SERVICES BLUEPRINT */}
       <section className="py-28 px-6 lg:px-16 bg-[#FAF7F2] border-b border-slate-200 relative overflow-hidden">
-  {/* Subtle background pattern */}
-  <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(0,168,150,0.03)_0%,transparent_50%)]" />
-  </div>
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(0,168,150,0.03)_0%,transparent_50%)]" />
+        </div>
 
-  <div className="max-w-7xl mx-auto relative z-10">
-    {/* Section Header */}
-    <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm">
-        <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
-        <span className="text-[10px] font-bold tracking-[0.2em] text-[#0B132B] uppercase">Capabilities Matrix</span>
-      </div>
-      <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-[#0B132B]">
-        Bespoke Services <span className="font-semibold bg-gradient-to-r from-[#00A896] to-[#0B132B] bg-clip-text text-transparent">Blueprint</span>
-      </h2>
-      <p className="text-slate-500 text-sm font-light max-w-lg mx-auto">
-        Simple, transparent solutions spanning traditional asset leverage and digital market performance platforms.
-      </p>
-      <div className="w-12 h-px bg-[#00A896]/50 mx-auto mt-2" />
-    </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Section Header */}
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#0B132B] uppercase">Capabilities Matrix</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-[#0B132B]">
+              Bespoke Services <span className="font-semibold bg-gradient-to-r from-[#00A896] to-[#0B132B] bg-clip-text text-transparent">Blueprint</span>
+            </h2>
+            <p className="text-slate-500 text-sm font-light max-w-lg mx-auto">
+              Simple, transparent solutions spanning traditional asset leverage and digital market performance platforms.
+            </p>
+            <div className="w-12 h-px bg-[#00A896]/50 mx-auto mt-2" />
+          </div>
 
-    {/* Three Column Grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
-      
-      {/* LOAN SOLUTIONS */}
-      <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-        
-        <div className="p-7 flex flex-col h-full">
-          {/* Icon Section */}
-          <div className="relative mb-5">
-            <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20 group-hover:border-[#00A896]/40 group-hover:bg-[#0B132B] transition-all duration-300">
-              <Landmark className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
+          {/* Three Column Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
+
+            {/* LOAN SOLUTIONS */}
+            <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+
+              <div className="p-7 flex flex-col h-full">
+                {/* Icon Section */}
+                <div className="relative mb-5">
+                  <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20 group-hover:border-[#00A896]/40 group-hover:bg-[#0B132B] transition-all duration-300">
+                    <Landmark className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
+                  </div>
+                </div>
+
+                {/* Title & Description */}
+                <div className="mb-5">
+                  <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Loan Solutions</h3>
+                  <p className="text-xs text-slate-500 font-light">Simplifying systemic borrowing channels.</p>
+                </div>
+
+                <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
+
+                {/* Services List */}
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "Home Loans", "Business Loans", "Personal Loans",
+                    "Loan Against Property", "Working Capital Finance",
+                    "Balance Transfer & Top-Up Loans", "Professional Loans Desk"
+                  ].map((loan, i) => (
+                    <li
+                      key={i}
+                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + loan)}`, "_blank")}
+                      className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
+                      <span className="group-hover/item:text-[#0B132B] transition-colors">{loan}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Footer Link */}
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Loan Solutions in detail.")}`, "_blank")}
+                    className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
+                  >
+                    <span>Explore all loans</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* INSURANCE SOLUTIONS */}
+            <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+
+              <div className="p-7 flex flex-col h-full">
+                <div className="relative mb-5">
+                  <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20 group-hover:border-[#00A896]/40 group-hover:bg-[#0B132B] transition-all duration-300">
+                    <HeartPulse className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
+                  </div>
+                </div>
+
+                <div className="mb-5">
+                  <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Insurance Solutions</h3>
+                  <p className="text-xs text-slate-500 font-light">Premium asset & health shields.</p>
+                </div>
+
+                <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
+
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "Health Insurance", "Life Insurance", "Term Insurance",
+                    "Motor Insurance", "Corporate Risk Coverage", "Investment Protection Plans"
+                  ].map((ins, i) => (
+                    <li
+                      key={i}
+                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + ins)}`, "_blank")}
+                      className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
+                      <span className="group-hover/item:text-[#0B132B] transition-colors">{ins}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Insurance Solutions in detail.")}`, "_blank")}
+                    className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
+                  >
+                    <span>Explore all plans</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* DIGITAL MARKETING SUITE */}
+            <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+
+              <div className="p-7 flex flex-col h-full">
+                <div className="relative mb-5">
+                  <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20 group-hover:border-[#00A896]/40 group-hover:bg-[#0B132B] transition-all duration-300">
+                    <BarChart3 className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
+                  </div>
+                </div>
+
+                <div className="mb-5">
+                  <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Digital Marketing Suite</h3>
+                  <p className="text-xs text-slate-500 font-light">Result-oriented commercial growth.</p>
+                </div>
+
+                <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
+
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "Social Media Marketing", "Search Engine Optimization",
+                    "Google Ads & PPC Funnels", "Website Design & Development",
+                    "Lead Generation Architecture", "Campaign Management",
+                    "WhatsApp & Conversational Flow"
+                  ].map((mkt, i) => (
+                    <li
+                      key={i}
+                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm looking to scale my business infrastructure. Let's discuss your execution models for: " + mkt)}`, "_blank")}
+                      className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
+                      <span className="group-hover/item:text-[#0B132B] transition-colors truncate">{mkt}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <button
+                    onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Digital Marketing solutions in detail.")}`, "_blank")}
+                    className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
+                  >
+                    <span>Explore services</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          
-          {/* Title & Description */}
-          <div className="mb-5">
-            <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Loan Solutions</h3>
-            <p className="text-xs text-slate-500 font-light">Simplifying systemic borrowing channels.</p>
-          </div>
-          
-          <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
-          
-          {/* Services List */}
-          <ul className="space-y-3 flex-1">
-            {[
-              "Home Loans", "Business Loans", "Personal Loans",
-              "Loan Against Property", "Working Capital Finance",
-              "Balance Transfer & Top-Up Loans", "Professional Loans Desk"
-            ].map((loan, i) => (
-              <li 
-                key={i} 
-                onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + loan)}`, "_blank")}
-                className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
-                <span className="group-hover/item:text-[#0B132B] transition-colors">{loan}</span>
-              </li>
-            ))}
-          </ul>
-          
-          {/* Footer Link */}
-          <div className="mt-6 pt-4 border-t border-slate-100">
-            <button 
-              onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Loan Solutions in detail.")}`, "_blank")}
-              className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
-            >
-              <span>Explore all loans</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        </div>
-      </div>
 
-      {/* INSURANCE SOLUTIONS */}
-      <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-        
-        <div className="p-7 flex flex-col h-full">
-          <div className="relative mb-5">
-            <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20 group-hover:border-[#00A896]/40 group-hover:bg-[#0B132B] transition-all duration-300">
-              <HeartPulse className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
+          {/* Trust Indicator */}
+          <div className="flex justify-center mt-12">
+            <div className="inline-flex items-center gap-4 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border border-slate-200 shadow-sm">
+              <div className="flex items-center gap-2">
+                <Shield className="w-3.5 h-3.5 text-[#00A896]" />
+                <span className="text-[10px] text-slate-500">Trusted by 10,000+ clients</span>
+              </div>
+              <div className="w-px h-3 bg-slate-200" />
+              <div className="flex items-center gap-2">
+                <Building2 className="w-3.5 h-3.5 text-[#00A896]" />
+                <span className="text-[10px] text-slate-500">50+ banking partners</span>
+              </div>
+              <div className="w-px h-3 bg-slate-200" />
+              <div className="flex items-center gap-2">
+                <Award className="w-3.5 h-3.5 text-[#00A896]" />
+                <span className="text-[10px] text-slate-500">98% client satisfaction</span>
+              </div>
             </div>
           </div>
-          
-          <div className="mb-5">
-            <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Insurance Solutions</h3>
-            <p className="text-xs text-slate-500 font-light">Premium asset & health shields.</p>
-          </div>
-          
-          <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
-          
-          <ul className="space-y-3 flex-1">
-            {[
-              "Health Insurance", "Life Insurance", "Term Insurance",
-              "Motor Insurance", "Corporate Risk Coverage", "Investment Protection Plans"
-            ].map((ins, i) => (
-              <li 
-                key={i} 
-                onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + ins)}`, "_blank")}
-                className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
-                <span className="group-hover/item:text-[#0B132B] transition-colors">{ins}</span>
-              </li>
-            ))}
-          </ul>
-          
-          <div className="mt-6 pt-4 border-t border-slate-100">
-            <button 
-              onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Insurance Solutions in detail.")}`, "_blank")}
-              className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
-            >
-              <span>Explore all plans</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
         </div>
-      </div>
-
-      {/* DIGITAL MARKETING SUITE */}
-      <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-        
-        <div className="p-7 flex flex-col h-full">
-          <div className="relative mb-5">
-            <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20 group-hover:border-[#00A896]/40 group-hover:bg-[#0B132B] transition-all duration-300">
-              <BarChart3 className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
-            </div>
-          </div>
-          
-          <div className="mb-5">
-            <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Digital Marketing Suite</h3>
-            <p className="text-xs text-slate-500 font-light">Result-oriented commercial growth.</p>
-          </div>
-          
-          <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
-          
-          <ul className="space-y-3 flex-1">
-            {[
-              "Social Media Marketing", "Search Engine Optimization",
-              "Google Ads & PPC Funnels", "Website Design & Development",
-              "Lead Generation Architecture", "Campaign Management",
-              "WhatsApp & Conversational Flow"
-            ].map((mkt, i) => (
-              <li 
-                key={i} 
-                onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm looking to scale my business infrastructure. Let's discuss your execution models for: " + mkt)}`, "_blank")}
-                className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
-                <span className="group-hover/item:text-[#0B132B] transition-colors truncate">{mkt}</span>
-              </li>
-            ))}
-          </ul>
-          
-          <div className="mt-6 pt-4 border-t border-slate-100">
-            <button 
-              onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Digital Marketing solutions in detail.")}`, "_blank")}
-              className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
-            >
-              <span>Explore services</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Trust Indicator */}
-    <div className="flex justify-center mt-12">
-      <div className="inline-flex items-center gap-4 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border border-slate-200 shadow-sm">
-        <div className="flex items-center gap-2">
-          <Shield className="w-3.5 h-3.5 text-[#00A896]" />
-          <span className="text-[10px] text-slate-500">Trusted by 10,000+ clients</span>
-        </div>
-        <div className="w-px h-3 bg-slate-200" />
-        <div className="flex items-center gap-2">
-          <Building2 className="w-3.5 h-3.5 text-[#00A896]" />
-          <span className="text-[10px] text-slate-500">50+ banking partners</span>
-        </div>
-        <div className="w-px h-3 bg-slate-200" />
-        <div className="flex items-center gap-2">
-          <Award className="w-3.5 h-3.5 text-[#00A896]" />
-          <span className="text-[10px] text-slate-500">98% client satisfaction</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* 7. ABOUT FINTRUST SECTION */}
       <section className="py-28 px-6 lg:px-16 bg-white border-b border-slate-200">
@@ -823,7 +820,7 @@ export default function Home() {
           <p>© {new Date().getFullYear()} Fintrust. Built for Institutional Scaling & Digital Growth.</p>
         </div>
       </footer>
-      
+
       <WhatsAppButton activePage="home" />
     </div>
   );
