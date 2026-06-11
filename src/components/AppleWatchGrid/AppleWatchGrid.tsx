@@ -85,7 +85,7 @@ export default function AppleWatchGrid() {
       </div>
 
       {/* Honeycomb */}
-      <div className="relative z-10 flex justify-start md:justify-center overflow-x-auto md:overflow-visible pt-8 md:pt-0 pb-4 pl-5">
+      <div className="relative z-10 flex justify-start md:justify-center overflow-x-auto md:overflow-visible pt-8 md:pt-0 pb-0 pl-5">
         <motion.div
           className="relative shrink-0"
           animate={{

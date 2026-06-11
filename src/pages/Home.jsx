@@ -163,103 +163,207 @@ export default function Home() {
 
       {/* 1. HERO SECTION */}
       <section
-        ref={heroRef}
-        onMouseMove={handleMouseMove}
-        className="relative min-h-[95vh] flex items-center bg-gradient-to-b from-[#FAF7F2] to-[#F3EDE2] px-6 lg:px-16 overflow-hidden pt-24 border-b border-slate-200/50"
-      >
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.02] mix-blend-overlay"
-          style={{
-            backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>')`
-          }}
-        />
+  ref={heroRef}
+  onMouseMove={handleMouseMove}
+  className="relative min-h-screen flex items-center bg-gradient-to-b from-[#FAF7F2] to-[#F3EDE2] px-6 lg:px-16 overflow-hidden pt-24 pb-5"
+>
+  {/* Texture */}
+  <div
+    className="absolute inset-0 opacity-[0.02] pointer-events-none"
+    style={{
+      backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>')`,
+    }}
+  />
 
-        <div
-          className="absolute w-[600px] h-[600px] rounded-full pointer-events-none blur-[140px] opacity-20 mix-blend-multiply transition-all duration-300 ease-out hidden lg:block bg-gradient-to-r from-[#00A896] to-[#0d2149]"
-          style={{
-            left: `${mousePos.x - 300}px`,
-            top: `${mousePos.y - 300}px`,
-          }}
-        />
+  {/* Mouse Glow */}
+  <div
+    className="absolute hidden lg:block w-[600px] h-[600px] rounded-full blur-[140px] opacity-20 pointer-events-none"
+    style={{
+      left: `${mousePos.x - 300}px`,
+      top: `${mousePos.y - 300}px`,
+      background:
+        "radial-gradient(circle, rgba(0,168,150,0.25) 0%, rgba(11,19,43,0.08) 60%, transparent 100%)",
+    }}
+  />
 
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-          <div className="lg:col-span-7 space-y-8">
-            <div className="inline-flex items-center gap-3 bg-white/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-slate-200/50 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#00A896] animate-pulse" />
-              <span className="text-slate-700 text-[10px] font-semibold uppercase tracking-widest">
-                Institutional Capital × Digital Performance
-              </span>
-            </div>
+  <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-20 items-center relative z-10">
 
-            <h1 className="text-4xl sm:text-6xl font-light tracking-tight text-[#0B132B] leading-[1.1]">
-              Architecting secure <br />
-              <span className="font-semibold text-[#00A896]">financial pathways</span> <br />
-              & digital market scale.
-            </h1>
+    {/* LEFT */}
+    <div className="lg:col-span-6">
 
-            <p className="text-base text-slate-600 max-w-lg leading-relaxed font-light">
-              Fintrust operates at the intersection of premium asset advisory and high-yield digital acquisition. We engineer custom liquidity frameworks while building data-driven client pipelines.
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8">
+        <div className="w-2 h-2 rounded-full bg-[#00A896] animate-pulse" />
+        <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-slate-600">
+          Trusted Financial Advisory
+        </span>
+      </div>
+
+      <h1 className="text-5xl lg:text-7xl font-light leading-[0.95] tracking-tight text-[#0B132B]">
+        Financing
+        <br />
+        <span className="font-semibold text-[#00A896]">
+          Growth.
+        </span>
+        <br />
+        Building
+        <br />
+        Trust.
+      </h1>
+
+      <p className="mt-8 max-w-xl text-lg text-slate-600 leading-relaxed font-light">
+        Access institutional lending, insurance advisory, and business
+        growth solutions through one trusted financial partner.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 mt-10">
+
+        <a
+          href={`https://wa.me/${clientWhatsAppNumber}?text=${genericWhatsAppMessage}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-4 rounded-xl bg-[#0B132B] text-white font-medium hover:bg-[#00A896] transition-all duration-300 shadow-xl"
+        >
+          Speak With Advisor
+        </a>
+
+        <a
+          href={`tel:${clientPhoneLine}`}
+          className="px-8 py-4 rounded-xl bg-white border border-slate-200 text-[#0B132B] font-medium hover:border-slate-400 transition-all duration-300"
+        >
+          Call Expert Desk
+        </a>
+
+      </div>
+
+      {/* Premium Stats Bar */}
+<div className="grid grid-cols-3 gap-4 mt-12">
+
+  <div className="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl px-6 py-5 shadow-sm">
+    <div className="text-4xl font-light text-[#0B132B] leading-none">
+      15<span className="text-[#00A896]">+</span>
+    </div>
+    <div className="mt-3 text-[10px] uppercase tracking-[0.25em] text-slate-500 font-medium">
+      Lending Partners
+    </div>
+  </div>
+
+  <div className="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl px-6 py-5 shadow-sm">
+    <div className="text-4xl font-light text-[#0B132B] leading-none">
+      10<span className="text-[#00A896]">K+</span>
+    </div>
+    <div className="mt-3 text-[10px] uppercase tracking-[0.25em] text-slate-500 font-medium">
+      Clients Served
+    </div>
+  </div>
+
+  <div className="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl px-6 py-5 shadow-sm">
+    <div className="text-4xl font-light text-[#0B132B] leading-none">
+      98<span className="text-[#00A896]">%</span>
+    </div>
+    <div className="mt-3 text-[10px] uppercase tracking-[0.25em] text-slate-500 font-medium">
+      Client Satisfaction
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+    {/* RIGHT */}
+    <div className="lg:col-span-6 relative">
+
+      <div className="absolute -top-10 -right-10 w-80 h-80 bg-[#00A896]/10 rounded-full blur-[120px]" />
+
+      <div className="relative bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
+
+        {/* Header */}
+        <div className="px-8 py-6 border-b border-slate-100 flex justify-between items-center">
+
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#00A896] font-bold">
+              FINTRUST NETWORK
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <a 
-                href={`https://wa.me/${clientWhatsAppNumber}?text=${genericWhatsAppMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0B132B] text-white text-sm font-medium rounded-lg hover:bg-[#00A896] transition-all duration-300 shadow-lg shadow-slate-900/10 group cursor-pointer"
-              >
-                <span>Enterprise Solutions</span>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-              </a>
-              <a 
-                href={`tel:${clientPhoneLine}`}
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:bg-white hover:border-slate-400 transition-all duration-300 shadow-xs cursor-pointer"
-              >
-                <span>Call Expert Desk</span>
-              </a>
-            </div>
+            <h3 className="text-xl font-semibold text-[#0B132B] mt-1">
+              Capital Ecosystem
+            </h3>
           </div>
 
-          <div className="lg:col-span-5 relative pt-8 pb-12">
-            <div className="absolute -top-6 left-0 w-full h-px bg-gradient-to-r from-slate-200 to-transparent hidden xl:block" />
-            <div className="absolute top-0 left-6 w-px h-[110%] bg-gradient-to-b from-slate-200 to-transparent hidden xl:block" />
-
-            <div className="relative space-y-4">
-              <div className="w-[95%] bg-white/95 backdrop-blur-md border border-slate-200/60 p-8 rounded-xl transition-all duration-500 relative z-20 shadow-xl shadow-slate-900/[0.03]">
-                <span className="text-[10px] uppercase tracking-wider text-amber-600 font-bold block mb-3">Capital Structure</span>
-                <h3 className="text-2xl font-normal text-[#0B132B] mb-2 tracking-tight">Institutional Advisory</h3>
-                <p className="text-sm text-slate-500 font-light leading-relaxed">
-                  Direct deployment vectors with 15+ trusted premier financial banking networks.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-12 gap-4 w-full">
-                <div className="col-span-7 p-7 bg-[#0B132B] text-white rounded-xl transition-all duration-500 translate-x-3 -mt-1 relative z-30 group overflow-hidden shadow-2xl shadow-slate-900/40">
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-[radial-gradient(250px_circle_at_50%_50%,rgba(0,168,150,0.2),transparent)]" />
-                  <div className="relative z-10">
-                    <div className="text-4xl font-light tracking-tight text-white mb-1">
-                      <span className="font-semibold text-[#00A896]">5.2</span>×
-                    </div>
-                    <p className="text-[9px] uppercase tracking-widest text-slate-400 font-medium leading-normal">
-                      Average Marketing Alpha Generated
-                    </p>
-                  </div>
-                </div>
-
-                <div className="col-span-5 p-6 bg-white border border-slate-200 rounded-xl -translate-y-3 -translate-x-2 relative z-10 flex flex-col justify-between items-start shadow-lg shadow-slate-900/[0.02]">
-                  <div className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                  </div>
-                  <span className="text-xs font-semibold text-[#0B132B] block mt-8 tracking-tight">
-                    Real-Time Sync Ready
-                  </span>
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-[#00A896] rounded-full animate-pulse" />
+            <span className="text-xs text-slate-500">
+              Live
+            </span>
           </div>
+
         </div>
-      </section>
+
+        {/* Grid */}
+        <div className="grid grid-cols-2">
+
+          <div className="p-8 border-r border-b border-slate-100">
+            <div className="text-5xl font-light text-[#0B132B]">
+              15+
+            </div>
+            <p className="text-[10px] uppercase tracking-widest text-slate-400 mt-3">
+              Lending Partners
+            </p>
+          </div>
+
+          <div className="p-8 border-b border-slate-100">
+            <div className="text-5xl font-light text-[#00A896]">
+              98%
+            </div>
+            <p className="text-[10px] uppercase tracking-widest text-slate-400 mt-3">
+              Approval Success
+            </p>
+          </div>
+
+          <div className="p-8 border-r border-slate-100">
+            <div className="text-xl font-medium text-[#0B132B]">
+              Loan Solutions
+            </div>
+            <p className="text-xs text-slate-500 mt-3">
+              Home • Business • LAP
+            </p>
+          </div>
+
+          <div className="p-8">
+            <div className="text-xl font-medium text-[#0B132B]">
+              Insurance
+            </div>
+            <p className="text-xs text-slate-500 mt-3">
+              Health • Life • Corporate
+            </p>
+          </div>
+
+        </div>
+
+        {/* Footer */}
+        <div className="px-8 py-5 bg-slate-50 border-t border-slate-100">
+
+          <p className="text-xs text-slate-500">
+            Integrated Banking Network of 50+ banks
+          </p>
+        </div>
+      </div>
+
+      {/* Floating Card */}
+      <div className="absolute -right-6 top-20 bg-[#0B132B] text-white px-6 py-5 rounded-2xl shadow-2xl border border-[#00A896]/20">
+        <div className="text-4xl font-light text-[#00A896]">
+          ₹500Cr+
+        </div>
+
+        <div className="text-[10px] uppercase tracking-widest text-slate-400 mt-2">
+          Capital Facilitated
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* 2. INTERACTIVE CALCULATOR SUITE WITH SYSTEMIC LEAD CTAs */}
 <section className="bg-white py-20 border-b border-slate-200/60 relative">
