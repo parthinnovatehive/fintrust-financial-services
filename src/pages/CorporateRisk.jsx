@@ -8,6 +8,7 @@ import {
     Umbrella, AlertTriangle, Network, BarChart3,
     User, TreePine, Droplet
 } from 'lucide-react';
+import Footer from "../components/Footer"; 
 
 export default function CorporateRisk() {
     const [isAgreed, setIsAgreed] = useState(false);
@@ -494,6 +495,7 @@ export default function CorporateRisk() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 }

@@ -5,6 +5,7 @@ import {
     MessageCircle, Phone, Award, Users, Rocket, Zap, CheckCircle2,
     DollarSign, LineChart, PieChart, CreditCard
 } from 'lucide-react';
+import Footer from "../components/Footer"; 
 
 export default function BusinessLoan() {
     const [loanAmount, setLoanAmount] = useState(2000000);
@@ -395,6 +396,7 @@ export default function BusinessLoan() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 }

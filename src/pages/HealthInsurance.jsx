@@ -8,6 +8,7 @@ import {
     Ambulance, Eye, Activity, Droplet, FileText,
     User
 } from 'lucide-react';
+import Footer from "../components/Footer"; 
 
 export default function HealthInsurance() {
     const [isAgreed, setIsAgreed] = useState(false);
@@ -366,6 +367,7 @@ export default function HealthInsurance() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 }

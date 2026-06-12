@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle, ShieldCheck } from "lucide-react";
+import Footer from "../components/Footer"; 
 
 export default function Contact() {
   const [countryCode, setCountryCode] = useState("+91");
@@ -286,4 +287,5 @@ export default function Contact() {
       </div>
     </div>
   );
+  
 }

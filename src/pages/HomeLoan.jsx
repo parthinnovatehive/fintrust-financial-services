@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Clock, ShieldCheck, UserCircle, Home, Percent, Calendar, IndianRupee, Building2, Award, ArrowRight, CheckCircle2, Phone, MessageCircle, Landmark, HeartPulse, BarChart3, ChevronRight } from 'lucide-react';
+import Footer from "../components/Footer"; 
 
 const lenders = [
     { id: 1, name: "SBI", logo: "/lenders/SBI-converted-from-png.svg", size: 80 },
@@ -333,6 +334,8 @@ export default function HomeLoan() {
                     </div>
                 </div>
             </section>
+             <Footer />
         </div>
     );
+    
 }

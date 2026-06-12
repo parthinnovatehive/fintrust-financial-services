@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import WhatsAppButton from "../components/WhatsAppButton";
 import EthosSection from "../components/EthosSection";
+import Footer from "../components/Footer";
 
 /* Modern Counter Hook */
 function useCounter(end, duration = 1500, isInView = true) {
@@ -63,6 +64,68 @@ export default function Home() {
   const clientWhatsAppNumber = "919876543210";
   const clientPhoneLine = "+919876543210";
 
+  // Add this state for the carousel
+  const [activeCard, setActiveCard] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+
+  // Define cards data for the carousel
+  const cards = [
+    {
+      title: "Loan Solutions",
+      subtitle: "Simplifying systemic borrowing channels.",
+      icon: <Landmark className="w-5 h-5 text-[#0B132B]" />,
+      services: [
+        "Home Loans", "Business Loans", "Personal Loans",
+        "Loan Against Property", "Working Capital Finance",
+        "Balance Transfer & Top-Up Loans", "Professional Loans Desk"
+      ],
+      whatsappMessage: "Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: ",
+      exploreMessage: "Hi Fintrust, I'd like to explore your Loan Solutions in detail.",
+      exploreText: "Explore all loans"
+    },
+    {
+      title: "Insurance Solutions",
+      subtitle: "Premium asset & health shields.",
+      icon: <HeartPulse className="w-5 h-5 text-[#0B132B]" />,
+      services: [
+        "Health Insurance", "Life Insurance", "Term Insurance",
+        "Motor Insurance", "Corporate Risk Coverage", "Investment Protection Plans"
+      ],
+      whatsappMessage: "Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: ",
+      exploreMessage: "Hi Fintrust, I'd like to explore your Insurance Solutions in detail.",
+      exploreText: "Explore all plans"
+    },
+    {
+      title: "Digital Marketing Suite",
+      subtitle: "Result-oriented commercial growth.",
+      icon: <BarChart3 className="w-5 h-5 text-[#0B132B]" />,
+      services: [
+        "Social Media Marketing", "Search Engine Optimization",
+        "Google Ads & PPC Funnels", "Website Design & Development",
+        "Lead Generation Architecture", "Campaign Management",
+        "WhatsApp & Conversational Flow"
+      ],
+      whatsappMessage: "Hi Fintrust, I'm looking to scale my business infrastructure. Let's discuss your execution models for: ",
+      exploreMessage: "Hi Fintrust, I'd like to explore your Digital Marketing solutions in detail.",
+      exploreText: "Explore services"
+    }
+  ];
+
+  // Add auto-play effect
+  useEffect(() => {
+    let interval;
+    if (autoPlay) {
+      interval = setInterval(() => {
+        setActiveCard((prev) => (prev + 1) % cards.length);
+      }, 4000);
+    }
+    return () => clearInterval(interval);
+  }, [autoPlay, cards.length]);
+
+  // Pause auto-play on hover/touch
+  const pauseAutoPlay = () => setAutoPlay(false);
+  const resumeAutoPlay = () => setAutoPlay(true);
+
   const genericWhatsAppMessage = encodeURIComponent(
     "Hello Fintrust, I just explored your financial and marketing services on the website. I would like to get on a quick advisory call."
   );
@@ -71,10 +134,10 @@ export default function Home() {
     {
       title: "Multiple Bank Partnerships",
       icon: Landmark,
-      heading: "Direct Access To 15+ Leading Lending Institutions",
+      heading: "Direct Access To 50+ Leading Lending Institutions",
       desc: "Unlike traditional loan consultants who are limited to a handful of lenders, Fintrust maintains active partnerships with a wide network of banks and NBFCs. This allows us to compare eligibility, approval probability, repayment structures, and interest rates across multiple institutions simultaneously.",
       details: [
-        "Access to 15+ banks and NBFCs",
+        "Access to 50+ banks and NBFCs",
         "Multiple offers compared simultaneously",
         "Higher approval probability",
         "Customized lender matching"
@@ -157,6 +220,38 @@ export default function Home() {
       y: e.clientY - rect.top,
     });
   };
+
+ // Add these new states for Advantage Matrix enhanced auto-play
+const [autoPlayAdvantage, setAutoPlayAdvantage] = useState(true);
+const [advantageResumeTimer, setAdvantageResumeTimer] = useState(0);
+const advantageTimeoutRef = useRef(null);
+const advantageDuration = 12; // 10 seconds per card for better readability
+const resumeDelay = 10;
+
+useEffect(() => {
+  if (!autoPlayAdvantage) return;
+
+  const interval = setInterval(() => {
+    setActiveFeature((prev) => (prev + 1) % advantageFeatures.length);
+  }, advantageDuration * 1000);
+
+  return () => clearInterval(interval);
+}, [autoPlayAdvantage, advantageFeatures.length]);
+
+const handleAdvantageSelect = (idx) => {
+  setActiveFeature(idx);
+
+  setAutoPlayAdvantage(false);
+
+  if (advantageTimeoutRef.current) {
+    clearTimeout(advantageTimeoutRef.current);
+  }
+
+  advantageTimeoutRef.current = setTimeout(() => {
+    setAutoPlayAdvantage(true);
+  }, resumeDelay * 1000);
+};
+
 
   return (
     <div className="min-h-screen bg-[#FAF7F2] text-slate-900 antialiased selection:bg-[#00A896]/10 font-sans">
@@ -402,7 +497,7 @@ export default function Home() {
             <div className="mt-8 pt-8 border-t border-slate-200/70 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-7">
                 <h4 className="text-sm font-semibold text-[#0B132B] mb-1">Satisfied with these calculations?</h4>
-                <p className="text-xs text-slate-500 font-light">Connect with our processing desk right now to submit your configuration for instant pre-approval across our 15+ banking partners.</p>
+                <p className="text-xs text-slate-500 font-light">Connect with our processing desk right now to submit your configuration for instant pre-approval across our 50+ banking partners.</p>
               </div>
               <div className="md:col-span-5 flex flex-col sm:flex-row gap-3 justify-end w-full">
                 <button
@@ -488,105 +583,203 @@ export default function Home() {
       </section>
 
       {/* 5. INTERACTIVE ADVANTAGE MATRIX WITH CLEAN 3s AUTO-PLAY */}
-      <section className="py-28 px-6 lg:px-16 bg-[#F4EDE2] border-b border-slate-200 relative">
-        <div className="max-w-7xl mx-auto">
+      {/* 5. INTERACTIVE ADVANTAGE MATRIX WITH ENHANCED TIMING & RESUME FEATURE */}
+<section className="py-28 px-6 lg:px-16 bg-[#F4EDE2] border-b border-slate-200 relative">
+  <div className="max-w-7xl mx-auto">
 
-          <div className="max-w-2xl mb-16 space-y-3">
-            <div className="inline-flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-              <span className="text-[11px] font-bold tracking-widest text-amber-700 uppercase block">
-                The Advantage Matrix
+    <div className="max-w-2xl mb-16 space-y-3">
+      <div className="inline-flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
+        <span className="text-[11px] font-bold tracking-widest text-amber-700 uppercase block">
+          The Advantage Matrix
+        </span>
+      </div>
+      <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-[#0B132B]">
+        Why Market Leaders <span className="font-semibold">Choose Fintrust</span>
+      </h2>
+      <p className="text-slate-500 text-sm font-light">
+        We combine extensive banking partnerships with custom-engineered data acquisition tools to deliver secure capital scaling.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+      <div className="lg:col-span-5 space-y-2.5">
+        {advantageFeatures.map((feat, idx) => {
+          const IconComponent = feat.icon;
+          const isSelected = activeFeature === idx;
+          return (
+            <button
+              key={idx}
+              onClick={() => {
+                if (activeFeature !== idx) {
+                  setActiveFeature(idx);
+                  // Pause auto-play on manual click
+                  setAutoPlayAdvantage(false);
+                  // Clear any existing timeout
+                  if (advantageTimeoutRef.current) {
+                    clearTimeout(advantageTimeoutRef.current);
+                  }
+                  // Resume auto-play after 10 seconds
+                  advantageTimeoutRef.current = setTimeout(() => {
+                    setAutoPlayAdvantage(true);
+                  }, 10000);
+                }
+              }}
+              className={`w-full text-left flex items-center gap-4 p-5 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden relative ${
+                isSelected
+                  ? "bg-white border-slate-300 shadow-md translate-x-2"
+                  : "bg-transparent border-transparent hover:bg-white/40 hover:border-slate-200"
+              }`}
+            >
+              {/* Timer progress bar - only show when auto-playing AND this card is selected */}
+              {isSelected && autoPlayAdvantage && (
+                <motion.div
+  key={`${activeFeature}-${autoPlayAdvantage}`}
+  initial={{ width: "0%" }}
+  animate={{ width: "100%" }}
+  transition={{
+    duration: advantageDuration,
+    ease: "linear"
+  }}
+  className="absolute bottom-0 left-0 h-[2px] bg-[#00A896]"
+/>
+              )}
+              
+              {/* Paused indicator - show when auto-play is off AND this card is selected */}
+              {isSelected && !autoPlayAdvantage && (
+                <div className="absolute bottom-0 left-0 h-[2px] bg-[#00A896]/30 w-full">
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-2">
+                    <div className="flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
+                      <span className="text-[8px] font-mono text-[#00A896]/70 hidden sm:inline">Paused</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transition-colors ${
+                isSelected 
+                  ? "bg-[#0B132B] border-[#0B132B] text-white" 
+                  : "bg-white border-slate-200 text-slate-600"
+              }`}>
+                <IconComponent className="w-4 h-4" />
+              </div>
+              <span className={`text-sm font-medium tracking-tight transition-colors ${
+                isSelected 
+                  ? "text-[#0B132B] font-semibold" 
+                  : "text-slate-600"
+              }`}>
+                {feat.title}
               </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-[#0B132B]">
-              Why Market Leaders <span className="font-semibold">Choose Fintrust</span>
-            </h2>
-            <p className="text-slate-500 text-sm font-light">
-              We combine extensive banking partnerships with custom-engineered data acquisition tools to deliver secure capital scaling.
-            </p>
-          </div>
+            </button>
+          );
+        })}
+      </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
-            <div className="lg:col-span-5 space-y-2.5">
-              {advantageFeatures.map((feat, idx) => {
-                const IconComponent = feat.icon;
-                const isSelected = activeFeature === idx;
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveFeature(idx)}
-                    className={`w-full text-left flex items-center gap-4 p-5 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden relative ${isSelected
-                        ? "bg-white border-slate-300 shadow-md translate-x-2"
-                        : "bg-transparent border-transparent hover:bg-white/40 hover:border-slate-200"
-                      }`}
-                  >
-                    {isSelected && (
-                      <motion.div
-                        initial={{ width: "0%" }}
-                        animate={{ width: "100%" }}
-                        transition={{ duration: 3, ease: "linear" }}
-                        className="absolute bottom-0 left-0 h-[2px] bg-[#00A896]"
-                      />
-                    )}
-
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transition-colors ${isSelected ? "bg-[#0B132B] border-[#0B132B] text-white" : "bg-white border-slate-200 text-slate-600"
-                      }`}>
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <span className={`text-sm font-medium tracking-tight transition-colors ${isSelected ? "text-[#0B132B] font-semibold" : "text-slate-600"
-                      }`}>
-                      {feat.title}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="lg:col-span-7 lg:sticky lg:top-24">
-              <div className="w-full bg-[#0B132B] text-white rounded-2xl p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[400px] flex flex-col justify-between">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
-
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeFeature}
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -30 }}
-                    transition={{ duration: 0.4 }}
-                    className="relative z-10 h-full flex flex-col justify-center"
-                  >
-                    <h3 className="text-3xl font-semibold text-white mb-6">
-                      {advantageFeatures[activeFeature].heading}
-                    </h3>
-
-                    <p className="text-slate-300 leading-relaxed text-base max-w-2xl mb-8">
-                      {advantageFeatures[activeFeature].desc}
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {advantageFeatures[activeFeature].details.map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-[#00A896] mt-2 shrink-0" />
-                          <span className="text-sm text-slate-300 leading-relaxed">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
+      <div className="lg:col-span-7 lg:sticky lg:top-24">
+        <div className="w-full bg-[#0B132B] text-white rounded-2xl p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[400px] flex flex-col justify-between">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
+          
+          {/* Top timer bar for content card */}
+          {autoPlayAdvantage && (
+            <motion.div
+              key={`content-timer-${activeFeature}`}
+              className="absolute top-0 left-0 h-1 bg-gradient-to-r from-[#00A896] to-[#2bc9b0]"
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: advantageDuration, ease: "linear" }}
+            />
+          )}
+          
+          {/* Manual mode indicator */}
+          {!autoPlayAdvantage && (
+            <div className="absolute top-0 left-0 right-0 h-1 bg-[#00A896]/20">
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                <div className="flex items-center gap-2 bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
+                  <span className="text-[8px] font-mono text-white/80">Manual Mode • Resumes in {advantageResumeTimer} sec</span>
+                </div>
               </div>
             </div>
+          )}
 
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeFeature}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -30 }}
+              transition={{ duration: 0.4 }}
+              className="relative z-10 h-full flex flex-col justify-center"
+            >
+              <h3 className="text-3xl font-semibold text-white mb-6">
+                {advantageFeatures[activeFeature].heading}
+              </h3>
+
+              <p className="text-slate-300 leading-relaxed text-base max-w-2xl mb-8">
+                {advantageFeatures[activeFeature].desc}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {advantageFeatures[activeFeature].details.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-[#00A896] mt-2 shrink-0" />
+                    <span className="text-sm text-slate-300 leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Resume button when in manual mode */}
+              {!autoPlayAdvantage && (
+                <button
+                  onClick={() => handleAdvantageSelect(idx)}
+                  className="mt-6 self-start inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 text-xs font-medium text-white/80 hover:text-white"
+                >
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              )}
+            </motion.div>
+          </AnimatePresence>
+          
+          {/* Navigation dots */}
+          <div className="absolute bottom-4 right-4 flex gap-1.5">
+            {advantageFeatures.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  if (activeFeature !== idx) {
+                    setActiveFeature(idx);
+                    setAutoPlayAdvantage(false);
+                    if (advantageTimeoutRef.current) clearTimeout(advantageTimeoutRef.current);
+                    advantageTimeoutRef.current = setTimeout(() => {
+                      setAutoPlayAdvantage(true);
+                    }, 10000);
+                  }
+                }}
+                className={`transition-all duration-300 rounded-full ${
+                  activeFeature === idx
+                    ? "w-2 h-2 bg-[#00A896]"
+                    : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40"
+                }`}
+              />
+            ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* 6. COMPREHENSIVE SERVICES BLUEPRINT */}
+    </div>
+  </div>
+</section>
+
+      {/* 6. COMPREHENSIVE SERVICES BLUEPRINT - WITH AUTO-SWIPE CAROUSEL */}
       <section className="py-28 px-6 lg:px-16 bg-[#FAF7F2] border-b border-slate-200 relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
@@ -609,55 +802,33 @@ export default function Home() {
             <div className="w-12 h-px bg-[#00A896]/50 mx-auto mt-2" />
           </div>
 
-          {/* Three Column Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
-
+          {/* Desktop: Three Column Grid */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-7">
             {/* LOAN SOLUTIONS */}
             <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
-              {/* Top accent line */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-
               <div className="p-7 flex flex-col h-full">
-                {/* Icon Section */}
                 <div className="relative mb-5">
                   <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20 group-hover:border-[#00A896]/40 group-hover:bg-[#0B132B] transition-all duration-300">
                     <Landmark className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
                   </div>
                 </div>
-
-                {/* Title & Description */}
                 <div className="mb-5">
                   <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Loan Solutions</h3>
                   <p className="text-xs text-slate-500 font-light">Simplifying systemic borrowing channels.</p>
                 </div>
-
                 <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
-
-                {/* Services List */}
                 <ul className="space-y-3 flex-1">
-                  {[
-                    "Home Loans", "Business Loans", "Personal Loans",
-                    "Loan Against Property", "Working Capital Finance",
-                    "Balance Transfer & Top-Up Loans", "Professional Loans Desk"
-                  ].map((loan, i) => (
-                    <li
-                      key={i}
-                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + loan)}`, "_blank")}
-                      className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
-                    >
+                  {["Home Loans", "Business Loans", "Personal Loans", "Loan Against Property", "Working Capital Finance", "Balance Transfer & Top-Up Loans", "Professional Loans Desk"].map((loan, i) => (
+                    <li key={i} onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + loan)}`, "_blank")} className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
                       <span className="group-hover/item:text-[#0B132B] transition-colors">{loan}</span>
                     </li>
                   ))}
                 </ul>
-
-                {/* Footer Link */}
                 <div className="mt-6 pt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Loan Solutions in detail.")}`, "_blank")}
-                    className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
-                  >
+                  <button onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Loan Solutions in detail.")}`, "_blank")} className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300">
                     <span>Explore all loans</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
@@ -668,7 +839,6 @@ export default function Home() {
             {/* INSURANCE SOLUTIONS */}
             <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-
               <div className="p-7 flex flex-col h-full">
                 <div className="relative mb-5">
                   <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -676,35 +846,21 @@ export default function Home() {
                     <HeartPulse className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
                   </div>
                 </div>
-
                 <div className="mb-5">
                   <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Insurance Solutions</h3>
                   <p className="text-xs text-slate-500 font-light">Premium asset & health shields.</p>
                 </div>
-
                 <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
-
                 <ul className="space-y-3 flex-1">
-                  {[
-                    "Health Insurance", "Life Insurance", "Term Insurance",
-                    "Motor Insurance", "Corporate Risk Coverage", "Investment Protection Plans"
-                  ].map((ins, i) => (
-                    <li
-                      key={i}
-                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + ins)}`, "_blank")}
-                      className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
-                    >
+                  {["Health Insurance", "Life Insurance", "Term Insurance", "Motor Insurance", "Corporate Risk Coverage", "Investment Protection Plans"].map((ins, i) => (
+                    <li key={i} onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm checking your capabilities catalog and would like details regarding options for: " + ins)}`, "_blank")} className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
                       <span className="group-hover/item:text-[#0B132B] transition-colors">{ins}</span>
                     </li>
                   ))}
                 </ul>
-
                 <div className="mt-6 pt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Insurance Solutions in detail.")}`, "_blank")}
-                    className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
-                  >
+                  <button onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Insurance Solutions in detail.")}`, "_blank")} className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300">
                     <span>Explore all plans</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
@@ -715,7 +871,6 @@ export default function Home() {
             {/* DIGITAL MARKETING SUITE */}
             <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[#00A896]/30 hover:-translate-y-1">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-
               <div className="p-7 flex flex-col h-full">
                 <div className="relative mb-5">
                   <div className="absolute -inset-2 bg-[#00A896]/5 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -723,41 +878,132 @@ export default function Home() {
                     <BarChart3 className="w-5 h-5 text-[#0B132B] group-hover:text-white transition-colors" />
                   </div>
                 </div>
-
                 <div className="mb-5">
                   <h3 className="text-xl font-semibold text-[#0B132B] mb-1">Digital Marketing Suite</h3>
                   <p className="text-xs text-slate-500 font-light">Result-oriented commercial growth.</p>
                 </div>
-
                 <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-5" />
-
                 <ul className="space-y-3 flex-1">
-                  {[
-                    "Social Media Marketing", "Search Engine Optimization",
-                    "Google Ads & PPC Funnels", "Website Design & Development",
-                    "Lead Generation Architecture", "Campaign Management",
-                    "WhatsApp & Conversational Flow"
-                  ].map((mkt, i) => (
-                    <li
-                      key={i}
-                      onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm looking to scale my business infrastructure. Let's discuss your execution models for: " + mkt)}`, "_blank")}
-                      className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
-                    >
+                  {["Social Media Marketing", "Search Engine Optimization", "Google Ads & PPC Funnels", "Website Design & Development", "Lead Generation Architecture", "Campaign Management", "WhatsApp & Conversational Flow"].map((mkt, i) => (
+                    <li key={i} onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'm looking to scale my business infrastructure. Let's discuss your execution models for: " + mkt)}`, "_blank")} className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
                       <span className="group-hover/item:text-[#0B132B] transition-colors truncate">{mkt}</span>
                     </li>
                   ))}
                 </ul>
-
                 <div className="mt-6 pt-4 border-t border-slate-100">
-                  <button
-                    onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Digital Marketing solutions in detail.")}`, "_blank")}
-                    className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
-                  >
+                  <button onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent("Hi Fintrust, I'd like to explore your Digital Marketing solutions in detail.")}`, "_blank")} className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300">
                     <span>Explore services</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile: Auto-Swiping Carousel */}
+          <div className="lg:hidden relative">
+            {/* Carousel Container */}
+            <div className="overflow-hidden relative">
+              <motion.div
+                className="flex cursor-grab active:cursor-grabbing"
+                animate={{ x: `-${activeCard * 100}%` }}
+                transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
+                drag="x"
+                dragConstraints={{ left: -((cards.length - 1) * 100), right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(e, info) => {
+                  const swipeThreshold = 50;
+                  if (info.offset.x < -swipeThreshold && activeCard < cards.length - 1) {
+                    setActiveCard(activeCard + 1);
+                  } else if (info.offset.x > swipeThreshold && activeCard > 0) {
+                    setActiveCard(activeCard - 1);
+                  }
+                }}
+              >
+                {cards.map((card, idx) => (
+                  <div
+                    key={idx}
+                    className="w-full flex-shrink-0 px-4"
+                    style={{ width: '100%' }}
+                  >
+                    <div className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300">
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00A896] to-[#0B132B]" />
+                      <div className="p-6 flex flex-col h-full">
+                        {/* Icon Section */}
+                        <div className="relative mb-4">
+                          <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00A896]/10 to-[#0B132B]/5 flex items-center justify-center border border-[#00A896]/20">
+                            {card.icon}
+                          </div>
+                        </div>
+
+                        {/* Title & Description */}
+                        <div className="mb-4">
+                          <h3 className="text-xl font-semibold text-[#0B132B] mb-1">{card.title}</h3>
+                          <p className="text-xs text-slate-500 font-light">{card.subtitle}</p>
+                        </div>
+
+                        <div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent mb-4" />
+
+                        {/* Services List */}
+                        <ul className="space-y-2.5 flex-1">
+                          {card.services.map((service, i) => (
+                            <li
+                              key={i}
+                              onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent(card.whatsappMessage + service)}`, "_blank")}
+                              className="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer transition-all duration-200 hover:translate-x-1 group/item"
+                            >
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#00A896]/40 group-hover/item:bg-[#00A896] transition-colors" />
+                              <span className="group-hover/item:text-[#0B132B] transition-colors text-sm">{service}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Footer Link */}
+                        <div className="mt-5 pt-3 border-t border-slate-100">
+                          <button
+                            onClick={() => window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent(card.exploreMessage)}`, "_blank")}
+                            className="inline-flex items-center gap-2 text-xs font-medium text-[#00A896] hover:gap-3 transition-all duration-300"
+                          >
+                            <span>{card.exploreText}</span>
+                            <ChevronRight className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Carousel Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {cards.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveCard(idx)}
+                  className={`transition-all duration-300 rounded-full ${activeCard === idx
+                      ? "w-8 h-2 bg-[#00A896]"
+                      : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                    }`}
+                />
+              ))}
+            </div>
+
+            {/* Auto-play Timer Indicator */}
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16">
+              <div className="h-0.5 bg-slate-200 rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full bg-[#00A896] rounded-full"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 4, ease: "linear" }}
+                  onAnimationComplete={() => {
+                    if (autoPlay) {
+                      setActiveCard((prev) => (prev + 1) % cards.length);
+                    }
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -811,15 +1057,8 @@ export default function Home() {
       {/* 8. ETHOS SECTION */}
       <EthosSection />
 
-      {/* 9. MINIMALIST LUXURY FOOTER */}
-      <footer className="py-12 bg-[#FAF7F2] border-t border-slate-200 px-6 lg:px-16">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500 font-light">
-          <div>
-            <span className="font-semibold text-[#0B132B]">Fintrust</span> Financial Services Matrix
-          </div>
-          <p>© {new Date().getFullYear()} Fintrust. Built for Institutional Scaling & Digital Growth.</p>
-        </div>
-      </footer>
+      {/* 9. PROFESSIONAL MULTI-SECTION FOOTER */}
+      <Footer />
 
       <WhatsAppButton activePage="home" />
     </div>

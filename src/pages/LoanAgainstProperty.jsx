@@ -6,6 +6,7 @@ import {
     TrendingUp, ArrowRight, Landmark, Users, DollarSign,
     FileText, PenTool, Scale, Key
 } from 'lucide-react';
+import Footer from "../components/Footer"; 
 
 export default function LoanAgainstProperty() {
     const [loanAmount, setLoanAmount] = useState(15000000);
@@ -489,6 +490,8 @@ export default function LoanAgainstProperty() {
                     </div>
                 </div>
             </section>
+             <Footer />
         </div>
     );
+    
 }

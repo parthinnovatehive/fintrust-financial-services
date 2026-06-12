@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { 
-    Building2, Shield, Briefcase, IndianRupee, 
-    MessageCircle, Phone, ShieldCheck, Clock, Award, 
-    CheckCircle2, Users, TrendingUp, Globe, 
-    FileText, Target, Zap, Heart, 
-    Lock, Database, Truck, Factory, 
+import {
+    Building2, Shield, Briefcase, IndianRupee,
+    MessageCircle, Phone, ShieldCheck, Clock, Award,
+    CheckCircle2, Users, TrendingUp, Globe,
+    FileText, Target, Zap, Heart,
+    Lock, Database, Truck, Factory,
     Umbrella, AlertTriangle, Network, BarChart3,
     Wallet, PieChart, LineChart, Calendar,
     DollarSign, Percent, RefreshCw, Banknote,
     ChartNoAxesCombined, PiggyBank, HandCoins,
     Package
 } from 'lucide-react';
+import Footer from "../components/Footer";
 
 export default function WorkingCapital() {
     const [isAgreed, setIsAgreed] = useState(false);
@@ -37,12 +38,12 @@ export default function WorkingCapital() {
 
     return (
         <div className="bg-[#FAF7F2] min-h-screen text-[#0B132B]">
-            
+
             {/* HERO SECTION */}
             <section className="relative bg-gradient-to-br from-[#0B132B] to-[#1a2a4a] text-white pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,168,150,0.12),transparent_60%)]" />
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00A896] to-transparent" />
-                
+
                 <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
@@ -56,14 +57,14 @@ export default function WorkingCapital() {
                             Strategic working capital solutions to improve cash flow, optimize inventory, and unlock hidden value in your business operations.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <button 
+                            <button
                                 onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Working Capital Advisory for my business.")}`, '_blank')}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Assess Your Needs
                             </button>
-                            <button 
+                            <button
                                 onClick={() => window.open(`tel:+919876543210`)}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all"
                             >
@@ -103,7 +104,7 @@ export default function WorkingCapital() {
                         <h2 className="text-3xl font-light text-[#0B132B] mt-2">Working Capital <span className="font-semibold">Advantages</span></h2>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         {[
                             { icon: RefreshCw, title: "Improved Liquidity", desc: "Unlock trapped cash in operations", color: "emerald" },
@@ -131,46 +132,46 @@ export default function WorkingCapital() {
                         <h3 className="text-2xl font-light text-[#0B132B] mt-2">Working Capital <span className="font-semibold">Solutions</span></h3>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { 
-                                title: "Cash Flow Optimization", 
+                            {
+                                title: "Cash Flow Optimization",
                                 desc: "Improve liquidity through better cash management",
                                 features: ["Cash flow forecasting", "Working capital cycle analysis", "Surplus deployment strategies"],
                                 icon: LineChart,
                                 popular: true
                             },
-                            { 
-                                title: "Credit Facility Structuring", 
+                            {
+                                title: "Credit Facility Structuring",
                                 desc: "Tailored credit solutions for your business needs",
                                 features: ["Overdraft & CC limits", "Bill discounting", "Letter of credit"],
                                 icon: HandCoins,
                                 popular: false
                             },
-                            { 
-                                title: "Inventory Management", 
+                            {
+                                title: "Inventory Management",
                                 desc: "Optimize stock levels to free up capital",
                                 features: ["Inventory turnover analysis", "Stock optimization", "Vendor managed inventory"],
                                 icon: Package,
                                 popular: false
                             },
-                            { 
-                                title: "Receivables Management", 
+                            {
+                                title: "Receivables Management",
                                 desc: "Accelerate customer collections effectively",
                                 features: ["Invoice factoring", "Collection strategies", "Credit policy review"],
                                 icon: DollarSign,
                                 popular: false
                             },
-                            { 
-                                title: "Payables Optimization", 
+                            {
+                                title: "Payables Optimization",
                                 desc: "Strategic vendor payment management",
                                 features: ["Payment term negotiation", "Early payment discounts", "Supply chain finance"],
                                 icon: Calendar,
                                 popular: false
                             },
-                            { 
-                                title: "Short-term Funding", 
+                            {
+                                title: "Short-term Funding",
                                 desc: "Quick access to emergency business capital",
                                 features: ["Business loans up to ₹5Cr", "Loan against receivables", "Equipment financing"],
                                 icon: PiggyBank,
@@ -196,13 +197,13 @@ export default function WorkingCapital() {
                                         </li>
                                     ))}
                                 </ul>
-                                <button 
+                                <button
                                     onClick={() => {
                                         setSelectedService(service.title === "Cash Flow Optimization" ? "cash-flow" :
-                                                       service.title === "Credit Facility Structuring" ? "credit-facility" :
-                                                       service.title === "Inventory Management" ? "inventory" :
-                                                       service.title === "Receivables Management" ? "receivables" :
-                                                       service.title === "Payables Optimization" ? "payables" : "funding");
+                                            service.title === "Credit Facility Structuring" ? "credit-facility" :
+                                                service.title === "Inventory Management" ? "inventory" :
+                                                    service.title === "Receivables Management" ? "receivables" :
+                                                        service.title === "Payables Optimization" ? "payables" : "funding");
                                         document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' });
                                     }}
                                     className="w-full py-2.5 rounded-xl bg-[#00A896]/10 text-[#00A896] font-semibold text-sm hover:bg-[#00A896] hover:text-white transition-all"
@@ -223,21 +224,21 @@ export default function WorkingCapital() {
                             <span className="text-[11px] font-bold tracking-[0.2em] text-[#00A896] uppercase">Quick Assessment</span>
                             <h3 className="text-2xl font-light mt-2">Estimate Your <span className="font-semibold">Working Capital Requirement</span></h3>
                         </div>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                             <div>
                                 <div className="flex justify-between text-sm mb-2">
                                     <span className="text-slate-300">Annual Business Turnover</span>
                                     <span className="font-semibold text-white">₹{annualTurnover.toLocaleString('en-IN')}</span>
                                 </div>
-                                <input 
-                                    type="range" 
-                                    min="500000" 
-                                    max="50000000" 
-                                    step="500000" 
-                                    value={annualTurnover} 
-                                    onChange={(e) => setAnnualTurnover(Number(e.target.value))} 
-                                    className="w-full accent-[#00A896] h-1.5 bg-white/20 rounded-lg cursor-pointer" 
+                                <input
+                                    type="range"
+                                    min="500000"
+                                    max="50000000"
+                                    step="500000"
+                                    value={annualTurnover}
+                                    onChange={(e) => setAnnualTurnover(Number(e.target.value))}
+                                    className="w-full accent-[#00A896] h-1.5 bg-white/20 rounded-lg cursor-pointer"
                                 />
                                 <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                                     <span>₹5L</span>
@@ -245,20 +246,20 @@ export default function WorkingCapital() {
                                     <span>₹5Cr</span>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <div className="flex justify-between text-sm mb-2">
                                     <span className="text-slate-300">Working Capital Required</span>
                                     <span className="font-semibold text-white">₹{requirementAmount.toLocaleString('en-IN')}</span>
                                 </div>
-                                <input 
-                                    type="range" 
-                                    min="250000" 
-                                    max="10000000" 
-                                    step="250000" 
-                                    value={requirementAmount} 
-                                    onChange={(e) => setRequirementAmount(Number(e.target.value))} 
-                                    className="w-full accent-[#00A896] h-1.5 bg-white/20 rounded-lg cursor-pointer" 
+                                <input
+                                    type="range"
+                                    min="250000"
+                                    max="10000000"
+                                    step="250000"
+                                    value={requirementAmount}
+                                    onChange={(e) => setRequirementAmount(Number(e.target.value))}
+                                    className="w-full accent-[#00A896] h-1.5 bg-white/20 rounded-lg cursor-pointer"
                                 />
                                 <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                                     <span>₹2.5L</span>
@@ -267,7 +268,7 @@ export default function WorkingCapital() {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="bg-white/5 rounded-xl p-4 text-center">
                                 <PieChart className="w-6 h-6 text-[#00A896] mx-auto mb-2" />
@@ -300,28 +301,28 @@ export default function WorkingCapital() {
                         <h3 className="text-2xl font-light text-[#0B132B] mt-2">Why Optimize <span className="font-semibold">Working Capital?</span></h3>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[
-                            { 
-                                icon: TrendingUp, 
-                                title: "Increased Profitability", 
-                                desc: "Reduce interest costs and improve bottom line by optimizing cash conversion cycle" 
+                            {
+                                icon: TrendingUp,
+                                title: "Increased Profitability",
+                                desc: "Reduce interest costs and improve bottom line by optimizing cash conversion cycle"
                             },
-                            { 
-                                icon: Shield, 
-                                title: "Business Stability", 
-                                desc: "Maintain smooth operations without cash flow interruptions during lean periods" 
+                            {
+                                icon: Shield,
+                                title: "Business Stability",
+                                desc: "Maintain smooth operations without cash flow interruptions during lean periods"
                             },
-                            { 
-                                icon: Zap, 
-                                title: "Growth Enablement", 
-                                desc: "Seize growth opportunities without being constrained by liquidity issues" 
+                            {
+                                icon: Zap,
+                                title: "Growth Enablement",
+                                desc: "Seize growth opportunities without being constrained by liquidity issues"
                             },
-                            { 
-                                icon: Banknote, 
-                                title: "Better Credit Terms", 
-                                desc: "Negotiate better rates with suppliers and access favorable credit lines" 
+                            {
+                                icon: Banknote,
+                                title: "Better Credit Terms",
+                                desc: "Negotiate better rates with suppliers and access favorable credit lines"
                             }
                         ].map((benefit, idx) => (
                             <div key={idx} className="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
@@ -344,7 +345,7 @@ export default function WorkingCapital() {
                         <h3 className="text-2xl font-light text-[#0B132B] mt-2">Available <span className="font-semibold">Financing Solutions</span></h3>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {[
                             { icon: HandCoins, title: "Cash Credit", desc: "Flexible limit up to ₹5Cr" },
@@ -385,7 +386,7 @@ export default function WorkingCapital() {
                                 ))}
                             </div>
                         </div>
-                        
+
                         <div>
                             <div className="flex items-center gap-2 mb-4">
                                 <FileText className="w-6 h-6 text-[#00A896]" />
@@ -437,47 +438,47 @@ export default function WorkingCapital() {
                     <div className="bg-gradient-to-r from-[#0B132B] to-[#1a2a4a] rounded-2xl p-8 shadow-xl">
                         <h3 className="text-2xl font-light text-white mb-3">Unlock Your Business Potential</h3>
                         <p className="text-slate-300 text-sm mb-6">Get expert working capital advisory from India's leading financial consultants. Free assessment for your business.</p>
-                        
+
                         <div className="bg-white/10 rounded-xl p-4 mb-6">
                             <div className="flex flex-wrap items-center justify-center gap-4">
                                 <label className="flex items-center gap-2 cursor-pointer">
-                                    <input 
-                                        type="radio" 
-                                        name="serviceType" 
-                                        value="cash-flow" 
-                                        checked={selectedService === 'cash-flow'} 
-                                        onChange={(e) => setSelectedService(e.target.value)} 
-                                        className="w-4 h-4 accent-[#00A896]" 
+                                    <input
+                                        type="radio"
+                                        name="serviceType"
+                                        value="cash-flow"
+                                        checked={selectedService === 'cash-flow'}
+                                        onChange={(e) => setSelectedService(e.target.value)}
+                                        className="w-4 h-4 accent-[#00A896]"
                                     />
                                     <span className="text-sm text-white">Cash Flow</span>
                                 </label>
                                 <label className="flex items-center gap-2 cursor-pointer">
-                                    <input 
-                                        type="radio" 
-                                        name="serviceType" 
-                                        value="credit-facility" 
-                                        checked={selectedService === 'credit-facility'} 
-                                        onChange={(e) => setSelectedService(e.target.value)} 
-                                        className="w-4 h-4 accent-[#00A896]" 
+                                    <input
+                                        type="radio"
+                                        name="serviceType"
+                                        value="credit-facility"
+                                        checked={selectedService === 'credit-facility'}
+                                        onChange={(e) => setSelectedService(e.target.value)}
+                                        className="w-4 h-4 accent-[#00A896]"
                                     />
                                     <span className="text-sm text-white">Credit Facility</span>
                                 </label>
                                 <label className="flex items-center gap-2 cursor-pointer">
-                                    <input 
-                                        type="radio" 
-                                        name="serviceType" 
-                                        value="funding" 
-                                        checked={selectedService === 'funding'} 
-                                        onChange={(e) => setSelectedService(e.target.value)} 
-                                        className="w-4 h-4 accent-[#00A896]" 
+                                    <input
+                                        type="radio"
+                                        name="serviceType"
+                                        value="funding"
+                                        checked={selectedService === 'funding'}
+                                        onChange={(e) => setSelectedService(e.target.value)}
+                                        className="w-4 h-4 accent-[#00A896]"
                                     />
                                     <span className="text-sm text-white">Short-term Funding</span>
                                 </label>
                             </div>
                         </div>
-                        
+
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button 
+                            <button
                                 onClick={handleWhatsApp}
                                 disabled={!isAgreed}
                                 className={`px-6 py-3 rounded-xl text-white font-semibold transition-all flex items-center justify-center gap-2 ${isAgreed ? 'bg-[#00A896] hover:bg-[#008f7f]' : 'bg-slate-600 cursor-not-allowed'}`}
@@ -485,7 +486,7 @@ export default function WorkingCapital() {
                                 <MessageCircle className="w-4 h-4" />
                                 Get Consultation
                             </button>
-                            <button 
+                            <button
                                 onClick={() => window.open(`tel:+919876543210`)}
                                 className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                             >
@@ -493,21 +494,22 @@ export default function WorkingCapital() {
                                 Call Advisory Desk
                             </button>
                         </div>
-                        
+
                         <label className="flex items-center justify-center gap-3 cursor-pointer mt-6">
-                            <input 
-                                type="checkbox" 
-                                checked={isAgreed} 
-                                onChange={(e) => setIsAgreed(e.target.checked)} 
-                                className="w-4 h-4 accent-[#00A896] rounded" 
+                            <input
+                                type="checkbox"
+                                checked={isAgreed}
+                                onChange={(e) => setIsAgreed(e.target.checked)}
+                                className="w-4 h-4 accent-[#00A896] rounded"
                             />
                             <span className="text-[10px] text-slate-400">I agree to the Privacy Policy and Terms & Conditions.</span>
                         </label>
-                        
+
                         <p className="text-[9px] text-slate-500 mt-4">Free consultation | Customized solutions | Multiple lenders | Quick disbursal</p>
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 }

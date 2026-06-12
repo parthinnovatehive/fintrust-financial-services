@@ -4,6 +4,7 @@ import {
     Activity, TrendingUp, Leaf, Megaphone, DollarSign, UserCheck, BadgeCheck,
     ArrowUp, Clock, Database, PieChart, Users, MessageCircle, Share2
 } from 'lucide-react';
+import Footer from "../components/Footer"; 
 
 const sendWhatsApp = (message) => {
     const phoneNumber = "919876543210"; // REPLACE WITH YOUR ACTUAL NUMBER
@@ -920,6 +921,7 @@ const SEOVisibility = () => {
         </div>
     </div>
 </section>
+ <Footer />
         </div>
     );
 };

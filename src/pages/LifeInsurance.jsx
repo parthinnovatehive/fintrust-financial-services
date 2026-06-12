@@ -30,6 +30,7 @@ import {
     Droplet,
     Car
 } from "lucide-react";
+import Footer from "../components/Footer"; 
 
 export default function LifeInsurance() {
     const [isAgreed, setIsAgreed] = useState(false);
@@ -448,6 +449,7 @@ export default function LifeInsurance() {
                     </div>
                 </div>
             </section>
+             <Footer />
         </div>
     );
 }

@@ -5,6 +5,7 @@ import {
     CheckCircle2, Wallet, Zap, Heart, Briefcase, 
     TrendingUp, ArrowRight, Landmark, Users, DollarSign
 } from 'lucide-react';
+import Footer from "../components/Footer"; 
 
 export default function PersonalLoan() {
     const [loanAmount, setLoanAmount] = useState(500000);
@@ -401,6 +402,8 @@ export default function PersonalLoan() {
                     </div>
                 </div>
             </section>
+             <Footer />
         </div>
     );
+    
 }

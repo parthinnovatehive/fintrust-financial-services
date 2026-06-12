@@ -32,7 +32,7 @@ export default function WhatsAppButton({ activePage = "home" }) {
     <div className="z-50 font-sans antialiased selection:bg-transparent">
       
       {/* 💻 DESKTOP & TABLET ARCHITECTURE: Premium Layered Floating Action Stack */}
-      <div className="hidden sm:flex flex-col gap-3.5 fixed bottom-8 right-8 items-end">
+      <div className="hidden sm:flex flex-col gap-3.5 fixed bottom-8 right-8 items-end z-[999999]">
         
         {/* Hot Vector Node 1: Call Execution Hub */}
         <a
@@ -69,7 +69,7 @@ export default function WhatsAppButton({ activePage = "home" }) {
       </div>
 
       {/* 📱 MOBILE VIEWPORT ARCHITECTURE: High-Contrast Fixed Floating Conversion Ribbon */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 grid grid-cols-2 bg-white border-t border-slate-200/80 shadow-[0_-10px_35px_rgba(0,0,0,0.08)] h-16 divide-x divide-slate-100 z-50">
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 grid grid-cols-2 bg-white border-t border-slate-200/80 shadow-[0_-10px_35px_rgba(0,0,0,0.08)] h-16 divide-x divide-slate-100 z-[999999]">
         
         {/* Call Hub Link Element */}
         <a
