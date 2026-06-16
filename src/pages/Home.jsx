@@ -61,8 +61,8 @@ export default function Home() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   // Direct Lead Vector Routing parameters
-  const clientWhatsAppNumber = "919876543210";
-  const clientPhoneLine = "+919876543210";
+  const clientWhatsAppNumber = "919167070916";
+  const clientPhoneLine = "+919167070916";
 
   // Add this state for the carousel
   const [activeCard, setActiveCard] = useState(0);
@@ -221,36 +221,36 @@ export default function Home() {
     });
   };
 
- // Add these new states for Advantage Matrix enhanced auto-play
-const [autoPlayAdvantage, setAutoPlayAdvantage] = useState(true);
-const [advantageResumeTimer, setAdvantageResumeTimer] = useState(0);
-const advantageTimeoutRef = useRef(null);
-const advantageDuration = 12; // 10 seconds per card for better readability
-const resumeDelay = 10;
+  // Add these new states for Advantage Matrix enhanced auto-play
+  const [autoPlayAdvantage, setAutoPlayAdvantage] = useState(true);
+  const [advantageResumeTimer, setAdvantageResumeTimer] = useState(0);
+  const advantageTimeoutRef = useRef(null);
+  const advantageDuration = 36; // 10 seconds per card for better readability
+  const resumeDelay = 10;
 
-useEffect(() => {
-  if (!autoPlayAdvantage) return;
+  useEffect(() => {
+    if (!autoPlayAdvantage) return;
 
-  const interval = setInterval(() => {
-    setActiveFeature((prev) => (prev + 1) % advantageFeatures.length);
-  }, advantageDuration * 1000);
+    const interval = setInterval(() => {
+      setActiveFeature((prev) => (prev + 1) % advantageFeatures.length);
+    }, advantageDuration * 1000);
 
-  return () => clearInterval(interval);
-}, [autoPlayAdvantage, advantageFeatures.length]);
+    return () => clearInterval(interval);
+  }, [autoPlayAdvantage, advantageFeatures.length]);
 
-const handleAdvantageSelect = (idx) => {
-  setActiveFeature(idx);
+  const handleAdvantageSelect = (idx) => {
+    setActiveFeature(idx);
 
-  setAutoPlayAdvantage(false);
+    setAutoPlayAdvantage(false);
 
-  if (advantageTimeoutRef.current) {
-    clearTimeout(advantageTimeoutRef.current);
-  }
+    if (advantageTimeoutRef.current) {
+      clearTimeout(advantageTimeoutRef.current);
+    }
 
-  advantageTimeoutRef.current = setTimeout(() => {
-    setAutoPlayAdvantage(true);
-  }, resumeDelay * 1000);
-};
+    advantageTimeoutRef.current = setTimeout(() => {
+      setAutoPlayAdvantage(true);
+    }, resumeDelay * 1000);
+  };
 
 
   return (
@@ -546,7 +546,7 @@ const handleAdvantageSelect = (idx) => {
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 text-center relative z-10 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
           <div className="pt-6 lg:pt-0">
             <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
-              <span className="font-semibold text-[#00A896]">{useCounter(15, 1200, isStatsInView)}</span>+
+              <span className="font-semibold text-[#00A896]">{useCounter(50, 1200, isStatsInView)}</span>+
             </p>
             <p className="text-xs uppercase tracking-widest text-slate-400 font-medium">Banking Partners</p>
           </div>
@@ -571,176 +571,156 @@ const handleAdvantageSelect = (idx) => {
         </div>
       </section>
 
-      {/* 5. INTERACTIVE ADVANTAGE MATRIX WITH CLEAN 3s AUTO-PLAY */}
-      {/* 5. INTERACTIVE ADVANTAGE MATRIX WITH ENHANCED TIMING & RESUME FEATURE */}
-<section className="py-28 px-6 lg:px-16 bg-[#F4EDE2] border-b border-slate-200 relative">
-  <div className="max-w-7xl mx-auto">
+      {/* 5. INTERACTIVE ADVANTAGE MATRIX - CENTERED CARD WITH NAVIGATION */}
+      <section className="py-28 px-6 lg:px- 16 bg-[#F4EDE2] border-b border-slate-200 relative">
+        <div className="max-w-5xl mx-auto">
 
-    <div className="max-w-2xl mb-16 space-y-3">
-      <div className="inline-flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-        <span className="text-[11px] font-bold tracking-widest text-amber-700 uppercase block">
-          The Advantage Matrix
-        </span>
-      </div>
-      <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-[#0B132B]">
-        Why Market Leaders <span className="font-semibold">Choose Fintrust</span>
-      </h2>
-      <p className="text-slate-500 text-sm font-light">
-        We combine extensive banking partnerships with custom-engineered data acquisition tools to deliver secure capital scaling.
-      </p>
-    </div>
+          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <div className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
+              <span className="text-[11px] font-bold tracking-widest text-amber-700 uppercase block">
+                The Advantage Matrix
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-[#0B132B]">
+              Why Market Leaders <span className="font-semibold">Choose Fintrust</span>
+            </h2>
+            <p className="text-slate-500 text-sm font-light">
+              We combine extensive banking partnerships with custom-engineered data acquisition tools to deliver secure capital scaling.
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Centered Card */}
+          <div className="relative">
+            <div className="w-full bg-[#0B132B] text-white rounded-2xl p-8 lg:p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[420px] flex flex-col">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
 
-      <div className="lg:col-span-5 space-y-2.5">
-        {advantageFeatures.map((feat, idx) => {
-          const IconComponent = feat.icon;
-          const isSelected = activeFeature === idx;
-          return (
-            <button
-              key={idx}
-              onClick={() => {
-                if (activeFeature !== idx) {
-                  setActiveFeature(idx);
-                  // Pause auto-play on manual click
-                  setAutoPlayAdvantage(false);
-                  // Clear any existing timeout
-                  if (advantageTimeoutRef.current) {
-                    clearTimeout(advantageTimeoutRef.current);
-                  }
-                  // Resume auto-play after 10 seconds
-                  advantageTimeoutRef.current = setTimeout(() => {
-                    setAutoPlayAdvantage(true);
-                  }, 10000);
-                }
-              }}
-              className={`w-full text-left flex items-center gap-4 p-5 rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden relative ${
-                isSelected
-                  ? "bg-white border-slate-300 shadow-md translate-x-2"
-                  : "bg-transparent border-transparent hover:bg-white/40 hover:border-slate-200"
-              }`}
-            >
-              {/* Timer progress bar - only show when auto-playing AND this card is selected */}
-              {isSelected && autoPlayAdvantage && (
+              {/* Timer bar */}
+              {autoPlayAdvantage && (
                 <motion.div
-  key={`${activeFeature}-${autoPlayAdvantage}`}
-  initial={{ width: "0%" }}
-  animate={{ width: "100%" }}
-  transition={{
-    duration: advantageDuration,
-    ease: "linear"
-  }}
-  className="absolute bottom-0 left-0 h-[2px] bg-[#00A896]"
-/>
+                  key={`content-timer-${activeFeature}`}
+                  className="absolute top-0 left-0 h-1 bg-gradient-to-r from-[#00A896] to-[#2bc9b0]"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: advantageDuration, ease: "linear" }}
+                />
               )}
-              
-              {/* Paused indicator - show when auto-play is off AND this card is selected */}
-              {isSelected && !autoPlayAdvantage && (
-                <div className="absolute bottom-0 left-0 h-[2px] bg-[#00A896]/30 w-full">
-                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-2">
-                    <div className="flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
-                      <span className="text-[8px] font-mono text-[#00A896]/70 hidden sm:inline">Paused</span>
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeFeature}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative z-10 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-[#00A896]/20 flex items-center justify-center">
+                        {React.createElement(advantageFeatures[activeFeature].icon, { className: "w-5 h-5 text-[#00A896]" })}
+                      </div>
+                      <span className="text-xs font-mono text-[#00A896]/70 uppercase tracking-wider">
+                        {activeFeature + 1} / {advantageFeatures.length}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl lg:text-3xl font-semibold text-white mb-4">
+                      {advantageFeatures[activeFeature].heading}
+                    </h3>
+
+                    <p className="text-slate-300 leading-relaxed text-base mb-6">
+                      {advantageFeatures[activeFeature].desc}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {advantageFeatures[activeFeature].details.map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/5 hover:bg-white/5 transition-colors duration-300"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] mt-1.5 shrink-0" />
+                          <span className="text-sm text-slate-300 leading-relaxed">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </div>
-              )}
 
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transition-colors ${
-                isSelected 
-                  ? "bg-[#0B132B] border-[#0B132B] text-white" 
-                  : "bg-white border-slate-200 text-slate-600"
-              }`}>
-                <IconComponent className="w-4 h-4" />
-              </div>
-              <span className={`text-sm font-medium tracking-tight transition-colors ${
-                isSelected 
-                  ? "text-[#0B132B] font-semibold" 
-                  : "text-slate-600"
-              }`}>
-                {feat.title}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+                  {/* Navigation Controls - Centered */}
+                  <div className="flex items-center justify-center gap-4 mt-6 pt-4 border-t border-white/10">
+                    {/* Previous Button */}
+                    <button
+                      onClick={() => {
+                        const prevIndex = activeFeature === 0 ? advantageFeatures.length - 1 : activeFeature - 1;
+                        setActiveFeature(prevIndex);
+                        setAutoPlayAdvantage(false);
+                        if (advantageTimeoutRef.current) clearTimeout(advantageTimeoutRef.current);
+                        advantageTimeoutRef.current = setTimeout(() => setAutoPlayAdvantage(true), 10000);
+                      }}
+                      className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                      aria-label="Previous"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
 
-      <div className="lg:col-span-7 lg:sticky lg:top-24">
-        <div className="w-full bg-[#0B132B] text-white rounded-2xl p-10 relative overflow-hidden shadow-2xl shadow-slate-900/30 border border-slate-800 min-h-[400px] flex flex-col justify-between">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
-          
-          {/* Top timer bar for content card */}
-          {autoPlayAdvantage && (
-            <motion.div
-              key={`content-timer-${activeFeature}`}
-              className="absolute top-0 left-0 h-1 bg-gradient-to-r from-[#00A896] to-[#2bc9b0]"
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{ duration: advantageDuration, ease: "linear" }}
-            />
-          )}
-          
-          {/* Manual mode indicator */}
-          {!autoPlayAdvantage && (
-            <div className="absolute top-0 left-0 right-0 h-1 bg-[#00A896]/20">
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                <div className="flex items-center gap-2 bg-black/60 backdrop-blur-sm px-2 py-0.5 rounded-full">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
-                  <span className="text-[8px] font-mono text-white/80">Manual Mode • Resumes in {advantageResumeTimer} sec</span>
-                </div>
-              </div>
-            </div>
-          )}
+                    {/* Dots Indicator */}
+                    <div className="flex gap-2 mx-4">
+                      {advantageFeatures.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => {
+                            if (activeFeature !== idx) {
+                              setActiveFeature(idx);
+                              setAutoPlayAdvantage(false);
+                              if (advantageTimeoutRef.current) clearTimeout(advantageTimeoutRef.current);
+                              advantageTimeoutRef.current = setTimeout(() => setAutoPlayAdvantage(true), 10000);
+                            }
+                          }}
+                          className={`transition-all duration-300 rounded-full ${activeFeature === idx
+                              ? "w-8 h-2 bg-[#00A896]"
+                              : "w-2 h-2 bg-white/30 hover:bg-white/50"
+                            }`}
+                        />
+                      ))}
+                    </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeFeature}
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -30 }}
-              transition={{ duration: 0.4 }}
-              className="relative z-10 h-full flex flex-col justify-center"
-            >
-              <h3 className="text-3xl font-semibold text-white mb-6">
-                {advantageFeatures[activeFeature].heading}
-              </h3>
-
-              <p className="text-slate-300 leading-relaxed text-base max-w-2xl mb-8">
-                {advantageFeatures[activeFeature].desc}
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {advantageFeatures[activeFeature].details.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-[#00A896] mt-2 shrink-0" />
-                    <span className="text-sm text-slate-300 leading-relaxed">
-                      {item}
-                    </span>
+                    {/* Next Button */}
+                    <button
+                      onClick={() => {
+                        const nextIndex = (activeFeature + 1) % advantageFeatures.length;
+                        setActiveFeature(nextIndex);
+                        setAutoPlayAdvantage(false);
+                        if (advantageTimeoutRef.current) clearTimeout(advantageTimeoutRef.current);
+                        advantageTimeoutRef.current = setTimeout(() => setAutoPlayAdvantage(true), 10000);
+                      }}
+                      className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                      aria-label="Next"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
                   </div>
-                ))}
-              </div>
-              
-              {/* Resume button when in manual mode */}
-              {!autoPlayAdvantage && (
-                <button
-                  onClick={() => handleAdvantageSelect(idx)}
-                  className="mt-6 self-start inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 text-xs font-medium text-white/80 hover:text-white"
-                >
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              )}
-            </motion.div>
-          </AnimatePresence>
-          
-          {/* Navigation dots */}
-          <div className="absolute bottom-4 right-4 flex gap-1.5">
-            {advantageFeatures.map((_, idx) => (
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Feature Title Badge - Below Card */}
+            <div className="text-center mt-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200 text-sm font-medium text-[#0B132B]">
+                <span className="w-2 h-2 rounded-full bg-[#00A896]" />
+                {advantageFeatures[activeFeature].title}
+              </span>
+            </div>
+          </div>
+
+          {/* Feature Quick Navigation - Small dots below */}
+          <div className="flex justify-center gap-2 mt-6">
+            {advantageFeatures.map((feat, idx) => (
               <button
                 key={idx}
                 onClick={() => {
@@ -748,25 +728,18 @@ const handleAdvantageSelect = (idx) => {
                     setActiveFeature(idx);
                     setAutoPlayAdvantage(false);
                     if (advantageTimeoutRef.current) clearTimeout(advantageTimeoutRef.current);
-                    advantageTimeoutRef.current = setTimeout(() => {
-                      setAutoPlayAdvantage(true);
-                    }, 10000);
+                    advantageTimeoutRef.current = setTimeout(() => setAutoPlayAdvantage(true), 10000);
                   }
                 }}
-                className={`transition-all duration-300 rounded-full ${
-                  activeFeature === idx
-                    ? "w-2 h-2 bg-[#00A896]"
-                    : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40"
-                }`}
+                className={`transition-all duration-300 rounded-full ${activeFeature === idx
+                  ? "w-2.5 h-2.5 bg-[#00A896]"
+                  : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                  }`}
               />
             ))}
           </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* 6. COMPREHENSIVE SERVICES BLUEPRINT - WITH AUTO-SWIPE CAROUSEL */}
       <section className="py-28 px-6 lg:px-16 bg-[#FAF7F2] border-b border-slate-200 relative overflow-hidden">
@@ -972,8 +945,8 @@ const handleAdvantageSelect = (idx) => {
                   key={idx}
                   onClick={() => setActiveCard(idx)}
                   className={`transition-all duration-300 rounded-full ${activeCard === idx
-                      ? "w-8 h-2 bg-[#00A896]"
-                      : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
+                    ? "w-8 h-2 bg-[#00A896]"
+                    : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
                     }`}
                 />
               ))}

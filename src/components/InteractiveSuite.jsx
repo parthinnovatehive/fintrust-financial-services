@@ -186,7 +186,7 @@ export default function InteractiveSuite() {
     const customWhatsAppText = `Hi Fintrust, I am using the calculator on your homepage and would like to lock in/apply for a loan with these parameters:\n\n• Loan Amount: ₹${formattedAmount}\n• Interest Rate: ${formattedRate}%\n• Tenure: ${formattedTenure} years\n\nPlease connect me with an asset specialist to verify my institutional pre-approval.`;
     
     // Corporate recipient phone line
-    const clientWhatsAppNumber = "919876543210"; 
+    const clientWhatsAppNumber = "919167070916"; 
     
     // Executing the secure application deep-link routing line
     window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent(customWhatsAppText)}`, '_blank');

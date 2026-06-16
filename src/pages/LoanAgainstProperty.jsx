@@ -35,7 +35,7 @@ export default function LoanAgainstProperty() {
             return;
         }
         const message = `Hi Fintrust, I'm interested in a Loan Against Property.\n\n• Property Value: ₹${propertyValue.toLocaleString('en-IN')}\n• Loan Amount: ₹${loanAmount.toLocaleString('en-IN')}\n• LTV Ratio: ${ltvRatio}%\n• Interest Rate: ${interestRate}%\n• Tenure: ${tenure} Years\n• Monthly EMI: ₹${emiVal.toLocaleString('en-IN')}\n• Total Interest: ₹${totalInterest.toLocaleString('en-IN')}\n\nPlease guide me through the application process.`;
-        window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
+        window.open(`https://wa.me/919167070916?text=${encodeURIComponent(message)}`, '_blank');
     };
 
     // Lenders logos array
@@ -72,14 +72,14 @@ export default function LoanAgainstProperty() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Loan Against Property options.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Loan Against Property options.")}`, '_blank')}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Check Eligibility
                             </button>
                             <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all"
                             >
                                 <Phone className="w-4 h-4" />
@@ -98,7 +98,7 @@ export default function LoanAgainstProperty() {
                             { value: "75%", label: "Max LTV Ratio", icon: Percent },
                             { value: "₹10Cr+", label: "Loan Amount", icon: DollarSign },
                             { value: "30 Yrs", label: "Max Tenure", icon: Calendar },
-                            { value: "15+", label: "Banking Partners", icon: Landmark }
+                            { value: "50+", label: "Banking Partners", icon: Landmark }
                         ].map((stat, idx) => (
                             <div key={idx} className="p-4">
                                 <stat.icon className="w-6 h-6 text-[#00A896] mx-auto mb-2" />
@@ -472,14 +472,14 @@ export default function LoanAgainstProperty() {
                         <p className="text-slate-300 text-sm mb-6">Get high-value loans against property with attractive interest rates</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to apply for a Loan Against Property.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to apply for a Loan Against Property.")}`, '_blank')}
                                 className="px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all flex items-center justify-center gap-2"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Apply Now
                             </button>
                             <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                             >
                                 <Phone className="w-4 h-4" />

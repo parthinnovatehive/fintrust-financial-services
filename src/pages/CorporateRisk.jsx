@@ -29,7 +29,7 @@ export default function CorporateRisk() {
             'property': 'Property & Marine Insurance'
         };
         const message = `Hi Fintrust, I'm interested in Corporate Risk Schemes.\n\n• Plan Type: ${planNames[selectedPlan]}\n• Company Size: ${companySize} employees\n\nPlease share the best corporate insurance plans available from your partnered insurers with premium estimates.`;
-        window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
+        window.open(`https://wa.me/919167070916?text=${encodeURIComponent(message)}`, '_blank');
     };
 
     // Insurance partners
@@ -61,14 +61,14 @@ export default function CorporateRisk() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Corporate Risk Schemes for my business.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Corporate Risk Schemes for my business.")}`, '_blank')}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Get Business Quote
                             </button>
                             <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all"
                             >
                                 <Phone className="w-4 h-4" />
@@ -473,7 +473,7 @@ export default function CorporateRisk() {
                                 Get Quote & Compare
                             </button>
                             <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                             >
                                 <Phone className="w-4 h-4" />

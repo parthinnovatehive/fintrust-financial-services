@@ -25,7 +25,7 @@ const advantages = [
         title: "Multiple Bank Partnerships",
         desc: "Direct tie-ups across India's top premier banks and institutional NBFC ecosystems.",
         icon: Network,
-        metric: "15+",
+        metric: "50+",
         metricLabel: "Banking Pipelines",
         highlight: "Instant Synergy"
     },

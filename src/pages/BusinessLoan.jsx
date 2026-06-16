@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { 
-    Briefcase, BarChart3, TrendingUp, ChevronRight, ShieldCheck, 
-    Clock, Target, Building2, IndianRupee, Percent, Calendar, 
+import {
+    Briefcase, BarChart3, TrendingUp, ChevronRight, ShieldCheck,
+    Clock, Target, Building2, IndianRupee, Percent, Calendar,
     MessageCircle, Phone, Award, Users, Rocket, Zap, CheckCircle2,
     DollarSign, LineChart, PieChart, CreditCard
 } from 'lucide-react';
-import Footer from "../components/Footer"; 
+import Footer from "../components/Footer";
 
 export default function BusinessLoan() {
     const [loanAmount, setLoanAmount] = useState(2000000);
@@ -14,62 +14,62 @@ export default function BusinessLoan() {
     const [isAgreed, setIsAgreed] = useState(false);
 
     const logos = [
-    'SBI-converted-from-png',
-    'hdfc',
-    'Tata_Capital-converted-from-jpg',
-    'Tata Capital Housing Finance-converted-from-webp',
-    'Logo_of_IDFC_First_Bank.svg-converted-from-png',
-    'YES BANK-converted-from-png',
-    'Aditya Birla Capital-converted-from-jpg',
-    'Aditya Birla Capital Home Loans-converted-from-jpg',
-    'Aditya Birla Finance-converted-from-png',
-    'Aavas Financiers-converted-from-png',
-    'Arka Fincap-converted-from-png',
-    'Ashv Finance-converted-from-png',
-    'AU Small Finance Bank-converted-from-png',
-    'Avanse Financial Services-converted-from-png',
-    'Bajaj Housing Finance Limited',
-    'Bharat Banking and Investment Limited-converted-from-png',
-    'CapriLoans-converted-from-png',
-    'CLIX-converted-from-png',
-    'Credit Saison India-converted-from-png',
-    'DBS-converted-from-webp',
-    'DCB Bank-converted-from-png',
-    'DMI Finance-converted-from-png',
-    'DMI Housing Finance-converted-from-png',
-    'Fibe-converted-from-png',
-    'ftcash-converted-from-png',
-    'Hero Housing Finance-converted-from-png',
-    'Hinduja Housing Finance-converted-from-webp',
-    'IIFL_Logo.svg-converted-from-png',
-    'InCred Finance-converted-from-png',
-    'Indifi-converted-from-png',
-    'JM Financia-converted-from-png',
-    'KreditBee-converted-from-png',
-    'L&T Finance-converted-from-png',
-    'LIC HFL-converted-from-png',
-    'LoanWired-converted-from-jpg',
-    'MAS Financial Services-converted-from-png',
-    'Moneywide-converted-from-jpg',
-    'Motilal Oswal Home Finance-converted-from-jpg',
-    'NAVI-converted-from-png',
-    'Piramal Finance-converted-from-png',
-    'Poonawalla Fincorp',
-    'Poonawalla Housing Finance-converted-from-jpg',
-    'Profectus Capital-converted-from-png',
-    'Protium-converted-from-png',
-    'SBM Bank-converted-from-png',
-    'Shinhan Bank-converted-from-jpg',
-    'Shriram City-converted-from-png',
-    'SMC Finance-converted-from-png',
-    'SMFG India Credit-converted-from-png',
-    'Sundaram Finance-converted-from-png',
-    'Suryoday Small Finance Bank-converted-from-png',
-    'UGRO Capital-converted-from-png',
-    'Unity Small Finance Bank-converted-from-png',
-    'Utkarsh Small Finance Bank-converted-from-jpg',
-    'Vastu Housing Finance-converted-from-webp'
-];
+        'SBI-converted-from-png',
+        'hdfc',
+        'Tata_Capital-converted-from-jpg',
+        'Tata Capital Housing Finance-converted-from-webp',
+        'Logo_of_IDFC_First_Bank.svg-converted-from-png',
+        'YES BANK-converted-from-png',
+        'Aditya Birla Capital-converted-from-jpg',
+        'Aditya Birla Capital Home Loans-converted-from-jpg',
+        'Aditya Birla Finance-converted-from-png',
+        'Aavas Financiers-converted-from-png',
+        'Arka Fincap-converted-from-png',
+        'Ashv Finance-converted-from-png',
+        'AU Small Finance Bank-converted-from-png',
+        'Avanse Financial Services-converted-from-png',
+        'Bajaj Housing Finance Limited',
+        'Bharat Banking and Investment Limited-converted-from-png',
+        'CapriLoans-converted-from-png',
+        'CLIX-converted-from-png',
+        'Credit Saison India-converted-from-png',
+        'DBS-converted-from-webp',
+        'DCB Bank-converted-from-png',
+        'DMI Finance-converted-from-png',
+        'DMI Housing Finance-converted-from-png',
+        'Fibe-converted-from-png',
+        'ftcash-converted-from-png',
+        'Hero Housing Finance-converted-from-png',
+        'Hinduja Housing Finance-converted-from-webp',
+        'IIFL_Logo.svg-converted-from-png',
+        'InCred Finance-converted-from-png',
+        'Indifi-converted-from-png',
+        'JM Financia-converted-from-png',
+        'KreditBee-converted-from-png',
+        'L&T Finance-converted-from-png',
+        'LIC HFL-converted-from-png',
+        'LoanWired-converted-from-jpg',
+        'MAS Financial Services-converted-from-png',
+        'Moneywide-converted-from-jpg',
+        'Motilal Oswal Home Finance-converted-from-jpg',
+        'NAVI-converted-from-png',
+        'Piramal Finance-converted-from-png',
+        'Poonawalla Fincorp',
+        'Poonawalla Housing Finance-converted-from-jpg',
+        'Profectus Capital-converted-from-png',
+        'Protium-converted-from-png',
+        'SBM Bank-converted-from-png',
+        'Shinhan Bank-converted-from-jpg',
+        'Shriram City-converted-from-png',
+        'SMC Finance-converted-from-png',
+        'SMFG India Credit-converted-from-png',
+        'Sundaram Finance-converted-from-png',
+        'Suryoday Small Finance Bank-converted-from-png',
+        'UGRO Capital-converted-from-png',
+        'Unity Small Finance Bank-converted-from-png',
+        'Utkarsh Small Finance Bank-converted-from-jpg',
+        'Vastu Housing Finance-converted-from-webp'
+    ];
 
     const calculateEMI = () => {
         const P = loanAmount;
@@ -90,17 +90,17 @@ export default function BusinessLoan() {
             return;
         }
         const message = `Hi Fintrust, I'm interested in a Business Loan.\n\n• Amount: ₹${loanAmount.toLocaleString('en-IN')}\n• Interest Rate: ${interestRate}%\n• Tenure: ${tenure} Years\n• Monthly EMI: ₹${emiVal.toLocaleString('en-IN')}\n• Total Interest: ₹${totalInterest.toLocaleString('en-IN')}\n\nPlease guide me through the application process.`;
-        window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
+        window.open(`https://wa.me/919167070916?text=${encodeURIComponent(message)}`, '_blank');
     };
 
     return (
         <div className="bg-[#FAF7F2] min-h-screen text-[#0B132B]">
-            
+
             {/* HERO SECTION - IMPROVED */}
             <section className="relative bg-gradient-to-br from-[#0B132B] to-[#1a2a4a] text-white pt-32 pb-20 overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,168,150,0.12),transparent_60%)]" />
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00A896] to-transparent" />
-                
+
                 <div className="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
@@ -114,15 +114,15 @@ export default function BusinessLoan() {
                             Strategic financing to accelerate inventory turnover, optimize operations, and capture market share.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Business Loan options for my company.")}`, '_blank')}
+                            <button
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Business Loan options for my company.")}`, '_blank')}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Apply for Business Loan
                             </button>
-                            <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                            <button
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all"
                             >
                                 <Phone className="w-4 h-4" />
@@ -141,10 +141,10 @@ export default function BusinessLoan() {
                     <div className="flex animate-scroll gap-16 items-center">
                         {[...logos, ...logos, ...logos].map((name, i) => (
                             <div key={i} className="flex-shrink-0 w-28 h-10 opacity-60 hover:opacity-100 transition-opacity">
-                                <img 
-                                    src={`/lenders/${name}.svg`} 
-                                    alt={name} 
-                                    className="h-full w-full object-contain" 
+                                <img
+                                    src={`/lenders/${name}.svg`}
+                                    alt={name}
+                                    className="h-full w-full object-contain"
                                     onError={(e) => e.target.style.display = 'none'}
                                 />
                             </div>
@@ -165,7 +165,7 @@ export default function BusinessLoan() {
                         <h2 className="text-3xl font-light text-[#0B132B] mt-2">Strategic Growth <span className="font-semibold">Advantages</span></h2>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {[
                             { icon: TrendingUp, title: "Capture Market Share", desc: "Scale marketing and distribution without waiting for cash flow.", color: "emerald" },
@@ -211,7 +211,7 @@ export default function BusinessLoan() {
                                 ))}
                             </div>
                         </div>
-                        
+
                         {/* Key Benefits */}
                         <div>
                             <div className="flex items-center gap-2 mb-6">
@@ -244,7 +244,7 @@ export default function BusinessLoan() {
                         <h2 className="text-3xl font-light text-[#0B132B] mt-2">Business Loan <span className="font-semibold">Calculator</span></h2>
                         <div className="w-12 h-px bg-[#00A896] mx-auto mt-3" />
                     </div>
-                    
+
                     <div className="grid lg:grid-cols-12 gap-8">
                         {/* Left - Calculator Inputs */}
                         <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
@@ -256,14 +256,14 @@ export default function BusinessLoan() {
                                     </div>
                                     <span className="text-base font-bold px-3 py-1.5 bg-slate-100 rounded-lg text-[#0B132B]">₹{loanAmount.toLocaleString('en-IN')}</span>
                                 </div>
-                                <input 
-                                    type="range" 
-                                    min="500000" 
-                                    max="50000000" 
-                                    step="100000" 
-                                    value={loanAmount} 
-                                    onChange={(e) => setLoanAmount(Number(e.target.value))} 
-                                    className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer" 
+                                <input
+                                    type="range"
+                                    min="500000"
+                                    max="50000000"
+                                    step="100000"
+                                    value={loanAmount}
+                                    onChange={(e) => setLoanAmount(Number(e.target.value))}
+                                    className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer"
                                 />
                                 <div className="flex justify-between text-[10px] text-slate-400">
                                     <span>₹5L</span>
@@ -280,14 +280,14 @@ export default function BusinessLoan() {
                                     </div>
                                     <span className="text-base font-bold px-3 py-1.5 bg-slate-100 rounded-lg text-[#0B132B]">{interestRate}% p.a.</span>
                                 </div>
-                                <input 
-                                    type="range" 
-                                    min="9.5" 
-                                    max="24" 
-                                    step="0.5" 
-                                    value={interestRate} 
-                                    onChange={(e) => setInterestRate(Number(e.target.value))} 
-                                    className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer" 
+                                <input
+                                    type="range"
+                                    min="9.5"
+                                    max="24"
+                                    step="0.5"
+                                    value={interestRate}
+                                    onChange={(e) => setInterestRate(Number(e.target.value))}
+                                    className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer"
                                 />
                                 <div className="flex justify-between text-[10px] text-slate-400">
                                     <span>9.5%</span>
@@ -304,14 +304,14 @@ export default function BusinessLoan() {
                                     </div>
                                     <span className="text-base font-bold px-3 py-1.5 bg-slate-100 rounded-lg text-[#0B132B]">{tenure} Years</span>
                                 </div>
-                                <input 
-                                    type="range" 
-                                    min="1" 
-                                    max="15" 
-                                    step="1" 
-                                    value={tenure} 
-                                    onChange={(e) => setTenure(Number(e.target.value))} 
-                                    className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer" 
+                                <input
+                                    type="range"
+                                    min="1"
+                                    max="15"
+                                    step="1"
+                                    value={tenure}
+                                    onChange={(e) => setTenure(Number(e.target.value))}
+                                    className="w-full accent-[#00A896] h-1.5 bg-slate-100 rounded-lg cursor-pointer"
                                 />
                                 <div className="flex justify-between text-[10px] text-slate-400">
                                     <span>1 yr</span>
@@ -328,7 +328,7 @@ export default function BusinessLoan() {
                                 <h2 className="text-3xl lg:text-4xl font-bold text-white mt-2">₹{emiVal.toLocaleString('en-IN')}</h2>
                                 <div className="w-12 h-px bg-[#00A896]/50 mx-auto mt-3" />
                             </div>
-                            
+
                             <div className="grid grid-cols-2 gap-4 mb-6">
                                 <div className="bg-white/5 rounded-xl p-4 border border-white/10">
                                     <p className="text-[10px] text-slate-400 uppercase tracking-wider">Principal Amount</p>
@@ -339,7 +339,7 @@ export default function BusinessLoan() {
                                     <p className="text-base font-semibold text-[#00A896] mt-1">₹{totalInterest.toLocaleString('en-IN')}</p>
                                 </div>
                             </div>
-                            
+
                             <div className="mb-6 p-4 bg-white/5 rounded-xl border border-white/10">
                                 <div className="flex justify-between text-sm mb-2">
                                     <span className="text-slate-400">Total Payment</span>
@@ -356,17 +356,17 @@ export default function BusinessLoan() {
 
                             <div className="space-y-3">
                                 <label className="flex items-start gap-3 cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        checked={isAgreed} 
-                                        onChange={(e) => setIsAgreed(e.target.checked)} 
-                                        className="mt-0.5 w-4 h-4 accent-[#00A896] rounded" 
+                                    <input
+                                        type="checkbox"
+                                        checked={isAgreed}
+                                        onChange={(e) => setIsAgreed(e.target.checked)}
+                                        className="mt-0.5 w-4 h-4 accent-[#00A896] rounded"
                                     />
                                     <span className="text-[10px] text-slate-300 leading-relaxed">I agree to the Privacy Policy and Terms & Conditions.</span>
                                 </label>
-                                <button 
-                                    onClick={handleWhatsApp} 
-                                    disabled={!isAgreed} 
+                                <button
+                                    onClick={handleWhatsApp}
+                                    disabled={!isAgreed}
                                     className={`w-full py-3.5 rounded-xl text-white text-sm font-semibold uppercase tracking-wide transition-all flex items-center justify-center gap-2 ${isAgreed ? 'bg-[#00A896] hover:bg-[#008f7f] hover:-translate-y-0.5' : 'bg-slate-600 cursor-not-allowed'}`}
                                 >
                                     <MessageCircle className="w-4 h-4" />
@@ -403,17 +403,17 @@ export default function BusinessLoan() {
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="bg-gradient-to-r from-[#0B132B] to-[#1a2a4a] rounded-2xl p-10 shadow-xl">
                         <h3 className="text-2xl font-light text-white mb-3">Ready to Scale Your Business?</h3>
-                        <p className="text-slate-300 text-sm mb-6">Get instant approval from 15+ banks with competitive interest rates</p>
+                        <p className="text-slate-300 text-sm mb-6">Get instant approval from 50+ banks with competitive interest rates</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Business Loan options for my company.")}`, '_blank')}
+                            <button
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Business Loan options for my company.")}`, '_blank')}
                                 className="px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all flex items-center justify-center gap-2"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Apply Now
                             </button>
-                            <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                            <button
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                             >
                                 <Phone className="w-4 h-4" />

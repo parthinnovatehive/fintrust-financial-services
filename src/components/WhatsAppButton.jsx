@@ -2,8 +2,8 @@ import React from "react";
 import { Phone } from "lucide-react";
 
 export default function WhatsAppButton({ activePage = "home" }) {
-  const targetPhoneNumber = "+919876543210"; // Core corporate contact line
-  const cleanNumericPhone = "919876543210"; // WhatsApp API structure target
+  const targetPhoneNumber = "+919167070916"; // Core corporate contact line
+  const cleanNumericPhone = "919167070916"; // WhatsApp API structure target
 
   // Contextual intent assignment based on active viewport state
   const getContextualWhatsAppUrl = () => {

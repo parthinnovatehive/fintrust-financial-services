@@ -7,7 +7,7 @@ import {
 import Footer from "../components/Footer"; 
 
 const sendWhatsApp = (message) => {
-    const phoneNumber = "919876543210"; // REPLACE WITH YOUR ACTUAL NUMBER
+    const phoneNumber = "919167070916"; // REPLACE WITH YOUR ACTUAL NUMBER
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
 };

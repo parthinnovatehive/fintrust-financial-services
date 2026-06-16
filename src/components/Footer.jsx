@@ -10,8 +10,8 @@ import {
 
 const Footer = () => {
   // Direct Lead Vector Routing parameters
-  const clientWhatsAppNumber = "919876543210";
-  const clientPhoneLine = "+919876543210";
+  const clientWhatsAppNumber = "919167070916";
+  const clientPhoneLine = "+919167070916";
 
   const genericWhatsAppMessage = encodeURIComponent(
     "Hello Fintrust, I just explored your financial and marketing services on the website. I would like to get on a quick advisory call."

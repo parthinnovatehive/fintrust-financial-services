@@ -32,7 +32,7 @@ export default function PersonalLoan() {
             return;
         }
         const message = `Hi Fintrust, I'm interested in a Personal Loan.\n\n• Amount: ₹${loanAmount.toLocaleString('en-IN')}\n• Interest Rate: ${interestRate}%\n• Tenure: ${tenure} Years\n• Monthly EMI: ₹${emiVal.toLocaleString('en-IN')}\n• Total Interest: ₹${totalInterest.toLocaleString('en-IN')}\n\nPlease guide me through the application process.`;
-        window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
+        window.open(`https://wa.me/919167070916?text=${encodeURIComponent(message)}`, '_blank');
     };
 
     // Lenders logos array - Same as BusinessLoan
@@ -116,14 +116,14 @@ export default function PersonalLoan() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Personal Loan options.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Personal Loan options.")}`, '_blank')}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Apply for Personal Loan
                             </button>
                             <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all"
                             >
                                 <Phone className="w-4 h-4" />
@@ -448,17 +448,17 @@ export default function PersonalLoan() {
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="bg-gradient-to-r from-[#0B132B] to-[#1a2a4a] rounded-2xl p-10 shadow-xl">
                         <h3 className="text-2xl font-light text-white mb-3">Ready to Get Started?</h3>
-                        <p className="text-slate-300 text-sm mb-6">Get instant approval from 15+ banks with competitive interest rates</p>
+                        <p className="text-slate-300 text-sm mb-6">Get instant approval from 50+ banks with competitive interest rates</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to apply for a Personal Loan.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to apply for a Personal Loan.")}`, '_blank')}
                                 className="px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all flex items-center justify-center gap-2"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Apply Now
                             </button>
                             <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                             >
                                 <Phone className="w-4 h-4" />

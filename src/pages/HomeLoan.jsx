@@ -88,7 +88,7 @@ export default function HomeLoan() {
         const formattedInterest = totalInterest.toLocaleString('en-IN');
         const formattedEMI = emiVal.toLocaleString('en-IN');
         const customWhatsAppText = `Hi Fintrust, I am reviewing your Home Loan blueprints. Criteria:\n\n• Amount: ₹${formattedAmount}\n• Interest: ${interestRate}%\n• Tenure: ${tenure} Years\n• EMI: ₹${formattedEMI}\n• Total Interest: ₹${formattedInterest}`;
-        const clientWhatsAppNumber = "919876543210";
+        const clientWhatsAppNumber = "919167070916";
         window.open(`https://wa.me/${clientWhatsAppNumber}?text=${encodeURIComponent(customWhatsAppText)}`, '_blank');
     };
 
@@ -302,7 +302,7 @@ export default function HomeLoan() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         {[
-                            { icon: Building2, title: "15+ Lenders", desc: "Compare rates across multiple banks" },
+                            { icon: Building2, title: "50+ Lenders", desc: "Compare rates across multiple banks" },
                             { icon: Award, title: "Best Rates", desc: "Negotiated institutional pricing" },
                             { icon: Clock, title: "Quick Disbursal", desc: "48-hour approval timeline" },
                             { icon: ShieldCheck, title: "Paperwork Support", desc: "End-to-end documentation" }
@@ -357,17 +357,17 @@ export default function HomeLoan() {
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="bg-gradient-to-r from-[#0B132B] to-[#1a2a4a] rounded-2xl p-10 shadow-xl">
                         <h3 className="text-2xl font-light text-white mb-3">Ready to Finance Your Dream Home?</h3>
-                        <p className="text-slate-300 text-sm mb-6">Get personalized home loan offers from 15+ banks at competitive rates</p>
+                        <p className="text-slate-300 text-sm mb-6">Get personalized home loan offers from 50+ banks at competitive rates</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button 
-                                onClick={() => window.open(`https://wa.me/919876543210?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Home Loan options for my property.")}`, '_blank')}
+                                onClick={() => window.open(`https://wa.me/919167070916?text=${encodeURIComponent("Hi Fintrust, I'd like to explore Home Loan options for my property.")}`, '_blank')}
                                 className="px-6 py-3 bg-[#00A896] text-white rounded-xl font-semibold hover:bg-[#008f7f] transition-all flex items-center justify-center gap-2"
                             >
                                 <MessageCircle className="w-4 h-4" />
                                 Start Application
                             </button>
                             <button 
-                                onClick={() => window.open(`tel:+919876543210`)}
+                                onClick={() => window.open(`tel:+919167070916`)}
                                 className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                             >
                                 <Phone className="w-4 h-4" />

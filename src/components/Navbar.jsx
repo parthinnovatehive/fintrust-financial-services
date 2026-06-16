@@ -198,12 +198,22 @@ export default function Navbar({ onNavigate, activePage }) {
             </div>
 
             <div className="space-y-2">
+              <p className="text-xs font-bold tracking-wider uppercase text-brand-blue px-2">Financial Solutions</p>
+              <div className="grid grid-cols-2 gap-2 pl-2">
+                <button onClick={() => { onNavigate("home-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Home Loans</button>
+                <button onClick={() => { onNavigate("business-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Business Loans</button>
+                <button onClick={() => { onNavigate("personal-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Personal Loans</button>
+                <button onClick={() => { onNavigate("health-insurance"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Insurance Plans</button>
+              </div>
+            </div>
+
+            <div className="space-y-2">
               <p className="text-xs font-bold tracking-wider uppercase text-brand-digital px-2">Digital Growth Suite</p>
               <div className="grid grid-cols-2 gap-2 pl-2">
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">SEO Audits</button>
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Google PPC</button>
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Social Ads</button>
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Lead Generation</button>
+                <button onClick={() => { onNavigate("seo-visibility", "seo"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">SEO Audits</button>
+                <button onClick={() => { onNavigate("seo-visibility", "ppc"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Google PPC</button>
+                <button onClick={() => { onNavigate("seo-visibility", "social-media"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Social Ads</button>
+                <button onClick={() => { onNavigate("seo-visibility", "lead-gen"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Lead Generation</button>
               </div>
             </div>
 
