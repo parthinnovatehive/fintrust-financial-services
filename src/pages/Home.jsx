@@ -296,7 +296,7 @@ const handleAdvantageSelect = (idx) => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-light leading-[1.05] tracking-tight text-[#0B132B]">
+            <h1 className="text-5xl lg:text-7xl xl:text-7xl font-light leading-[1.05] tracking-tight text-[#0B132B]">
               Financing
               <br />
               <span className="font-bold bg-gradient-to-r from-[#00A896] to-[#0B132B] bg-clip-text text-transparent">
@@ -342,7 +342,7 @@ const handleAdvantageSelect = (idx) => {
             <div className="grid grid-cols-3 gap-4 pt-6">
               <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
                 <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
-                  15<span className="text-[#00A896]">+</span>
+                  50<span className="text-[#00A896]">+</span>
                 </div>
                 <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
                   Banking Partners
@@ -463,17 +463,6 @@ const handleAdvantageSelect = (idx) => {
                 </div>
               </div>
             </div>
-
-            {/* Floating Badge - Capital Facilitated - ADJUSTED FOR MOBILE */}
-            <div className="absolute -right-2 sm:-right-16 top-37 sm:top-24 lg:top-32 bg-gradient-to-br from-[#0B132B] to-[#1a2a4a] text-white px-3 sm:px-5 py-2.5 sm:py-4 rounded-xl shadow-2xl border-l-4 border-[#00A896]">
-              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#00A896] leading-none">
-                ₹500<span className="text-white text-base sm:text-xl">Cr+</span>
-              </div>
-              <div className="text-[7px] sm:text-[9px] uppercase tracking-wider text-slate-400 mt-0.5 sm:mt-1 font-medium">
-                Capital Facilitated
-              </div>
-            </div>
-
           </div>
         </div>
       </section>

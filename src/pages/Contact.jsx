@@ -119,18 +119,6 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-
-            <div className="flex items-start gap-4">
-              <div className="w-9 h-9 bg-slate-900/5 border border-slate-900/10 flex items-center justify-center text-brand-navy rounded-sm">
-                <MapPin className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">HQ Operations</span>
-                <p className="text-sm font-light text-slate-600 leading-relaxed max-w-xs">
-                  InnovateHive Corporate Zone, Premier Business Park, Mumbai, Maharashtra, India
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 

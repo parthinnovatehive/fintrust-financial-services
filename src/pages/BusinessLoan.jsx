@@ -14,15 +14,62 @@ export default function BusinessLoan() {
     const [isAgreed, setIsAgreed] = useState(false);
 
     const logos = [
-        'Aavas Financiers-converted-from-png',
-        'Aditya Birla Capital Home Loans-converted-from-jpg',
-        'AU Small Finance Bank-converted-from-png',
-        'Bajaj Housing Finance Limited',
-        'CLIX-converted-from-png',
-        'hdfc',
-        'SBI-converted-from-png',
-        'YES BANK-converted-from-png'
-    ];
+    'SBI-converted-from-png',
+    'hdfc',
+    'Tata_Capital-converted-from-jpg',
+    'Tata Capital Housing Finance-converted-from-webp',
+    'Logo_of_IDFC_First_Bank.svg-converted-from-png',
+    'YES BANK-converted-from-png',
+    'Aditya Birla Capital-converted-from-jpg',
+    'Aditya Birla Capital Home Loans-converted-from-jpg',
+    'Aditya Birla Finance-converted-from-png',
+    'Aavas Financiers-converted-from-png',
+    'Arka Fincap-converted-from-png',
+    'Ashv Finance-converted-from-png',
+    'AU Small Finance Bank-converted-from-png',
+    'Avanse Financial Services-converted-from-png',
+    'Bajaj Housing Finance Limited',
+    'Bharat Banking and Investment Limited-converted-from-png',
+    'CapriLoans-converted-from-png',
+    'CLIX-converted-from-png',
+    'Credit Saison India-converted-from-png',
+    'DBS-converted-from-webp',
+    'DCB Bank-converted-from-png',
+    'DMI Finance-converted-from-png',
+    'DMI Housing Finance-converted-from-png',
+    'Fibe-converted-from-png',
+    'ftcash-converted-from-png',
+    'Hero Housing Finance-converted-from-png',
+    'Hinduja Housing Finance-converted-from-webp',
+    'IIFL_Logo.svg-converted-from-png',
+    'InCred Finance-converted-from-png',
+    'Indifi-converted-from-png',
+    'JM Financia-converted-from-png',
+    'KreditBee-converted-from-png',
+    'L&T Finance-converted-from-png',
+    'LIC HFL-converted-from-png',
+    'LoanWired-converted-from-jpg',
+    'MAS Financial Services-converted-from-png',
+    'Moneywide-converted-from-jpg',
+    'Motilal Oswal Home Finance-converted-from-jpg',
+    'NAVI-converted-from-png',
+    'Piramal Finance-converted-from-png',
+    'Poonawalla Fincorp',
+    'Poonawalla Housing Finance-converted-from-jpg',
+    'Profectus Capital-converted-from-png',
+    'Protium-converted-from-png',
+    'SBM Bank-converted-from-png',
+    'Shinhan Bank-converted-from-jpg',
+    'Shriram City-converted-from-png',
+    'SMC Finance-converted-from-png',
+    'SMFG India Credit-converted-from-png',
+    'Sundaram Finance-converted-from-png',
+    'Suryoday Small Finance Bank-converted-from-png',
+    'UGRO Capital-converted-from-png',
+    'Unity Small Finance Bank-converted-from-png',
+    'Utkarsh Small Finance Bank-converted-from-jpg',
+    'Vastu Housing Finance-converted-from-webp'
+];
 
     const calculateEMI = () => {
         const P = loanAmount;
@@ -109,25 +156,6 @@ export default function BusinessLoan() {
                 </div>
             </div>
 
-            {/* STATS SECTION - NEW */}
-            <section className="py-12 px-6 lg:px-16 bg-white border-b border-slate-100">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                        {[
-                            { value: "₹50Cr+", label: "Disbursed", icon: DollarSign },
-                            { value: "500+", label: "Businesses Served", icon: Users },
-                            { value: "48hrs", label: "Approval Time", icon: Clock },
-                            { value: "15+", label: "Banking Partners", icon: Building2 }
-                        ].map((stat, idx) => (
-                            <div key={idx} className="p-4">
-                                <stat.icon className="w-6 h-6 text-[#00A896] mx-auto mb-2" />
-                                <div className="text-2xl font-bold text-[#0B132B]">{stat.value}</div>
-                                <div className="text-[10px] uppercase tracking-wider text-slate-500 mt-1">{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* VALUE PILLARS - ENHANCED */}
             <section className="py-20 px-6 lg:px-16">

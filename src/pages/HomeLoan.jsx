@@ -9,12 +9,55 @@ const lenders = [
     { id: 4, name: "Tata Capital Housing", logo: "/lenders/Tata Capital Housing Finance-converted-from-webp.svg", size: 80 },
     { id: 5, name: "IDFC First Bank", logo: "/lenders/Logo_of_IDFC_First_Bank.svg-converted-from-png.svg", size: 70 },
     { id: 6, name: "YES BANK", logo: "/lenders/YES BANK-converted-from-png.svg", size: 75 },
+    { id: 7, name: "Aditya Birla Capital", logo: "/lenders/Aditya Birla Capital-converted-from-jpg.svg", size: 75 },
+    { id: 8, name: "Aditya Birla Capital Home Loans", logo: "/lenders/Aditya Birla Capital Home Loans-converted-from-jpg.svg", size: 80 },
+    { id: 9, name: "Aditya Birla Finance", logo: "/lenders/Aditya Birla Finance-converted-from-png.svg", size: 75 },
+    { id: 10, name: "Aavas Financiers", logo: "/lenders/Aavas Financiers-converted-from-png.svg", size: 72 },
+    { id: 11, name: "Arka Fincap", logo: "/lenders/Arka Fincap-converted-from-png.svg", size: 70 },
+    { id: 12, name: "Ashv Finance", logo: "/lenders/Ashv Finance-converted-from-png.svg", size: 70 },
+    { id: 13, name: "AU Small Finance Bank", logo: "/lenders/AU Small Finance Bank-converted-from-png.svg", size: 78 },
+    { id: 14, name: "Avanse Financial Services", logo: "/lenders/Avanse Financial Services-converted-from-png.svg", size: 75 },
     { id: 15, name: "Bajaj Housing", logo: "/lenders/Bajaj Housing Finance Limited.svg", size: 82 },
+    { id: 16, name: "Bharat Banking and Investment", logo: "/lenders/Bharat Banking and Investment Limited-converted-from-png.svg", size: 80 },
+    { id: 17, name: "CapriLoans", logo: "/lenders/CapriLoans-converted-from-png.svg", size: 72 },
+    { id: 18, name: "CLIX", logo: "/lenders/CLIX-converted-from-png.svg", size: 65 },
+    { id: 19, name: "Credit Saison India", logo: "/lenders/Credit Saison India-converted-from-png.svg", size: 75 },
     { id: 20, name: "DBS", logo: "/lenders/DBS-converted-from-webp.svg", size: 68 },
+    { id: 21, name: "DCB Bank", logo: "/lenders/DCB Bank-converted-from-png.svg", size: 72 },
+    { id: 22, name: "DMI Finance", logo: "/lenders/DMI Finance-converted-from-png.svg", size: 75 },
+    { id: 23, name: "DMI Housing Finance", logo: "/lenders/DMI Housing Finance-converted-from-png.svg", size: 75 },
+    { id: 24, name: "Fibe", logo: "/lenders/Fibe-converted-from-png.svg", size: 65 },
+    { id: 25, name: "ftcash", logo: "/lenders/ftcash-converted-from-png.svg", size: 68 },
+    { id: 26, name: "Hero Housing Finance", logo: "/lenders/Hero Housing Finance-converted-from-png.svg", size: 75 },
+    { id: 27, name: "Hinduja Housing Finance", logo: "/lenders/Hinduja Housing Finance-converted-from-webp.svg", size: 80 },
     { id: 28, name: "IIFL", logo: "/lenders/IIFL_Logo.svg-converted-from-png.svg", size: 70 },
+    { id: 29, name: "InCred Finance", logo: "/lenders/InCred Finance-converted-from-png.svg", size: 72 },
+    { id: 30, name: "Indifi", logo: "/lenders/Indifi-converted-from-png.svg", size: 70 },
+    { id: 31, name: "JM Financial", logo: "/lenders/JM Financia-converted-from-png.svg", size: 75 },
+    { id: 32, name: "KreditBee", logo: "/lenders/KreditBee-converted-from-png.svg", size: 72 },
+    { id: 33, name: "L&T Finance", logo: "/lenders/L&T Finance-converted-from-png.svg", size: 78 },
     { id: 34, name: "LIC HFL", logo: "/lenders/LIC HFL-converted-from-png.svg", size: 70 },
-    { id: 42, name: "Poonawalla Fincorp", logo: "/lenders/Poonawalla Fincorp.svg", size: 80 },
-    { id: 47, name: "SBM Bank", logo: "/lenders/SBM Bank-converted-from-png.svg", size: 72 }
+    // { id: 35, name: "LoanWired", logo: "/lenders/LoanWired-converted-from-jpg.svg", size: 75 },
+    { id: 36, name: "MAS Financial Services", logo: "/lenders/MAS Financial Services-converted-from-png.svg", size: 78 },
+    { id: 37, name: "Moneywide", logo: "/lenders/Moneywide-converted-from-jpg.svg", size: 72 },
+    { id: 38, name: "Motilal Oswal Home Finance", logo: "/lenders/Motilal Oswal Home Finance-converted-from-jpg.svg", size: 80 },
+    { id: 39, name: "NAVI", logo: "/lenders/NAVI-converted-from-png.svg", size: 68 },
+    { id: 40, name: "Piramal Finance", logo: "/lenders/Piramal Finance-converted-from-png.svg", size: 75 },
+    { id: 41, name: "Poonawalla Fincorp", logo: "/lenders/Poonawalla Fincorp.svg", size: 80 },
+    { id: 42, name: "Poonawalla Housing Finance", logo: "/lenders/Poonawalla Housing Finance-converted-from-jpg.svg", size: 80 },
+    { id: 43, name: "Profectus Capital", logo: "/lenders/Profectus Capital-converted-from-png.svg", size: 75 },
+    { id: 44, name: "Protium", logo: "/lenders/Protium-converted-from-png.svg", size: 72 },
+    { id: 45, name: "SBM Bank", logo: "/lenders/SBM Bank-converted-from-png.svg", size: 72 },
+    { id: 46, name: "Shinhan Bank", logo: "/lenders/Shinhan Bank-converted-from-jpg.svg", size: 75 },
+    { id: 47, name: "Shriram City", logo: "/lenders/Shriram City-converted-from-png.svg", size: 75 },
+    { id: 48, name: "SMC Finance", logo: "/lenders/SMC Finance-converted-from-png.svg", size: 70 },
+    { id: 49, name: "SMFG India Credit", logo: "/lenders/SMFG India Credit-converted-from-png.svg", size: 78 },
+    { id: 50, name: "Sundaram Finance", logo: "/lenders/Sundaram Finance-converted-from-png.svg", size: 75 },
+    { id: 51, name: "Suryoday Small Finance Bank", logo: "/lenders/Suryoday Small Finance Bank-converted-from-png.svg", size: 78 },
+    { id: 52, name: "UGRO Capital", logo: "/lenders/UGRO Capital-converted-from-png.svg", size: 72 },
+    { id: 53, name: "Unity Small Finance Bank", logo: "/lenders/Unity Small Finance Bank-converted-from-png.svg", size: 78 },
+    { id: 54, name: "Utkarsh Small Finance Bank", logo: "/lenders/Utkarsh Small Finance Bank-converted-from-jpg.svg", size: 78 },
+    { id: 55, name: "Vastu Housing Finance", logo: "/lenders/Vastu Housing Finance-converted-from-webp.svg", size: 80 }
 ];
 
 export default function HomeLoan() {
@@ -277,37 +320,37 @@ export default function HomeLoan() {
             </section>
 
             {/* Partner Ecosystem */}
-            <section className="py-16 px-6 lg:px-16 bg-[#FAF7F2] border-t border-slate-100">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-10">
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 mb-4">
-                            <Building2 className="w-3.5 h-3.5 text-[#00A896]" />
-                            <span className="text-[10px] font-bold tracking-[0.2em] text-slate-600 uppercase">Institutional Partners</span>
-                        </div>
-                        <h3 className="text-xl font-light text-[#0B132B]">Trusted by India's <span className="font-semibold">Leading Financial Institutions</span></h3>
+<section className="py-16 px-6 lg:px-16 bg-[#FAF7F2] border-t border-slate-100">
+    <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 mb-4">
+                <Building2 className="w-3.5 h-3.5 text-[#00A896]" />
+                <span className="text-[10px] font-bold tracking-[0.2em] text-slate-600 uppercase">Institutional Partners</span>
+            </div>
+            <h3 className="text-xl font-light text-[#0B132B]">Trusted by India's <span className="font-semibold">Leading Financial Institutions</span></h3>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+            {lenders.map((lender) => (
+                <div key={lender.id} className="group flex flex-col items-center gap-2 md:grayscale hover:md:grayscale-0 transition-all duration-300">
+                    <div className="h-12 flex items-center justify-center">
+                        <img 
+                            src={lender.logo} 
+                            alt={lender.name} 
+                            className="max-h-full w-auto object-contain opacity-70 md:opacity-70 group-hover:opacity-100 transition-all" 
+                            style={{ width: `${lender.size + 80}px` }} 
+                        />
                     </div>
-                    
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
-                        {lenders.map((lender) => (
-                            <div key={lender.id} className="group flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300">
-                                <div className="h-12 flex items-center justify-center">
-                                    <img 
-                                        src={lender.logo} 
-                                        alt={lender.name} 
-                                        className="max-h-full w-auto object-contain opacity-70 group-hover:opacity-100 transition-all" 
-                                        style={{ width: `${lender.size + 30}px` }} 
-                                    />
-                                </div>
-                                <span className="text-[9px] text-slate-400 group-hover:text-[#00A896] transition-colors">{lender.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                    
-                    <div className="text-center mt-8">
-                        <p className="text-[10px] text-slate-400">+ Many more NBFCs and banking partners across India</p>
-                    </div>
+                    <span className="text-[9px] text-slate-400 group-hover:text-[#00A896] transition-colors">{lender.name}</span>
                 </div>
-            </section>
+            ))}
+        </div>
+        
+        <div className="text-center mt-8">
+            <p className="text-[10px] text-slate-400">+ Many more NBFCs and banking partners across India</p>
+        </div>
+    </div>
+</section>
 
             {/* Final CTA Section */}
             <section className="py-16 px-6 lg:px-16">

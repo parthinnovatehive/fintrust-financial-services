@@ -61,6 +61,13 @@ export default function Navbar({ onNavigate, activePage }) {
         {/* DESKTOP NAVIGATION */}
         <div className="hidden lg:flex items-center gap-8">
 
+          <button
+            onClick={() => onNavigate("home")}
+            className={`text-sm font-medium transition-colors cursor-pointer ${activePage === "home" ? "text-brand-blue" : "text-slate-600 hover:text-brand-navy"}`}
+          >
+            Home
+          </button>
+
           {/* Finance Mega Menu Trigger */}
           <div
             className="relative"

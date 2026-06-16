@@ -35,17 +35,63 @@ export default function PersonalLoan() {
         window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
     };
 
-    // Lenders logos array
+    // Lenders logos array - Same as BusinessLoan
     const logos = [
         'SBI-converted-from-png',
         'hdfc',
-        'Shinhan Bank-converted-from-jpg.svg',
-        'ICICI Bank-converted-from-png',
-        'Axis Bank-converted-from-png',
+        'Tata_Capital-converted-from-jpg',
+        'Tata Capital Housing Finance-converted-from-webp',
+        'Logo_of_IDFC_First_Bank.svg-converted-from-png',
         'YES BANK-converted-from-png',
-        'Bajaj Finserv-converted-from-png',
-        'Tata Capital-converted-from-jpg',
-        'IDFC First Bank-converted-from-png'
+        'Aditya Birla Capital-converted-from-jpg',
+        'Aditya Birla Capital Home Loans-converted-from-jpg',
+        'Aditya Birla Finance-converted-from-png',
+        'Aavas Financiers-converted-from-png',
+        'Arka Fincap-converted-from-png',
+        'Ashv Finance-converted-from-png',
+        'AU Small Finance Bank-converted-from-png',
+        'Avanse Financial Services-converted-from-png',
+        'Bajaj Housing Finance Limited',
+        'Bharat Banking and Investment Limited-converted-from-png',
+        'CapriLoans-converted-from-png',
+        'CLIX-converted-from-png',
+        'Credit Saison India-converted-from-png',
+        'DBS-converted-from-webp',
+        'DCB Bank-converted-from-png',
+        'DMI Finance-converted-from-png',
+        'DMI Housing Finance-converted-from-png',
+        'Fibe-converted-from-png',
+        'ftcash-converted-from-png',
+        'Hero Housing Finance-converted-from-png',
+        'Hinduja Housing Finance-converted-from-webp',
+        'IIFL_Logo.svg-converted-from-png',
+        'InCred Finance-converted-from-png',
+        'Indifi-converted-from-png',
+        'JM Financia-converted-from-png',
+        'KreditBee-converted-from-png',
+        'L&T Finance-converted-from-png',
+        'LIC HFL-converted-from-png',
+        'LoanWired-converted-from-jpg',
+        'MAS Financial Services-converted-from-png',
+        'Moneywide-converted-from-jpg',
+        'Motilal Oswal Home Finance-converted-from-jpg',
+        'NAVI-converted-from-png',
+        'Piramal Finance-converted-from-png',
+        'Poonawalla Fincorp',
+        'Poonawalla Housing Finance-converted-from-jpg',
+        'Profectus Capital-converted-from-png',
+        'Protium-converted-from-png',
+        'SBM Bank-converted-from-png',
+        'Shinhan Bank-converted-from-jpg',
+        'Shriram City-converted-from-png',
+        'SMC Finance-converted-from-png',
+        'SMFG India Credit-converted-from-png',
+        'Sundaram Finance-converted-from-png',
+        'Suryoday Small Finance Bank-converted-from-png',
+        'UGRO Capital-converted-from-png',
+        'Unity Small Finance Bank-converted-from-png',
+        'Utkarsh Small Finance Bank-converted-from-jpg',
+        'Vastu Housing Finance-converted-from-webp'
     ];
 
     return (
@@ -88,15 +134,38 @@ export default function PersonalLoan() {
                 </div>
             </section>
 
+            {/* INFINITE SCROLL BANNER - Same as BusinessLoan */}
+            <div className="w-full overflow-hidden py-8 bg-white border-y border-slate-100">
+                <div className="relative">
+                    <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+                    <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+                    <div className="flex animate-scroll gap-16 items-center">
+                        {[...logos, ...logos, ...logos].map((name, i) => (
+                            <div key={i} className="flex-shrink-0 w-28 h-10 opacity-60 hover:opacity-100 transition-opacity">
+                                <img 
+                                    src={`/lenders/${name}.svg`} 
+                                    alt={name} 
+                                    className="h-full w-full object-contain" 
+                                    onError={(e) => e.target.style.display = 'none'}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="text-center mt-3">
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Trusted by 50+ leading financial institutions</p>
+                </div>
+            </div>
+
             {/* STATS SECTION */}
             <section className="py-12 px-6 lg:px-16 bg-white border-b border-slate-100">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                         {[
-                            { value: "₹200Cr+", label: "Disbursed", icon: DollarSign },
+                            // { value: "₹200Cr+", label: "Disbursed", icon: DollarSign },
                             { value: "25K+", label: "Happy Customers", icon: Users },
                             { value: "24hrs", label: "Approval Time", icon: Clock },
-                            { value: "15+", label: "Banking Partners", icon: Landmark }
+                            { value: "50+", label: "Banking Partners", icon: Landmark }
                         ].map((stat, idx) => (
                             <div key={idx} className="p-4">
                                 <stat.icon className="w-6 h-6 text-[#00A896] mx-auto mb-2" />
@@ -118,21 +187,21 @@ export default function PersonalLoan() {
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-    {[
-        { icon: Zap, title: "Instant Approval", desc: "Get approval within 24 hours", color: "emerald", bgClass: "from-emerald-500/10 to-emerald-600/5", textClass: "text-emerald-600" },
-        { icon: CreditCard, title: "No Collateral", desc: "Unsecured loans up to ₹50L", color: "blue", bgClass: "from-blue-500/10 to-blue-600/5", textClass: "text-blue-600" },
-        { icon: Wallet, title: "Minimal Documents", desc: "Only KYC and income proof", color: "amber", bgClass: "from-amber-500/10 to-amber-600/5", textClass: "text-amber-600" },
-        { icon: Heart, title: "Flexible EMI", desc: "Tenure up to 7 years", color: "rose", bgClass: "from-rose-500/10 to-rose-600/5", textClass: "text-rose-600" }
-    ].map((item, i) => (
-        <div key={i} className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
-            <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.bgClass} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                <item.icon className={`w-6 h-6 ${item.textClass}`} />
-            </div>
-            <h4 className="font-semibold text-lg mb-2 text-[#0B132B]">{item.title}</h4>
-            <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-        </div>
-    ))}
-</div>
+                        {[
+                            { icon: Zap, title: "Instant Approval", desc: "Get approval within 24 hours", color: "emerald", bgClass: "from-emerald-500/10 to-emerald-600/5", textClass: "text-emerald-600" },
+                            { icon: CreditCard, title: "No Collateral", desc: "Unsecured loans up to ₹50L", color: "blue", bgClass: "from-blue-500/10 to-blue-600/5", textClass: "text-blue-600" },
+                            { icon: Wallet, title: "Minimal Documents", desc: "Only KYC and income proof", color: "amber", bgClass: "from-amber-500/10 to-amber-600/5", textClass: "text-amber-600" },
+                            { icon: Heart, title: "Flexible EMI", desc: "Tenure up to 7 years", color: "rose", bgClass: "from-rose-500/10 to-rose-600/5", textClass: "text-rose-600" }
+                        ].map((item, i) => (
+                            <div key={i} className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+                                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.bgClass} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                                    <item.icon className={`w-6 h-6 ${item.textClass}`} />
+                                </div>
+                                <h4 className="font-semibold text-lg mb-2 text-[#0B132B]">{item.title}</h4>
+                                <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
@@ -350,7 +419,7 @@ export default function PersonalLoan() {
                 </div>
             </section>
 
-            {/* USE CASES SECTION - NEW */}
+            {/* USE CASES SECTION */}
             <section className="py-16 px-6 lg:px-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-10">
@@ -373,8 +442,6 @@ export default function PersonalLoan() {
                     </div>
                 </div>
             </section>
-
-          
 
             {/* FINAL CTA */}
             <section className="py-16 px-6 lg:px-16">
@@ -402,8 +469,7 @@ export default function PersonalLoan() {
                     </div>
                 </div>
             </section>
-             <Footer />
+            <Footer />
         </div>
     );
-    
 }

@@ -40,18 +40,6 @@ const Footer = () => {
             <p className="text-sm text-slate-400 leading-relaxed font-light">
               Empowering dreams through transparent financial solutions and strategic growth partnerships.
             </p>
-            
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-3 pt-2">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
-                <Shield className="w-3.5 h-3.5 text-[#00A896]" />
-                <span className="text-[10px] text-slate-300">SEBI Registered</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
-                <Award className="w-3.5 h-3.5 text-[#00A896]" />
-                <span className="text-[10px] text-slate-300">ISO Certified</span>
-              </div>
-            </div>
           </div>
           
           {/* Loan Products - Using a tags instead of Link */}
