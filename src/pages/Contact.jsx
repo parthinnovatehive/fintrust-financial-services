@@ -19,44 +19,74 @@ export default function Contact() {
   const [activeModal, setActiveModal] = useState(null); // 'privacy' | 'terms' | null
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setSubmissionError("");
+    e.preventDefault();
 
-  try {
-    // Use a CORS proxy to bypass Google's CORS restriction
-    const proxyUrl = "https://api.allorigins.win/raw?url=";
-    const targetUrl = "https://script.google.com/macros/s/AKfycbyMMRB2qkoliTQRAoIJD0hBB-09dBVqp8FJNy26i5yRtIbK4wTC2wHRWNUUTbuddGfSpw/exec";
+    setIsSubmitting(true);
+    setSubmissionError("");
 
-    const response = await fetch(proxyUrl + encodeURIComponent(targetUrl), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formState.name,
-        email: formState.email,
-        phone: `${countryCode} ${formState.phone}`,
-        service: formState.service,
-        message: formState.message,
-        consent: formState.consent ? "Yes" : "No"
-      }),
-    });
+    try {
+      const formData = new FormData();
 
-    const result = await response.json();
+      formData.append("entry.709760320", formState.name);
+      formData.append("entry.1843571188", formState.email);
+      formData.append(
+        "entry.21724035",
+        `${countryCode} ${formState.phone}`
+      );
+      formData.append(
+        "entry.2811390",
+        formState.service === "loan"
+          ? "Loan Solutions & Borrowing Channels"
+          : formState.service === "insurance"
+            ? "Insurance Plans & Wealth Protection"
+            : "Digital Marketing & Performance Growth"
+      );
+      formData.append(
+        "entry.1800551029",
+        formState.message
+      );
 
-    if (result.success) {
+      console.log("===== GOOGLE FORM SUBMISSION =====");
+
+for (const pair of formData.entries()) {
+  console.log(pair[0], ":", pair[1]);
+}
+
+console.log(
+  "POST URL:",
+  "https://docs.google.com/forms/d/e/1FAIpQLScF7tOJklIexqzJTkA1_Zj3ccohbvpRj6tn6l6qWvWfxEVupg/formResponse"
+);
+
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLScF7tOJklIexqzJTkA1_Zj3ccohbvpRj6tn6l6qWvWfxEVupg/formResponse",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: formData,
+        }
+      );
+
+      console.log("Google Form request completed");
+
       setIsSubmitted(true);
-      setFormState({ name: "", email: "", phone: "", service: "loan", message: "", consent: false });
-    } else {
-      setSubmissionError("Unable to submit. Please try again or call us directly.");
+
+      setFormState({
+        name: "",
+        email: "",
+        phone: "",
+        service: "loan",
+        message: "",
+        consent: false,
+      });
+
+    } catch (error) {
+      setSubmissionError(
+        "Unable to submit. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    setSubmissionError("Network error. Please check your connection and try again.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   const isOfficeOpen = () => {
     const hours = new Date().getHours();
