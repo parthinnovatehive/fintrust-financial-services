@@ -178,58 +178,48 @@ export default function Navbar({ onNavigate, activePage }) {
         </button>
       </div>
 
-      {/* MOBILE DRAW OVERLAY */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden fixed inset-x-0 top-20 bg-white border-t border-slate-100 shadow-xl overflow-y-auto px-6 py-8 space-y-6"
-          >
-            <div className="space-y-2">
-              <p className="text-xs font-bold tracking-wider uppercase text-brand-blue px-2">Financial Solutions</p>
-              <div className="grid grid-cols-2 gap-2 pl-2">
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Home Loans</button>
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Business Loans</button>
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Personal Loans</button>
-                <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Insurance Plans</button>
-              </div>
-            </div>
+     {/* MOBILE DRAW OVERLAY */}
+<AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "100vh" }}
+      exit={{ opacity: 0, height: 0 }}
+      className="lg:hidden fixed inset-x-0 top-20 bg-white border-t border-slate-100 shadow-xl overflow-y-auto px-6 py-8 space-y-6"
+    >
+      <div className="space-y-2">
+        <p className="text-xs font-bold tracking-wider uppercase text-brand-blue px-2">Financial Solutions</p>
+        <div className="grid grid-cols-2 gap-2 pl-2">
+          <button onClick={() => { onNavigate("home-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Home Loans</button>
+          <button onClick={() => { onNavigate("business-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Business Loans</button>
+          <button onClick={() => { onNavigate("personal-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Personal Loans</button>
+          <button onClick={() => { onNavigate("health-insurance"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Insurance Plans</button>
+        </div>
+      </div>
 
-            <div className="space-y-2">
-              <p className="text-xs font-bold tracking-wider uppercase text-brand-blue px-2">Financial Solutions</p>
-              <div className="grid grid-cols-2 gap-2 pl-2">
-                <button onClick={() => { onNavigate("home-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Home Loans</button>
-                <button onClick={() => { onNavigate("business-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Business Loans</button>
-                <button onClick={() => { onNavigate("personal-loan"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Personal Loans</button>
-                <button onClick={() => { onNavigate("health-insurance"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-blue">Insurance Plans</button>
-              </div>
-            </div>
+      <div className="space-y-2">
+        <p className="text-xs font-bold tracking-wider uppercase text-brand-digital px-2">Digital Growth Suite</p>
+        <div className="grid grid-cols-2 gap-2 pl-2">
+          <button onClick={() => { onNavigate("seo-visibility", "seo"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">SEO Audits</button>
+          <button onClick={() => { onNavigate("seo-visibility", "ppc"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Google PPC</button>
+          <button onClick={() => { onNavigate("seo-visibility", "social-media"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Social Ads</button>
+          <button onClick={() => { onNavigate("seo-visibility", "lead-gen"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Lead Generation</button>
+        </div>
+      </div>
 
-            <div className="space-y-2">
-              <p className="text-xs font-bold tracking-wider uppercase text-brand-digital px-2">Digital Growth Suite</p>
-              <div className="grid grid-cols-2 gap-2 pl-2">
-                <button onClick={() => { onNavigate("seo-visibility", "seo"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">SEO Audits</button>
-                <button onClick={() => { onNavigate("seo-visibility", "ppc"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Google PPC</button>
-                <button onClick={() => { onNavigate("seo-visibility", "social-media"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Social Ads</button>
-                <button onClick={() => { onNavigate("seo-visibility", "lead-gen"); setIsOpen(false); }} className="text-left text-sm text-slate-600 py-1.5 hover:text-brand-digital">Lead Generation</button>
-              </div>
-            </div>
+      <hr className="border-slate-100" />
 
-            <hr className="border-slate-100" />
+      <div className="flex flex-col gap-4 pl-2">
+        <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-base font-medium text-brand-navy">About Fintrust</button>
+        <button onClick={() => { onNavigate("contact"); setIsOpen(false); }} className="text-left text-base font-medium text-brand-navy">Contact & Support</button>
+      </div>
 
-            <div className="flex flex-col gap-4 pl-2">
-              <button onClick={() => { onNavigate("home"); setIsOpen(false); }} className="text-left text-base font-medium text-brand-navy">About Fintrust</button>
-              <button onClick={() => { onNavigate("contact"); setIsOpen(false); }} className="text-left text-base font-medium text-brand-navy">Contact & Support</button>
-            </div>
-
-            <button onClick={() => { onNavigate("contact"); setIsOpen(false); }} className="w-full py-3 bg-brand-blue text-white text-center font-medium rounded-lg shadow-sm">
-              Get Free Consultation
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <button onClick={() => { onNavigate("contact"); setIsOpen(false); }} className="w-full py-3 bg-brand-blue text-white text-center font-medium rounded-lg shadow-sm">
+        Get Free Consultation
+      </button>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 }
