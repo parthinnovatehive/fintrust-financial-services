@@ -34,28 +34,29 @@ export default function Contact() {
         `${countryCode} ${formState.phone}`
       );
       formData.append(
-        "entry.2811390",
-        formState.service === "loan"
-          ? "Loan Solutions & Borrowing Channels"
-          : formState.service === "insurance"
-            ? "Insurance Plans & Wealth Protection"
-            : "Digital Marketing & Performance Growth"
-      );
-      formData.append(
-        "entry.1800551029",
-        formState.message
-      );
+  "entry.124556480",
+  formState.service === "loan"
+    ? "Loan Solutions & Borrowing Channels"
+    : formState.service === "insurance"
+      ? "Insurance Plans & Wealth Protection"
+      : "Digital Marketing & Performance Growth"
+);
+
+formData.append(
+  "entry.2811390",
+  formState.message
+);
 
       console.log("===== GOOGLE FORM SUBMISSION =====");
 
-for (const pair of formData.entries()) {
-  console.log(pair[0], ":", pair[1]);
-}
+      for (const pair of formData.entries()) {
+        console.log(pair[0], ":", pair[1]);
+      }
 
-console.log(
-  "POST URL:",
-  "https://docs.google.com/forms/d/e/1FAIpQLScF7tOJklIexqzJTkA1_Zj3ccohbvpRj6tn6l6qWvWfxEVupg/formResponse"
-);
+      console.log(
+        "POST URL:",
+        "https://docs.google.com/forms/d/e/1FAIpQLScF7tOJklIexqzJTkA1_Zj3ccohbvpRj6tn6l6qWvWfxEVupg/formResponse"
+      );
 
       await fetch(
         "https://docs.google.com/forms/d/e/1FAIpQLScF7tOJklIexqzJTkA1_Zj3ccohbvpRj6tn6l6qWvWfxEVupg/formResponse",
