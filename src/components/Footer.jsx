@@ -258,7 +258,7 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <span className="text-slate-500 text-[10px]">Developed by</span>
             <a 
-              href="https://innovatehive.com" 
+              href="https://innovatehive.in" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[#00A896] font-semibold text-[10px] tracking-wide hover:text-white transition-colors duration-200"
