@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import Footer from "../components/Footer"; 
 
-export default function CorporateRisk() {
+export default function CorporateRisk({ onNavigate }) {
     const [isAgreed, setIsAgreed] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState('group-health');
     const [companySize, setCompanySize] = useState('50-200');
@@ -495,7 +495,7 @@ export default function CorporateRisk() {
                     </div>
                 </div>
             </section>
-            <Footer />
+           <Footer onNavigate={onNavigate} />
         </div>
     );
 }

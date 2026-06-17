@@ -12,7 +12,7 @@ const sendWhatsApp = (message) => {
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
 };
 
-const SEOVisibility = () => {
+const SEOVisibility = ({ onNavigate }) => {
     return (
         <div className="bg-[#FAF7F2] min-h-screen text-[#0B132B]">
 
@@ -921,7 +921,7 @@ const SEOVisibility = () => {
         </div>
     </div>
 </section>
- <Footer />
+ <Footer onNavigate={onNavigate} />
         </div>
     );
 };

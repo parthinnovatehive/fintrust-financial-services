@@ -32,7 +32,7 @@ import {
 } from "lucide-react";
 import Footer from "../components/Footer"; 
 
-export default function LifeInsurance() {
+export default function LifeInsurance({ onNavigate }) {
     const [isAgreed, setIsAgreed] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState('term');
 
@@ -449,7 +449,7 @@ export default function LifeInsurance() {
                     </div>
                 </div>
             </section>
-             <Footer />
+            <Footer onNavigate={onNavigate} />
         </div>
     );
 }

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import Footer from "../components/Footer";
 
-export default function WorkingCapital() {
+export default function WorkingCapital({ onNavigate }) {
     const [isAgreed, setIsAgreed] = useState(false);
     const [selectedService, setSelectedService] = useState('cash-flow');
     const [annualTurnover, setAnnualTurnover] = useState(5000000);
@@ -509,7 +509,7 @@ export default function WorkingCapital() {
                     </div>
                 </div>
             </section>
-            <Footer />
+           <Footer onNavigate={onNavigate} />
         </div>
     );
 }

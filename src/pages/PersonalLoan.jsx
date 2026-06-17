@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import Footer from "../components/Footer"; 
 
-export default function PersonalLoan() {
+export default function PersonalLoan({ onNavigate }) {
     const [loanAmount, setLoanAmount] = useState(500000);
     const [interestRate, setInterestRate] = useState(11.5);
     const [tenure, setTenure] = useState(5);
@@ -469,7 +469,7 @@ export default function PersonalLoan() {
                     </div>
                 </div>
             </section>
-            <Footer />
+           <Footer onNavigate={onNavigate} />
         </div>
     );
 }

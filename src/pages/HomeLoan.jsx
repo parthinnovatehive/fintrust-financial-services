@@ -60,7 +60,7 @@ const lenders = [
     { id: 55, name: "Vastu Housing Finance", logo: "/lenders/Vastu Housing Finance-converted-from-webp.svg", size: 80 }
 ];
 
-export default function HomeLoan() {
+export default function HomeLoan({ onNavigate }) {
     const [loanAmount, setLoanAmount] = useState(5000000);
     const [interestRate, setInterestRate] = useState(8.5);
     const [tenure, setTenure] = useState(20);
@@ -377,7 +377,7 @@ export default function HomeLoan() {
                     </div>
                 </div>
             </section>
-             <Footer />
+            <Footer onNavigate={onNavigate} />
         </div>
     );
     

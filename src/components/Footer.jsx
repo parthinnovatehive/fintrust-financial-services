@@ -8,7 +8,7 @@ import {
   ArrowUpRight
 } from "lucide-react";
 
-const Footer = () => {
+const Footer = ({ onNavigate }) => {
   // Direct Lead Vector Routing parameters
   const clientWhatsAppNumber = "919167070916";
   const clientPhoneLine = "+919167070916";
@@ -16,6 +16,13 @@ const Footer = () => {
   const genericWhatsAppMessage = encodeURIComponent(
     "Hello Fintrust, I just explored your financial and marketing services on the website. I would like to get on a quick advisory call."
   );
+
+  // Navigation helper
+  const navigateTo = (page, section = null) => {
+    if (onNavigate) {
+      onNavigate(page, section);
+    }
+  };
 
   return (
     <footer className="bg-[#0B132B] text-white border-t border-white/10 px-6 lg:px-16 pt-16 pb-8">
@@ -42,56 +49,56 @@ const Footer = () => {
             </p>
           </div>
           
-          {/* Loan Products - Using a tags instead of Link */}
+          {/* Loan Products */}
           <div className="space-y-4">
             <h4 className="text-xs font-bold tracking-widest uppercase text-[#00A896]">
               Loan Products
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <a 
-                  href="/home-loan"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("home-loan")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Home Loan</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/business-loan"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("business-loan")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Business Loan</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/personal-loan"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("personal-loan")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Personal Loan</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/loan-against-property"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("loan-against-property")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Loan Against Property</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/working-capital"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("working-capital")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Working Capital</span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -103,31 +110,31 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <a 
-                  href="/health-insurance"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("health-insurance")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Health Insurance</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/life-insurance"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("life-insurance")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Life Insurance</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/corporate-risk"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("corp-insurance")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Corporate Risk</span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -139,38 +146,38 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <a 
-                  href="/"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("home")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Home</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/contact"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("contact")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>Contact</span>
-                </a>
+                </button>
               </li>
               <li>
-                <a 
-                  href="/seo-visibility"
-                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                <button 
+                  onClick={() => navigateTo("seo-visibility", "seo")}
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group w-full text-left"
                 >
                   <ChevronRight className="w-3 h-3 text-[#00A896] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                   <span>SEO Visibility</span>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
           
         </div>
         
-        {/* Middle Section - Contact & CTA (same as before) */}
+        {/* Middle Section - Contact & CTA */}
         <div className="py-10 border-b border-white/10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             
@@ -241,20 +248,20 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center gap-4">
-            <a href="#" className="text-slate-500 hover:text-[#00A896] transition-colors text-[11px]">
+            <button onClick={() => navigateTo("contact")} className="text-slate-500 hover:text-[#00A896] transition-colors text-[11px]">
               Terms & Conditions
-            </a>
+            </button>
             <div className="w-px h-3 bg-white/20" />
-            <a href="#" className="text-slate-500 hover:text-[#00A896] transition-colors text-[11px]">
+            <button onClick={() => navigateTo("contact")} className="text-slate-500 hover:text-[#00A896] transition-colors text-[11px]">
               Privacy Policy
-            </a>
+            </button>
             <div className="w-px h-3 bg-white/20" />
-            <a href="#" className="text-slate-500 hover:text-[#00A896] transition-colors text-[11px]">
+            <button onClick={() => navigateTo("contact")} className="text-slate-500 hover:text-[#00A896] transition-colors text-[11px]">
               Disclaimer
-            </a>
+            </button>
           </div>
           
-          {/* InnovateHive Attribution with Link */}
+          {/* InnovateHive Attribution */}
           <div className="flex items-center gap-2">
             <span className="text-slate-500 text-[10px]">Developed by</span>
             <a 

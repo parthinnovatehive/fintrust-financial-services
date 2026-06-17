@@ -51,7 +51,7 @@ function useCounter(end, duration = 1500, isInView = true) {
   return count;
 }
 
-export default function Home() {
+export default function Home({onNavigate }) {
   const statsRef = useRef(null);
   const isStatsInView = useInView(statsRef, { once: true, margin: "-100px" });
   const heroRef = useRef(null);
@@ -1020,7 +1020,7 @@ export default function Home() {
       <EthosSection />
 
       {/* 9. PROFESSIONAL MULTI-SECTION FOOTER */}
-      <Footer />
+      <Footer onNavigate={onNavigate} />
 
       <WhatsAppButton activePage="home" />
     </div>

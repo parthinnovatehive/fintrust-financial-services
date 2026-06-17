@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import Footer from "../components/Footer"; 
 
-export default function HealthInsurance() {
+export default function HealthInsurance({ onNavigate }) {
     const [isAgreed, setIsAgreed] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState('family');
 
@@ -367,7 +367,7 @@ export default function HealthInsurance() {
                     </div>
                 </div>
             </section>
-            <Footer />
+           <Footer onNavigate={onNavigate} />
         </div>
     );
 }

@@ -13,8 +13,6 @@ import LifeInsurance from "./pages/LifeInsurance";
 import CorporateRisk from "./pages/CorporateRisk";
 import WorkingCapital from "./pages/WorkingCapital";
 
-
-
 function App() {
   const [activePage, setActivePage] = useState("home");
   const [scrollToSection, setScrollToSection] = useState(null);
@@ -23,21 +21,18 @@ function App() {
     setActivePage(page);
     
     if (page === "seo-visibility" && sectionId) {
-      // Store the section to scroll to after SEOVisibility mounts
       setScrollToSection(sectionId);
     }
     
     window.scrollTo(0, 0);
   };
 
-  // Handle scrolling to section after SEOVisibility page loads
   useEffect(() => {
     if (activePage === "seo-visibility" && scrollToSection) {
-      // Small delay to ensure DOM is fully rendered
       const timer = setTimeout(() => {
         const element = document.getElementById(scrollToSection);
         if (element) {
-          const navbarHeight = 96; // h-24 = 96px
+          const navbarHeight = 96;
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
           const offsetPosition = elementPosition - navbarHeight;
           
@@ -57,18 +52,18 @@ function App() {
     <div className="bg-white min-h-screen pb-16 sm:pb-0 relative">
       <Navbar onNavigate={navigate} activePage={activePage} />
 
-      {activePage === "home" && <Home />}
-      {activePage === "home-loan" && <HomeLoan />} 
-      {activePage === "business-loan" && <BusinessLoan />} 
-      {activePage === "personal-loan" && <PersonalLoan />}
-      {activePage === "loan-against-property" && <LoanAgainstProperty />}
-      {activePage === "health-insurance" && <HealthInsurance />}
-      {activePage === "life-insurance" && <LifeInsurance />}
-      {activePage === "corp-insurance" && <CorporateRisk />}
-      {activePage === "working-capital" && <WorkingCapital />}
-
-      {activePage === "seo-visibility" && <SEOVisibility />} 
-      {activePage === "contact" && <Contact />}
+      {/* Pass navigate to each page component */}
+      {activePage === "home" && <Home onNavigate={navigate} />}
+      {activePage === "home-loan" && <HomeLoan onNavigate={navigate} />} 
+      {activePage === "business-loan" && <BusinessLoan onNavigate={navigate} />} 
+      {activePage === "personal-loan" && <PersonalLoan onNavigate={navigate} />}
+      {activePage === "loan-against-property" && <LoanAgainstProperty onNavigate={navigate} />}
+      {activePage === "health-insurance" && <HealthInsurance onNavigate={navigate} />}
+      {activePage === "life-insurance" && <LifeInsurance onNavigate={navigate} />}
+      {activePage === "corp-insurance" && <CorporateRisk onNavigate={navigate} />}
+      {activePage === "working-capital" && <WorkingCapital onNavigate={navigate} />}
+      {activePage === "seo-visibility" && <SEOVisibility onNavigate={navigate} />} 
+      {activePage === "contact" && <Contact onNavigate={navigate} />}
 
       <WhatsAppButton activePage={activePage} />
     </div>
