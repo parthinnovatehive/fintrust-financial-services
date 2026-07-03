@@ -352,16 +352,6 @@ export default function Home({onNavigate }) {
 
               <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
                 <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
-                  10<span className="text-[#00A896]">K+</span>
-                </div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
-                  Clients Served
-                </div>
-                <div className="w-8 h-px bg-[#00A896]/30 mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-
-              <div className="group bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-5 py-4 shadow-sm hover:shadow-md hover:border-[#00A896]/30 transition-all duration-300">
-                <div className="text-3xl lg:text-4xl font-bold text-[#0B132B] leading-none">
                   98<span className="text-[#00A896]">%</span>
                 </div>
                 <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold">
@@ -536,40 +526,28 @@ export default function Home({onNavigate }) {
       {/* 3. APPLE WATCH GRID */}
       <AppleWatchGrid />
 
-      {/* 4. METRICS SECTION */}
-      <section
-        ref={statsRef}
-        className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-[#0B132B] text-white px-6 lg:px-16 relative overflow-hidden -mt-12 lg:-mt-24 z-30"
-      >
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+{/* 4. METRICS SECTION */}
+<section
+  ref={statsRef}
+  className="pt-12 pb-20 lg:pt-16 lg:pb-24 bg-[#0B132B] text-white px-6 lg:px-16 relative overflow-hidden -mt-12 lg:-mt-24 z-30"
+>
+  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-12 text-center relative z-10 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-          <div className="pt-6 lg:pt-0">
-            <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
-              <span className="font-semibold text-[#00A896]">{useCounter(50, 1200, isStatsInView)}</span>+
-            </p>
-            <p className="text-xs uppercase tracking-widest text-slate-400 font-medium">Banking Partners</p>
-          </div>
-          <div className="pt-6 lg:pt-0">
-            <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
-              <span className="font-semibold text-[#00A896]">{useCounter(10, 1200, isStatsInView)}</span>K+
-            </p>
-            <p className="text-xs uppercase tracking-widest text-slate-400 font-medium">Engaged Clients</p>
-          </div>
-          <div className="pt-6 lg:pt-0">
-            <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
-              <span className="font-semibold text-[#00A896]">{useCounter(5, 1200, isStatsInView)}</span>x
-            </p>
-            <p className="text-xs uppercase tracking-widest text-slate-400 font-medium">Average Marketing ROI</p>
-          </div>
-          <div className="pt-6 lg:pt-0">
-            <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
-              <span className="font-semibold text-[#00A896]">{useCounter(98, 1200, isStatsInView)}</span>%
-            </p>
-            <p className="text-xs uppercase tracking-widest text-slate-400 font-medium">Retention Metric</p>
-          </div>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-12 text-center relative z-10">
+    <div className="flex-1 min-w-[120px] max-w-[200px]">
+      <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
+        <span className="font-semibold text-[#00A896]">{useCounter(50, 2100, isStatsInView)}</span>+
+      </p>
+      <p className="text-xs uppercase tracking-widest text-slate-400 font-medium">Banking Partners</p>
+    </div>
+    <div className="flex-1 min-w-[120px] max-w-[200px]">
+      <p className="text-4xl lg:text-5xl font-light tracking-tight text-white mb-2">
+        <span className="font-semibold text-[#00A896]">{useCounter(98, 2100, isStatsInView)}</span>%
+      </p>
+      <p className="text-xs uppercase tracking-widest text-slate-400 font-medium">Retention Metric</p>
+    </div>
+  </div>
+</section>
 
       {/* 5. INTERACTIVE ADVANTAGE MATRIX - CENTERED CARD WITH NAVIGATION */}
       <section className="py-28 px-6 lg:px- 16 bg-[#F4EDE2] border-b border-slate-200 relative">

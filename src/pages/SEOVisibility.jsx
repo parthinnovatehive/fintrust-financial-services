@@ -4,7 +4,7 @@ import {
     Activity, TrendingUp, Leaf, Megaphone, DollarSign, UserCheck, BadgeCheck,
     ArrowUp, Clock, Database, PieChart, Users, MessageCircle, Share2
 } from 'lucide-react';
-import Footer from "../components/Footer"; 
+import Footer from "../components/Footer";
 
 const sendWhatsApp = (message) => {
     const phoneNumber = "919167070916"; // REPLACE WITH YOUR ACTUAL NUMBER
@@ -55,7 +55,7 @@ const SEOVisibility = ({ onNavigate }) => {
 
                         <div className="flex flex-wrap gap-5 pt-3">
                             <button
-                               onClick={() => sendWhatsApp("Hi Fintrust, I'm interested in an SEO Site Audit. I'd like to understand my current organic search performance, keyword gaps, and technical SEO health score to improve my website's visibility for high-intent financial keywords.")}
+                                onClick={() => sendWhatsApp("Hi Fintrust, I'm interested in an SEO Site Audit. I'd like to understand my current organic search performance, keyword gaps, and technical SEO health score to improve my website's visibility for high-intent financial keywords.")}
                                 className="group px-8 py-4 bg-[#0B132B] text-white rounded-xl font-semibold hover:bg-[#00A896] transition-all duration-300 shadow-lg shadow-[#0B132B]/20 hover:shadow-[#00A896]/40 hover:-translate-y-0.5 flex items-center gap-2"
                             >
                                 <span>Request Site Audit</span>
@@ -850,78 +850,78 @@ const SEOVisibility = ({ onNavigate }) => {
 
             {/* 5. FINAL CTA */}
             <section className="py-24 px-6 relative overflow-hidden">
-    {/* Ambient glow effects */}
-    <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00A896]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00A896]/30 to-transparent" />
-    </div>
+                {/* Ambient glow effects */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00A896]/10 rounded-full blur-[120px]" />
+                    <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00A896]/30 to-transparent" />
+                </div>
 
-    <div className="max-w-5xl mx-auto relative z-10">
-        <div className="bg-gradient-to-br from-[#0B132B] via-[#0F1A2E] to-[#0B132B] rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
-            
-            {/* Decorative top line */}
-            <div className="h-1 bg-gradient-to-r from-transparent via-[#00A896] to-transparent w-full" />
-            
-            <div className="p-8 md:p-12 lg:p-16 text-center">
-                {/* Small badge above heading */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00A896]/10 border border-[#00A896]/20 mb-6">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#00A896]">Limited Time Offer</span>
+                <div className="max-w-5xl mx-auto relative z-10">
+                    <div className="bg-gradient-to-br from-[#0B132B] via-[#0F1A2E] to-[#0B132B] rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+
+                        {/* Decorative top line */}
+                        <div className="h-1 bg-gradient-to-r from-transparent via-[#00A896] to-transparent w-full" />
+
+                        <div className="p-8 md:p-12 lg:p-16 text-center">
+                            {/* Small badge above heading */}
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00A896]/10 border border-[#00A896]/20 mb-6">
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#00A896] animate-pulse" />
+                                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#00A896]">Limited Time Offer</span>
+                            </div>
+
+                            {/* Main heading */}
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                                Ready to scale your <span className="text-[#00A896]">organic visibility</span>?
+                            </h2>
+
+                            {/* Description */}
+                            <p className="text-slate-300 text-base md:text-lg mb-8 max-w-lg mx-auto leading-relaxed">
+                                Get a custom SEO audit based on your specific industry benchmarking and search intent data.
+                            </p>
+
+                            {/* CTA Button with icon animation */}
+                            <button
+                                onClick={() => sendWhatsApp("Hi Fintrust, I would like to get a custom SEO audit based on my business data. Please analyze my domain authority, backlink profile, core web vitals, mobile usability, and provide actionable recommendations to rank for high-intent financial keywords in my market.")}
+                                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#00A896] rounded-xl font-semibold text-white hover:bg-[#008f7f] transition-all duration-300 shadow-lg shadow-[#00A896]/25 hover:shadow-[#00A896]/40 hover:-translate-y-0.5 overflow-hidden"
+                            >
+                                {/* Button shine effect */}
+                                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+
+                                <span>Get My Free Audit</span>
+                                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </button>
+
+                            {/* Trust indicators below button */}
+                            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-[11px] text-slate-400">
+                                <div className="flex items-center gap-2">
+                                    <svg className="w-3.5 h-3.5 text-[#00A896]" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                    </svg>
+                                    <span>No obligation</span>
+                                </div>
+                                <div className="w-1 h-1 rounded-full bg-slate-600" />
+                                <div className="flex items-center gap-2">
+                                    <Clock className="w-3.5 h-3.5 text-[#00A896]" />
+                                    <span>48-hour delivery</span>
+                                </div>
+                                <div className="w-1 h-1 rounded-full bg-slate-600" />
+                                <div className="flex items-center gap-2">
+                                    <ShieldCheck className="w-3.5 h-3.5 text-[#00A896]" />
+                                    <span>Data-driven insights</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Decorative bottom elements */}
+                        <div className="flex justify-center gap-1 pb-4">
+                            {[0, 1, 2, 3, 4].map((i) => (
+                                <div key={i} className="w-1 h-1 rounded-full bg-[#00A896]/30" />
+                            ))}
+                        </div>
+                    </div>
                 </div>
-                
-                {/* Main heading */}
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                    Ready to scale your <span className="text-[#00A896]">organic visibility</span>?
-                </h2>
-                
-                {/* Description */}
-                <p className="text-slate-300 text-base md:text-lg mb-8 max-w-lg mx-auto leading-relaxed">
-                    Get a custom SEO audit based on your specific industry benchmarking and search intent data.
-                </p>
-                
-                {/* CTA Button with icon animation */}
-                <button
-                    onClick={() => sendWhatsApp("Hi Fintrust, I would like to get a custom SEO audit based on my business data. Please analyze my domain authority, backlink profile, core web vitals, mobile usability, and provide actionable recommendations to rank for high-intent financial keywords in my market.")}
-                    className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#00A896] rounded-xl font-semibold text-white hover:bg-[#008f7f] transition-all duration-300 shadow-lg shadow-[#00A896]/25 hover:shadow-[#00A896]/40 hover:-translate-y-0.5 overflow-hidden"
-                >
-                    {/* Button shine effect */}
-                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
-                    
-                    <span>Get My Free Audit</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
-                
-                {/* Trust indicators below button */}
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-[11px] text-slate-400">
-                    <div className="flex items-center gap-2">
-                        <svg className="w-3.5 h-3.5 text-[#00A896]" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <span>No obligation</span>
-                    </div>
-                    <div className="w-1 h-1 rounded-full bg-slate-600" />
-                    <div className="flex items-center gap-2">
-                        <Clock className="w-3.5 h-3.5 text-[#00A896]" />
-                        <span>48-hour delivery</span>
-                    </div>
-                    <div className="w-1 h-1 rounded-full bg-slate-600" />
-                    <div className="flex items-center gap-2">
-                        <ShieldCheck className="w-3.5 h-3.5 text-[#00A896]" />
-                        <span>Data-driven insights</span>
-                    </div>
-                </div>
-            </div>
-            
-            {/* Decorative bottom elements */}
-            <div className="flex justify-center gap-1 pb-4">
-                {[0, 1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-1 h-1 rounded-full bg-[#00A896]/30" />
-                ))}
-            </div>
-        </div>
-    </div>
-</section>
- <Footer onNavigate={onNavigate} />
+            </section>
+            <Footer onNavigate={onNavigate} />
         </div>
     );
 };
